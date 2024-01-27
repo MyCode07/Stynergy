@@ -5,6 +5,9 @@ html {
 body {
     scroll-behavior: smooth;
     font-style: normal;
+    font-family: TTHoves;
+    font-weight: 400;
+    line-height: normal;
 
     &._noscroll {
         overflow: hidden;
@@ -28,7 +31,7 @@ body {
 
 main {
     flex: 1 1 auto;
-
+    
     & > :last-child {
         margin-bottom: 0 !important;
     }

@@ -1,0 +1,175 @@
+.menu {
+    position: fixed;
+    left: 0;
+    top: 137px;
+
+    width: 100%;
+    min-height: 100vh;
+    max-height: 100%;
+
+    overflow-y: auto;
+
+    background-color: $white;
+    padding-bottom: 200px;
+    padding-top: 18px;
+
+    transform: translateX(110%);
+    z-index: -1;
+    transition: all 0.3s ease 0s;
+
+    @media (max-width: 768px) {
+        top: 124px;
+    }
+
+    &._open {
+        transform: translateX(0%);
+        z-index: 10;
+    }
+
+    // .menu__container
+
+    &__container {
+    }
+
+    // .menu__body
+
+    &__body {
+        overflow: hidden;
+    }
+
+    .catalog {
+        width: 100%;
+        border: 1px solid rgba(213, 38, 35, 0.5);
+
+        @media (max-width: 1200px) {
+            display: flex;
+        }
+
+        * {
+            color: $accent;
+            font-weight: 600;
+        }
+    }
+
+    .nav {
+        @media (max-width: 1200px) {
+            display: block;
+            height: fit-content;
+        }
+
+        margin-top: 36px;
+        padding-bottom: 43px;
+        border-bottom: 1px solid #f7f7f7;
+
+        & > ul {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+
+            & > li {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                width: 100%;
+
+                a {
+                    text-align: left;
+                    text-transform: uppercase;
+                    width: calc(100% - 20px);
+                    color: #656565;
+                    white-space: wrap;
+                }
+
+                button {
+                    svg {
+                        fill: currentColor;
+                    }
+                }
+            }
+        }
+    }
+
+    ._demibold {
+        a {
+            color: #d52623 !important;
+        }
+
+        color: #d52623 !important;
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .address {
+        margin-top: 35px;
+        display: flex;
+        flex-direction: column;
+
+        gap: 22px;
+
+        p {
+            opacity: 0.5;
+            color: $black;
+            font-size: 15px;
+            display: block;
+        }
+
+        a {
+            display: flex;
+            gap: 8px;
+
+            svg {
+                width: 10.302px;
+                height: 14px;
+                flex: 0 0 auto;
+            }
+
+            div {
+                font-weight: 400;
+
+                span {
+                    display: block;
+                    color: $black;
+                    font-size: 15px;
+                    margin-bottom: 6px;
+                }
+                
+                label {
+                    display: block;
+                    opacity: 0.7;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    .catalog__box-container {
+        position: relative;
+        max-height: 0;
+        overflow: hidden;
+        z-index: -1;
+        transition: all 0.3s ease 0s;
+
+        .catalog__box-body {
+            padding-bottom: 28px;
+        }
+
+        &._open {
+            max-height: 100%;
+            overflow: visible;
+            z-index: 1;
+        }
+
+        .catalog__box-left {
+            padding-bottom: 8px;
+        }
+
+        .catalog__box-right {
+            a {
+                max-width: 90%;
+                width: 100%;
+            }
+        }
+    }
+}

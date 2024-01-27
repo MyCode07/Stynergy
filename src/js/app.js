@@ -7,10 +7,9 @@ import "./parts/menu.js";
 
 import "./parts/sliders.js";
 import "./parts/popup.js";
+import "./parts/catalog.js";
 
-parallax();
 accordeon();
-animateStaggerAction();
 maskInputs('+7 (999) 999-99-99', '._mask-phone')
 replaceDomElements();
 stickyHeader();

@@ -6,12 +6,16 @@ const menu = document.querySelector('.menu');
 const burger = document.querySelector('.header__burger');
 const menuLinks = document.querySelectorAll('.menu li a');
 const header = document.querySelector('.header');
-
+const headerBottom = document.querySelector('.header__bottom');
+const search = document.querySelector('.header__bottom-mobile .search');
 
 if (burger) {
     burger.addEventListener('click', (е) => {
         burger.classList.toggle('_active');
         menu.classList.toggle('_open');
+        search.classList.toggle('_active')
+        headerBottom.classList.toggle('_active')
+        mobileNav.classList.toggle('_none')
 
         document.body.classList.toggle('_noscroll');
         if (!header.classList.contains('_scrolled')) {
@@ -40,8 +44,8 @@ if (menuLinks.length) {
 }
 
 
-const arrow = `<button><svg xmlns="http://www.w3.org/2000/svg" width="6" height="4" viewBox="0 0 6 4" >
-<path d="M2.92578 2.32868L5.16199 -3.0436e-06L5.80078 0.6652L2.92578 3.65909L0.0507819 0.665201L0.690022 -2.65264e-06L2.92578 2.32868Z"/>
+const arrow = `<button><svg xmlns="http://www.w3.org/2000/svg" width="8" height="6" viewBox="0 0 8 6" >
+  <path d="M4.31216 5.30418L7.8722 1.51679C7.9546 1.42919 8 1.31225 8 1.18757C8 1.06288 7.9546 0.945947 7.8722 0.858349L7.61008 0.579434C7.43929 0.397941 7.1617 0.397941 6.99116 0.579434L4.00166 3.7598L1.00884 0.575905C0.926432 0.488307 0.816579 0.439941 0.699442 0.439941C0.582174 0.439941 0.472321 0.488307 0.38985 0.575905L0.127804 0.85482C0.0453982 0.942487 -2.70754e-08 1.05935 -3.25256e-08 1.18404C-3.79757e-08 1.30872 0.0453982 1.42566 0.127804 1.51326L3.69109 5.30418C3.77376 5.39199 3.88413 5.44022 4.00146 5.43994C4.11925 5.44022 4.22956 5.39199 4.31216 5.30418Z" />
 </svg></button>`;
 
 const submenuList = document.querySelectorAll('nav ul li');
@@ -119,3 +123,15 @@ document.addEventListener('click', function (e) {
         if (!menu.classList.contains('_open')) unLockPadding();
     }
 })
+
+
+const mobileSearch = document.querySelector('.mb-search');
+const mobileNav = document.querySelector('.header__bottom-mobile nav');
+
+if (mobileSearch && window.innerWidth <= 1200) {
+    mobileSearch.addEventListener('click', (e) => {
+        const search = e.target.closest('.header__bottom-mobile').querySelector('.search');
+        search.classList.toggle('_active')
+        mobileNav.classList.toggle('_none')
+    })
+}
