@@ -1,0 +1,62 @@
+._ticker {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: $white;
+
+    @media (any-hover: hover) {
+        &:hover {
+            .ticker-text {
+                animation-play-state: paused;
+            }
+        }
+    }
+
+    // ._ticker-text
+
+    &-text {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: fit-content;
+
+        span {
+            flex: 0 0 auto;
+            width: 2px;
+            height: 2px;
+            border-radius: 50%;
+            background-color: #212226;
+            display: block;
+        }
+
+        svg {
+            flex: 0 0 auto;
+            max-width: unset;
+        }
+    }
+
+    // ._ticker-page
+
+    &-page {
+        padding: 20px 0;
+        @include adaptive-value("margin-bottom", 99, 78, 1);
+
+        svg {
+            width: 216px;
+            height: 30px;
+        }
+
+        @media (max-width: 992px) {
+            padding: 12px;
+
+            svg {
+                width: 136px;
+                height: 19px;
+            }
+        }
+    }
+}

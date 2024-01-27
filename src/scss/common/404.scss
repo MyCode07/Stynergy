@@ -1,0 +1,16 @@
+.error-404 {
+    @include adaptive-value("padding-top", 200, 100, 1);
+
+    .section__body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    span {
+        @include adaptive-value("font-size", 70, 30, 1);
+    }
+}
