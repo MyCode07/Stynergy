@@ -37,11 +37,12 @@
         overflow: hidden;
     }
 
-    .catalog {
+    .open-catalog-btn {
         width: 100%;
         border: 1px solid rgba(213, 38, 35, 0.5);
+        display: none;
 
-        @media (max-width: 1200px) {
+        @media (max-width: 768px) {
             display: flex;
         }
 
@@ -134,41 +135,12 @@
                     font-size: 15px;
                     margin-bottom: 6px;
                 }
-                
+
                 label {
                     display: block;
                     opacity: 0.7;
                     font-size: 12px;
                 }
-            }
-        }
-    }
-
-    .catalog__box-container {
-        position: relative;
-        max-height: 0;
-        overflow: hidden;
-        z-index: -1;
-        transition: all 0.3s ease 0s;
-
-        .catalog__box-body {
-            padding-bottom: 28px;
-        }
-
-        &._open {
-            max-height: 100%;
-            overflow: visible;
-            z-index: 1;
-        }
-
-        .catalog__box-left {
-            padding-bottom: 8px;
-        }
-
-        .catalog__box-right {
-            a {
-                max-width: 90%;
-                width: 100%;
             }
         }
     }

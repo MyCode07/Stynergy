@@ -1,58 +1,93 @@
-const catalogBtns = document.querySelectorAll('.catalog-desktop');
-const catalogBox = document.querySelector('.catalog__box');
+import { lockPadding, unLockPadding } from "../utils/lockPadding.js";
 
-if (catalogBtns.length) {
-    catalogBtns.forEach(btn => {
+
+
+const openCatalogBtns = document.querySelectorAll('[data-open-catalog-menu]');
+const catalogMenu = document.querySelector('.catalog-menu');
+
+if (openCatalogBtns.length) {
+    openCatalogBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             btn.classList.toggle('_active')
-            catalogBox.classList.toggle('_open')
-            document.body.classList.toggle('_noscroll');
+            catalogMenu.classList.toggle('_open')
 
+            if (btn.classList.contains('_active')) {
+                lockPadding();
+
+            }
+            else {
+                unLockPadding();
+            }
         })
     });
 }
 
-const catalogBtnMobile = document.querySelector('.catalog-mobile');
-const catalogBoxContainer = document.querySelector('.catalog__box-container');
-
-if (catalogBtnMobile) {
-    catalogBtnMobile.addEventListener('click', (e) => {
-        catalogBtnMobile.classList.toggle('_active')
-        catalogBoxContainer.classList.toggle('_open')
-
-    })
-}
 
 
-const catalogItems = document.querySelectorAll('.catalog__box-right nav');
-
-if (catalogItems.length) {
-    catalogItems.forEach(item => {
-        item.addEventListener('click', (e) => {
-
-            catalogItems.forEach(item => {
-                item.classList.remove('_open');
-            });
-
-            item.classList.toggle('_open')
-
-        })
-    });
-}
-
-const catalogCategories = document.querySelectorAll('.catalog__box-left a');
+const catalogCategories = document.querySelectorAll('.catalog-menu [data-catalog-item]');
+const catalogCategoriesMenus = document.querySelectorAll('.catalog-menu [data-catalog-menu]');
 
 if (catalogCategories.length) {
-    catalogCategories.forEach(categori => {
-        categori.addEventListener('click', (e) => {
+    catalogCategories.forEach((cat) => {
+        const id = cat.dataset.catalogItem;
+
+        cat.addEventListener('click', (e) => {
             e.preventDefault();
 
             catalogCategories.forEach(item => {
-                item.classList.remove('_selected');
+                const currentId = item.dataset.catalogItem;
+
+                if (currentId == id) {
+                    item.classList.add('_active');
+                }
+                else {
+                    item.classList.remove('_active');
+                }
             });
 
-            categori.classList.add('_selected');
+            catalogCategoriesMenus.forEach(item => {
+                const currentId = item.dataset.catalogMenu;
 
+                if (currentId == id) {
+                    item.classList.add('_active');
+                }
+                else {
+                    item.classList.remove('_active');
+                }
+            });
         })
     });
 }
+
+const replaceCatalogMenu = () => {
+    if (!catalogMenu) return;
+
+    let lockPosition = true;
+
+    const width = 768;
+    const newPosition = document.querySelector('.menu .open-catalog-btn');
+    const oldPosition = document.body;
+
+    const newPositionInsertType = 'afterend';
+    const oldPositionInsertType = 'afterbegin';
+
+
+    function replace() {
+        if (window.innerWidth <= width) {
+            if (lockPosition == true)
+                newPosition.insertAdjacentElement(newPositionInsertType, catalogMenu)
+            lockPosition = false
+        }
+        else {
+            if (lockPosition == false)
+                oldPosition.insertAdjacentElement(oldPositionInsertType, catalogMenu)
+            lockPosition = true
+        }
+
+    }
+
+    replace()
+    window.addEventListener('resize', replace)
+}
+
+replaceCatalogMenu();

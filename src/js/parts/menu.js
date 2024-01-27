@@ -14,16 +14,20 @@ if (burger) {
         burger.classList.toggle('_active');
         menu.classList.toggle('_open');
         search.classList.toggle('_active')
+        headerBottom.classList.toggle('_white')
         headerBottom.classList.toggle('_active')
-        mobileNav.classList.toggle('_none')
 
-        document.body.classList.toggle('_noscroll');
+
         if (!header.classList.contains('_scrolled')) {
             header.classList.toggle('_open');
         }
 
-        if (menu.classList.contains('_open')) lockPadding();
-        else unLockPadding();
+        if (menu.classList.contains('_open')) {
+            lockPadding();
+        }
+        else {
+            unLockPadding();
+        }
     })
 }
 
@@ -32,9 +36,14 @@ if (menuLinks.length) {
     menuLinks.forEach(link => {
         link.addEventListener('click', (е) => {
 
-            if (!isMobile.any())
-                if (menu.classList.contains('_open')) unLockPadding();
-                else lockPadding()
+            if (!isMobile.any()) {
+                if (menu.classList.contains('_open')) {
+                    unLockPadding();
+                }
+                else {
+                    lockPadding()
+                }
+            }
 
             menu.classList.toggle('_open');
             burger.classList.toggle('_active');
@@ -120,18 +129,19 @@ document.addEventListener('click', function (e) {
             header.classList.remove('_open');
         }
 
-        if (!menu.classList.contains('_open')) unLockPadding();
+        if (!menu.classList.contains('_open')) {
+            unLockPadding();
+        }
     }
 })
 
 
 const mobileSearch = document.querySelector('.mb-search');
-const mobileNav = document.querySelector('.header__bottom-mobile nav');
 
 if (mobileSearch && window.innerWidth <= 1200) {
     mobileSearch.addEventListener('click', (e) => {
         const search = e.target.closest('.header__bottom-mobile').querySelector('.search');
-        search.classList.toggle('_active')
-        mobileNav.classList.toggle('_none')
+        headerBottom.classList.add('_active')
+        search.classList.add('_active')
     })
 }
