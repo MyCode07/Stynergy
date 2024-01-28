@@ -124,19 +124,19 @@
             height: 100%;
         }
     }
-}
 
-.swiper {
-    // .swiper-wrapper
+    .pagination {
+        @media (min-width: 769px) {
+            position: absolute;
+            bottom: 22px;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
 
-    &-wrapper {
+        @media (max-width: 768px) {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 16px;
+        }
     }
-
-    // .swiper-slide
-
-    &-slide {
-    }
-}
-
-.pagination {
 }
