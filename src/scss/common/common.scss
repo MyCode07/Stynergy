@@ -31,7 +31,7 @@ body {
 
 main {
     flex: 1 1 auto;
-    
+
     & > :last-child {
         margin-bottom: 0 !important;
     }
@@ -66,16 +66,107 @@ h3,
 h4,
 h5,
 h6 {
+    color: $black;
+
+    span {
+        color: $accent;
+    }
 }
 
 h1 {
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    @include adaptive-value("font-size", 50, 20, 1);
+
+    @media (max-width: 768px) {
+        letter-spacing: -0.2px;
+    }
 }
 
 h2 {
+    font-weight: 600;
+    letter-spacing: -0.88px;
+    @include adaptive-value("font-size", 44, 24, 1);
+
+    @media (max-width: 768px) {
+        letter-spacing: -0.48px;
+        line-height: 1;
+    }
 }
 
 h3 {
 }
 
 h4 {
+}
+
+h5 {
+    color: #fff;
+    @include adaptive-value("font-size", 20, 14, 1);
+    font-weight: 600;
+    text-transform: uppercase;
+
+    @media (max-width: 425px) {
+        font-weight: 500;
+    }
+}
+
+._btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include adaptive-value("height", 60, 40, 1);
+    width: fit-content;
+    gap: 10px;
+    border-radius: 10px;
+    @include adaptive-value("padding-left", 54, 20, 1);
+    @include adaptive-value("padding-right", 54, 20, 1);
+
+    text-align: center;
+    @include adaptive-value("font-size", 16, 13, 1);
+    font-weight: 600;
+
+    &-red {
+        background: $accent;
+        color: $white;
+    }
+
+    &-white {
+        border: 1px solid $accent;
+        color: $accent;
+    }
+}
+
+.pagination {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    @media (min-width: 769px) {
+        position: absolute;
+        bottom: 22px;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    @media (max-width: 768px) {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 16px;
+    }
+
+    span {
+        display: block;
+        width: 8px;
+        height: 8px;
+        border-radius: 100px;
+        background-color: #d9d9d9;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: $accent;
+    }
 }

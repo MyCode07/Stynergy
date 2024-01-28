@@ -88,6 +88,14 @@
                         fill: currentColor;
                     }
                 }
+
+                ul {
+                    li {
+                        a {
+                            text-transform: initial;
+                        }
+                    }
+                }
             }
         }
     }
