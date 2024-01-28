@@ -5,101 +5,127 @@
 @@include('./html/header.html')
 
 <main>
+
     <section class="hero">
-        <div class="hero__container _container">
+        <div class="hero__container">
             <div class="hero__body">
                 <div class="hero-slider">
                     <div class="swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <div class="content">
-                                    <h1>Защелкивающиеся панели <br> <span>Smart Фальц PRO</span></h1>
-                                    <ol>
-                                        <li> Герметичность</li>
-                                        <li> Простой и быстрый монтаж</li>
-                                        <li> Заводское исполнение замков</li>
-                                        <li> Фабричная геометрия</li>
-                                    </ol>
-                                    <button class="_btn _btn-red">Подробнее</button>
+                                <div class="_container">
+                                    <div class="hero-slider__content">
+                                        <h1>Защелкивающиеся <br> панели <span>Smart Фальц PRO</span></h1>
+                                        <ol>
+                                            <li> Герметичность</li>
+                                            <li> Простой и быстрый монтаж</li>
+                                            <li> Заводское исполнение замков</li>
+                                            <li> Фабричная геометрия</li>
+                                        </ol>
+                                        <a href="" class="_btn _btn-red">Подробнее</a>
+                                    </div>
+                                    <div class="hero-slider__img">
+                                        <img src="img/hero-slider/slide-1-1.png" alt="">
+                                    </div>
                                 </div>
-                                <img src="img/hero-slider/slide-1.png" alt="">
                             </div>
                             <div class="swiper-slide">
-                                <div class="content">
-                                    <h1>Защелкивающиеся панели <br> <span>Smart Фальц PRO</span></h1>
-                                    <ol>
-                                        <li> Герметичность</li>
-                                        <li> Простой и быстрый монтаж</li>
-                                        <li> Заводское исполнение замков</li>
-                                        <li> Фабричная геометрия</li>
-                                    </ol>
-                                    <button class="_btn _btn-red">Подробнее</button>
+                                <div class="_container">
+                                    <div class="hero-slider__content">
+                                        <h1>Защелкивающиеся <br> панели <span>Smart Фальц PRO</span></h1>
+                                        <ol>
+                                            <li> Герметичность</li>
+                                            <li> Простой и быстрый монтаж</li>
+                                            <li> Заводское исполнение замков</li>
+                                            <li> Фабричная геометрия</li>
+                                        </ol>
+                                        <a href="" class="_btn _btn-red">Подробнее</a>
+                                    </div>
+                                    <div class="hero-slider__img">
+                                        <img src="img/hero-slider/slide-1-1.png" alt="">
+                                    </div>
                                 </div>
-                                <img src="img/hero-slider/slide-1.png" alt="">
                             </div>
                         </div>
                     </div>
                     <div class="pagination"></div>
                 </div>
-                <label class="erid">Реклама ООО «Стинержи». Erid: Kra23x9NH</label>
+                <div class="_container">
+                    <div class="erid">
+                        <label>Реклама ООО «Стинержи». Erid: Kra23x9NH</label>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="section" id="catalog">
+    <section class="section" id="grid-catalog">
         <div class="section__container _container">
             <div class="section__body">
                 <div class="section__top">
                     <h2>Каталог продукции</h2>
-                    <a href=""><span>Перейти в каталог</span>
+                    <a href="">
+                        <span>Перейти в каталог</span>
                         <svg width="7" height="12">
                             <use xlink:href="@img/svg/icons.svg#btn-link"></use>
                         </svg>
                     </a>
                 </div>
                 <div class="section__bottom">
-                    <div class="section__grid grid grid-3">
-                        <a href="" class="catalog-cart">
-                            <img class="catalog-cart__img" src="img/catalog-img/img-1.png" alt="">
+                    <div class="grid grid-3">
+                        <a href="" class="grid-catalog__item">
                             <div>
+                                <img src="img/catalog-img/img-1.png" alt="">
+                            </div>
+                            <span>
                                 <img src="img/catalog-svg/svg-1.svg" alt="">
-                                <h5>Металлочерепица</h5>
-                            </div>
+                                <label>Металлочерепица</label>
+                            </span>
                         </a>
-                        <a href="" class="catalog-cart">
-                            <img class="catalog-cart__img" src="img/catalog-img/img-2.png" alt="">
+                        <a href="" class="grid-catalog__item">
                             <div>
+                                <img src="img/catalog-img/img-2.png" alt="">
+                            </div>
+                            <span>
                                 <img src="img/catalog-svg/svg-2.svg" alt="">
-                                <h5>Профнастил</h5>
-                            </div>
+                                <label>Профнастил</label>
+                            </span>
                         </a>
-                        <a href="" class="catalog-cart">
-                            <img class="catalog-cart__img" src="img/catalog-img/img-3.png" alt="">
+                        <a href="" class="grid-catalog__item">
                             <div>
+                                <img src="img/catalog-img/img-3.png" alt="">
+                            </div>
+                            <span>
                                 <img src="img/catalog-svg/svg-3.svg" alt="">
-                                <h5>Фальцевая кровля</h5>
-                            </div>
+                                <label>Фальцевая кровля</label>
+                            </span>
                         </a>
-                        <a href="" class="catalog-cart">
-                            <img class="catalog-cart__img" src="img/catalog-img/img-4.png" alt="">
+                        <a href="" class="grid-catalog__item">
                             <div>
+                                <img src="img/catalog-img/img-4.png" alt="">
+                            </div>
+                            <span>
                                 <img src="img/catalog-svg/svg-4.svg" alt="">
-                                <h5>Водостоки</h5>
-                            </div>
+                                <label>Водостоки</label>
+                            </span>
                         </a>
-                        <a href="" class="catalog-cart">
-                            <img class="catalog-cart__img" src="img/catalog-img/img-5.png" alt="">
+                        <a href="" class="grid-catalog__item">
                             <div>
+                                <img src="img/catalog-img/img-5.png" alt="">
+                            </div>
+                            <span>
                                 <img src="img/catalog-svg/svg-5.svg" alt="">
-                                <h5>Сайдинг</h5>
-                            </div>
+                                <label>Сайдинг</label>
+                            </span>
                         </a>
-                        <a href="" class="catalog-cart">
-                            <img class="catalog-cart__img" src="img/catalog-img/img-6.png" alt="">
+                        <a href="" class="grid-catalog__item">
                             <div>
-                                <img src="img/catalog-svg/svg-6.svg" alt="">
-                                <h5>Штакетник</h5>
+                                <img src="img/catalog-img/img-6.png" alt="">
                             </div>
+                            <span>
+                                <img src="img/catalog-svg/svg-6.svg" alt="">
+                                <label>Штакетник</label>
+                            </span>
                         </a>
                     </div>
                 </div>
@@ -118,22 +144,20 @@
                         </h2>
                     </div>
                     <div class="section__flex-right">
-                        <div class="text__box">
-                            <div class="text__box-content">
-                                <p>С 2006 года мы оказываем качественные услуги на рынке поставок рулонной
-                                    оцинкованной холоднокатаной и горячекатаной стали.</p>
-                                <p>Собственное производство Stynergy соответствует единому стандарту в соответствии
-                                    с сертификатами качества.
-                                </p>
-                                <p class="_bold-text">Производство оснащено собственной лабораторией, что дает свои
-                                    преимущества, а именно позволяет обеспечить контроль качества:</p>
-                            </div>
+                        <div class="text-box">
+                            <p>С 2006 года мы оказываем качественные услуги на рынке поставок рулонной
+                                оцинкованной холоднокатаной и горячекатаной стали.</p>
+                            <p>Собственное производство Stynergy соответствует единому стандарту в соответствии
+                                с сертификатами качества.
+                            </p>
+                            <p class="_bold-text">Производство оснащено собственной лабораторией, что дает свои
+                                преимущества, а именно позволяет обеспечить контроль качества:</p>
                             <ol>
                                 <li>поступающего сырья;</li>
                                 <li>выпускаемой продукции.</li>
                             </ol>
+                            <a href="" class="_btn _btn-white">О компании</a>
                         </div>
-                        <a href="" class="_btn _btn-white">О компании</a>
                     </div>
                 </div>
             </div>
@@ -147,12 +171,12 @@
                     <h2>Надежные поставщики</h2>
                     <p>Компания STYNERGY является постоянным партнёром ведущих металлургических комбинатов:</p>
                 </div>
-                <div class="section__flex">
+                <div class="section__bottom">
                     <div class="partners-slider">
                         <div class="swiper">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <a href="">
+                                    <a href="" class="partners-item">
                                         <div>
                                             <img src="img/partners/partner-1.svg" alt="">
                                         </div>
@@ -160,7 +184,7 @@
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <a href="">
+                                    <a href="" class="partners-item">
                                         <div>
                                             <img src="img/partners/partner-2.svg" alt="">
                                         </div>
@@ -168,7 +192,7 @@
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <a href="">
+                                    <a href="" class="partners-item">
                                         <div>
                                             <img src="img/partners/partner-3.svg" alt="">
                                         </div>
@@ -176,7 +200,7 @@
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <a href="">
+                                    <a href="" class="partners-item">
                                         <div>
                                             <img src="img/partners/partner-4.svg" alt="">
                                         </div>
@@ -184,7 +208,7 @@
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <a href="">
+                                    <a href="" class="partners-item">
                                         <div>
                                             <img src="img/partners/partner-5.svg" alt="">
                                         </div>
@@ -200,34 +224,34 @@
         </div>
     </section>
 
-    <section class="section _red-section" id="advantages" data-replace-width="768">
+    <section class="section _accent-section" id="advantages" data-replace-width="768">
         <div class="section__container _container">
             <div class="section__body">
                 <div class="section__top">
                     <div class="section__top-title" data-replace-old-position="afterend">
                         <h2 data-replace-new-position="afterend">Преимущества работы <br> со STYNERGY</h2>
-                        <button class="_btn ">Стать дилером STYNERGY</button>
+                        <a href="" class="_btn">Стать дилером STYNERGY</a>
                     </div>
                     <p data-replace-element>На производстве используется высокоточное автоматизированное оборудование.
                         Производственно-складская база расположена
                         вблизи крупнейших автомагистралей. Имеется ж/д ветка для вагонных отгрузок.</p>
                 </div>
                 <div class="section__flex">
-                    <div class="advantages__cart">
+                    <div class="advantages-item">
                         <img src="img/advantages/advantages-1.svg" alt="">
                         <div>
                             <span>Современный парк оборудования и квалифицированный персонал</span>
                             <p>Это позволяет обеспечить отличное качество выпускаемой продукции</p>
                         </div>
                     </div>
-                    <div class="advantages__cart">
+                    <div class="advantages-item">
                         <img src="img/advantages/advantages-1.svg" alt="">
                         <div>
                             <span>Скорость производства и поставки продукции</span>
                             <p>Собственные складские площади, постоянный складской запаз сырья и комплектующих</p>
                         </div>
                     </div>
-                    <div class="advantages__cart">
+                    <div class="advantages-item">
                         <img src="img/advantages/advantages-1.svg" alt="">
                         <div>
                             <span>Выгодные цены и индивидуальный подход</span>
@@ -252,74 +276,72 @@
                 </div>
                 <div class="section__bottom">
                     <div class="guarante-slider">
+                        <button class="prev">
+                            <svg width="6" height="11">
+                                <use xlink:href="@img/svg/icons.svg#slider-controll"></use>
+                            </svg>
+                        </button>
                         <div class="swiper">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <div class="guarante-cart">
+                                    <div class="guarante-item">
                                         <img src="img/guarante/guarante-1.png" alt="">
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="guarante-cart">
+                                    <div class="guarante-item">
                                         <img src="img/guarante/guarante-2.png" alt="">
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="guarante-cart">
+                                    <div class="guarante-item">
                                         <img src="img/guarante/guarante-3.png" alt="">
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="guarante-cart">
+                                    <div class="guarante-item">
                                         <img src="img/guarante/guarante-4.png" alt="">
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="guarante-cart">
+                                    <div class="guarante-item">
                                         <img src="img/guarante/guarante-5.png" alt="">
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="guarante-cart">
+                                    <div class="guarante-item">
                                         <img src="img/guarante/guarante-1.png" alt="">
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="guarante-cart">
+                                    <div class="guarante-item">
                                         <img src="img/guarante/guarante-2.png" alt="">
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="guarante-cart">
+                                    <div class="guarante-item">
                                         <img src="img/guarante/guarante-3.png" alt="">
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="guarante-cart">
+                                    <div class="guarante-item">
                                         <img src="img/guarante/guarante-4.png" alt="">
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="guarante-cart">
+                                    <div class="guarante-item">
                                         <img src="img/guarante/guarante-5.png" alt="">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="pagination"></div>
-                        <div class="slider-control">
-                            <button class="prev">
-                                <svg width="6" height="11">
-                                    <use xlink:href="@img/svg/icons.svg#slider-controll"></use>
-                                </svg>
-                            </button>
-                            <button class="next">
-                                <svg width="6" height="11">
-                                    <use xlink:href="@img/svg/icons.svg#slider-controll"></use>
-                                </svg>
-                            </button>
-                        </div>
+                        <button class="next">
+                            <svg width="6" height="11">
+                                <use xlink:href="@img/svg/icons.svg#slider-controll"></use>
+                            </svg>
+                        </button>
                     </div>
+                    <div class="pagination"></div>
                 </div>
             </div>
         </div>

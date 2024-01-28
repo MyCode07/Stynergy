@@ -13,9 +13,7 @@ if (sliders.length) {
         if (section.classList.contains('hero')) {
             new Swiper(slider, {
                 modules: [Pagination, Autoplay],
-                centeredSlides: true,
-                initialSlide: 1,
-                slidesPerView: 'auto',
+                slidesPerView: 1,
                 loop: true,
                 autoplay: {
                     delay: 3000,
@@ -30,8 +28,6 @@ if (sliders.length) {
         else if (section.classList.contains('partners') && window.innerWidth <= 768) {
             new Swiper(slider, {
                 modules: [Pagination, Autoplay],
-                centeredSlides: true,
-                initialSlide: 1,
                 slidesPerView: 'auto',
                 loop: true,
                 autoplay: {
@@ -47,7 +43,6 @@ if (sliders.length) {
         else if (section.classList.contains('guarante')) {
             new Swiper(slider, {
                 modules: [Pagination, Autoplay, Navigation],
-                initialSlide: 1,
                 spaceBetween: 40,
                 loop: true,
                 autoplay: {
@@ -63,13 +58,12 @@ if (sliders.length) {
                     nextEl: next,
                 },
                 breakpoints: {
-                    480: {
+                    300: {
                         slidesPerView: 1,
                     },
-                    480: {
+                    476: {
                         slidesPerView: "auto",
                     },
-
                 }
             })
         }
