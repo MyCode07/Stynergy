@@ -221,11 +221,12 @@
     }
 }
 
-.element-item {
+.catalog-element {
     padding: 8px;
     border: 1px solid #e8e7e7;
-    height: 232px;
     border-radius: 4px;
+    min-height: 232px;
+    background-color: $white;
 
     @media (any-hover: hover) {
         &:hover {
@@ -236,19 +237,20 @@
     }
 
     @media (max-width: 768px) {
-        height: 195px;
+        min-height: 195px;
     }
 
     img {
         border: 1px solid #d1d1d1;
         border-radius: 2px;
-        height: 129px;
         object-fit: contain;
         margin-bottom: 14px;
         display: block;
 
+        height: 129px;
+
         @media (max-width: 768px) {
-            height: 119;
+            height: 119px;
         }
     }
 
@@ -257,8 +259,9 @@
 
         text-align: center;
         font-size: 15px;
+        padding-bottom: 10px;
 
-        @media (max-width: 425px) {
+        @media (max-width: 768px) {
             font-size: 13px;
         }
     }
