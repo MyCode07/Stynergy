@@ -2,6 +2,17 @@
     display: grid;
     grid-template-rows: auto;
 
+    // .grid-2
+
+    &-2 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px 24px;
+
+        @media (max-width: 768px) {
+            gap: 20px 8px;
+        }
+    }
+
     // .grid-3
 
     &-3 {

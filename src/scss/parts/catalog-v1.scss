@@ -353,6 +353,17 @@
         gap: 10px;
         border-bottom: 1px solid #f3f3f3;
 
+        @media (max-width: 768px) {
+            width: 100vw;
+            overflow: auto;
+            margin-left: -16px;
+            padding-inline: 16px;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
         button {
             border-radius: 10px 10px 0px 0px;
             background: #f3f3f3;
@@ -360,6 +371,7 @@
             align-items: center;
             justify-content: center;
             padding: 10px 32px;
+            white-space: nowrap;
 
             color: $black;
             font-weight: 600;
@@ -382,6 +394,55 @@
 
                 &._active {
                     display: block;
+                }
+
+                // .tab-content__file
+
+                &__downloadfile {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    @include adaptive-value("font-size", 16, 14, 1);
+                    padding: 20px 0;
+                    border-bottom: 1px solid #eaeaea;
+
+                    @media (max-width: 768px) {
+                        padding: 17px 0;
+                    }
+
+                    @media (any-hover: hover) {
+                        &:hover {
+                            span {
+                                color: $accent;
+                            }
+                        }
+                    }
+
+                    span {
+                        transition: all 0.3s ease 0s;
+                    }
+
+                    p {
+                        pointer-events: none;
+                        display: flex;
+                        align-items: center;
+                        gap: 9px;
+
+                        color: $accent;
+
+                        label {
+                            @media (max-width: 425px) {
+                                display: none;
+                            }
+                        }
+
+                        svg {
+                            width: 14px;
+                            height: 14px;
+                            flex: 0 0 auto;
+                            fill: currentColor;
+                        }
+                    }
                 }
             }
         }
