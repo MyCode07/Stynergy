@@ -1,5 +1,4 @@
 .section {
-    @include adaptive-value("margin-top", 73, 65, 1);
 
     // .section__container
 
@@ -226,6 +225,10 @@
 
     h2 {
         color: $white;
+
+        @media (max-width: 768px) {
+            line-height: normal;
+        }
     }
 
     .section__top {

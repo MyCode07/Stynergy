@@ -54,6 +54,7 @@
             @media (max-width: 768px) {
                 width: 100%;
                 max-width: none;
+                height: 52px;
             }
         }
     }
@@ -215,10 +216,9 @@
 
         span {
             @media (max-width: 768px) {
-                font-size: 12px;
-                opacity: 0.5;
-                margin-bottom: 20px;
+                font-size: 14px;
                 display: block;
+                order: 3;
             }
         }
 
@@ -232,7 +232,17 @@
             }
 
             @media (max-width: 768px) {
-                font-size: 14px;
+                opacity: 0.5;
+                font-size: 12px;
+                order: 2;
+                margin-bottom: 20px;
+            }
+        }
+
+        .footer__social {
+            @media (max-width: 768px) {
+                opacity: 1;
+                order: 1;
             }
         }
     }

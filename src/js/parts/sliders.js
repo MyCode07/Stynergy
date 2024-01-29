@@ -67,6 +67,27 @@ if (sliders.length) {
                 }
             })
         }
+        else if (section.classList.contains('single-page')) {
+            let swiper = new Swiper(".product__slider-thumb", {
+                slidesPerView: 4,
+                spaceBetween: 8,
+                freeMode: true,
+                watchSlidesProgress: true,
+            });
+            new Swiper(".product__slider-swiper", {
+                modules: [
+                    Navigation, Thumbs
+                ],
+                navigation: {
+                    nextEl: ".next",
+                    prevEl: ".prev",
+                },
+                thumbs: {
+                    swiper: swiper,
+                },
+            });
+        }
+
     })
 }
 

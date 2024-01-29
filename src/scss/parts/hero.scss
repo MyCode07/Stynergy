@@ -1,4 +1,6 @@
 .hero {
+    @include adaptive-value("margin-bottom", 73, 38, 1);
+
     // .hero__container
 
     &__container {

@@ -24,8 +24,8 @@ if (openCatalogBtns.length) {
 
 
 
-const catalogCategories = document.querySelectorAll('.catalog-menu [data-catalog-item]');
-const catalogCategoriesMenus = document.querySelectorAll('.catalog-menu [data-catalog-menu]');
+const catalogCategories = document.querySelectorAll('.single-page [data-catalog-item]');
+const catalogCategoriesMenus = document.querySelectorAll('.single-page [data-catalog-menu]');
 
 if (catalogCategories.length) {
     catalogCategories.forEach((cat) => {
