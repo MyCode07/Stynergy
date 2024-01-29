@@ -130,6 +130,8 @@ h5 {
     font-weight: 600;
     transition: all 0.3s ease 0s;
 
+    // ._btn-red
+
     &-red {
         background: $accent;
         color: $white;
@@ -141,6 +143,8 @@ h5 {
         }
     }
 
+    // ._btn-white
+
     &-white {
         border: 1px solid $accent;
         color: $accent;
@@ -150,6 +154,18 @@ h5 {
                 background: #d52623;
                 color: $white;
             }
+        }
+    }
+
+    // ._btn-link
+
+    &-link {
+        svg {
+            flex: 0 0 auto;
+            width: 8px;
+            height: 8px;
+            fill: currentColor;
+            margin-bottom: 8px;
         }
     }
 }
@@ -215,6 +231,10 @@ h5 {
         }
     }
 
+    a {
+        color: $accent;
+    }
+
     ol {
         display: flex;
         flex-direction: column;
@@ -260,7 +280,8 @@ h5 {
 
 .pages-hero {
     position: relative;
-    @include adaptive-value("margin-bottom", 80, 60, 1);
+    @include adaptive-value("padding-top", 40, 28, 1);
+    @include adaptive-value("padding-bottom", 58, 28, 1);
 
     h1 {
         color: $white;
@@ -271,6 +292,13 @@ h5 {
         width: 100%;
         height: 100%;
         z-index: 0;
+        top: 0;
+        left: 0;
+
+        picture {
+            width: 100%;
+            height: 100%;
+        }
 
         img {
             width: 100%;
@@ -280,17 +308,19 @@ h5 {
     }
 
     .section__body {
-        @include adaptive-value("padding-top", 40, 28, 1);
-        position: relative;
         z-index: 2;
+        position: relative;
     }
+}
+
+.breadcrumbs {
+    margin-bottom: 26px;
 
     ul {
         display: flex;
         align-items: center;
         gap: 6px;
         opacity: 0.5;
-        margin-bottom: 26px;
 
         li {
             a {
@@ -302,7 +332,7 @@ h5 {
             }
         }
 
-        span {
+        div {
             display: block;
             width: 3px;
             height: 3px;
@@ -337,6 +367,10 @@ h5 {
     &.swiper-pagination-lock {
         display: none !important;
     }
+}
+
+.swiper {
+    width: 100%;
 }
 
 .slider-control {

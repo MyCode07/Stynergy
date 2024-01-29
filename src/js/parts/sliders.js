@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { FreeMode, Navigation, Pagination, Thumbs, Scrollbar, Autoplay } from 'swiper/modules';
+import { FreeMode, Navigation, Pagination, Thumbs, Autoplay } from 'swiper/modules';
 
 const sliders = document.querySelectorAll('.swiper');
 if (sliders.length) {
@@ -7,7 +7,6 @@ if (sliders.length) {
         const section = slider.closest('section');
         let prev = section.querySelector('.prev')
         let next = section.querySelector('.next')
-        let scrollbar = section.querySelector('.swiper-scrollbar')
         let pagination = section.querySelector('.pagination')
 
         if (section.classList.contains('hero')) {
@@ -67,23 +66,29 @@ if (sliders.length) {
                 }
             })
         }
-        else if (section.classList.contains('single-page')) {
-            let swiper = new Swiper(".product__slider-thumb", {
-                slidesPerView: 4,
-                spaceBetween: 8,
+        else if (slider.closest('.catalog-content__slider')) {
+            const thumbs = new Swiper('.swiper[thumbsSlider]', {
+                modules: [
+                    FreeMode
+                ],
                 freeMode: true,
                 watchSlidesProgress: true,
+                slidesPerView: 4,
+                spaceBetween: 8,
             });
-            new Swiper(".product__slider-swiper", {
+
+            new Swiper('.catalog-content__slider-main .swiper', {
                 modules: [
                     Navigation, Thumbs
                 ],
+                spaceBetween: 20,
+                slidesPerView: 1,
                 navigation: {
-                    nextEl: ".next",
-                    prevEl: ".prev",
+                    prevEl: prev,
+                    nextEl: next,
                 },
                 thumbs: {
-                    swiper: swiper,
+                    swiper: thumbs,
                 },
             });
         }

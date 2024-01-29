@@ -1,15 +1,15 @@
-const tabs = document.querySelectorAll('.single-page [data-info-tab]');
-const content = document.querySelectorAll('.single-page [data-info-content]');
+const tabs = document.querySelectorAll('[data-tab]');
+const content = document.querySelectorAll('[data-tab-content]');
 
 if (tabs.length) {
-    tabs.forEach((cat) => {
-        const id = cat.dataset.infoTab;
+    tabs.forEach(tab => {
+        const id = tab.dataset.tab;
 
-        cat.addEventListener('click', (e) => {
+        tab.addEventListener('click', (e) => {
             e.preventDefault();
 
             tabs.forEach(item => {
-                const currentId = item.dataset.infoTab;
+                const currentId = item.dataset.tab;
 
                 if (currentId == id) {
                     item.classList.add('_active');
@@ -20,7 +20,7 @@ if (tabs.length) {
             });
 
             content.forEach(item => {
-                const currentId = item.dataset.infoContent;
+                const currentId = item.dataset.tabContent;
 
                 if (currentId == id) {
                     item.classList.add('_active');

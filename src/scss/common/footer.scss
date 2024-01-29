@@ -1,6 +1,6 @@
 .footer {
     background-color: #0a111b;
-    @include adaptive-value("margin-top", 10, 80, 1);
+    @include adaptive-value("margin-top", 100, 80, 1);
     @include adaptive-value("padding-top", 60, 33, 1);
 
     // .footer__container
