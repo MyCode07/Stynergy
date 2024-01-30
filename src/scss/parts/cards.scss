@@ -301,7 +301,7 @@
     // .catalog-item__img
 
     &__img {
-        @include adaptive-value("height", 330, 119, 1);
+        @include adaptive-value("height", 330, 117, 1);
 
         img {
             border-radius: 2px;
@@ -313,12 +313,16 @@
     // .catalog-item__info
 
     &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
         h5 {
             text-transform: initial;
             margin-bottom: 12px;
             color: $black;
             font-weight: 600;
-            letter-spacing: -2;
+            letter-spacing: -2px;
             @include adaptive-value("font-size", 20, 12, 1);
 
             @media (max-width: 768px) {
@@ -354,7 +358,6 @@
             font-weight: 400;
             text-align: center;
             height: fit-content;
-
             transition: all 0.3s ease 0s;
 
             @media (any-hover: hover) {
@@ -385,10 +388,29 @@
             gap: 14px;
         }
 
+        @media (max-width: 425px) {
+            ._btn {
+                height: 32px;
+                font-size: 12px;
+                border-radius: 6px;
+            }
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            @media (max-width: 992px) {
+                width: 100%;
+            }
+        }
+
         &._reverse {
             margin-top: 40px;
 
             @media (max-width: 1300px) {
+                flex-direction: column-reverse;
                 flex-wrap: wrap;
                 justify-content: center;
                 gap: 16px;
@@ -401,7 +423,7 @@
 
             @media (max-width: 768px) {
                 flex-direction: column-reverse;
-                margin-top: 16px;
+                margin-top: 8px;
             }
         }
     }
@@ -491,13 +513,24 @@
         height: 60px;
         border-radius: 10px;
         background-color: #f7f7f7;
+        flex: 0 0 auto;
 
-        svg {
-            width: 19px;
-            height: 24px;
+        @media (any-hover: hover) {
+            &:hover {
+                svg {
+                    opacity: 1;
+                }
+            }
         }
 
-        @media (max-width: 992px) {
+        svg {
+            transition: opacity 0.3s ease 0s;
+            width: 19px;
+            height: 24px;
+            opacity: 0.6;
+        }
+
+        @media (max-width: 768px) {
             display: none;
         }
     }

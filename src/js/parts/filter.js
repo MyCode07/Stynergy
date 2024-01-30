@@ -1,14 +1,12 @@
 import { isMobile } from '../utils/isMobile.js';
 const filters = document.querySelectorAll('.catalog__filters-item');
 
-
 if (filters.length && isMobile.any()) {
 
     filters.forEach(item => {
         const btn = item.querySelector('button');
-
         if (btn) {
-            btn.addEventListener('click', () => {
+            btn.addEventListener('click', (e) => {
                 toggleTarget(item, filters, '_active');
             })
         }
@@ -37,4 +35,34 @@ document.addEventListener('click', function (e) {
     }
 
 })
- 
+
+
+const filterOptons = document.querySelectorAll('.catalog__filters-item ul li');
+
+filterOptons.forEach(option => {
+    option.addEventListener('click', (e) => {
+        const target = e.target
+
+        filterOptons.forEach(element => {
+            if (target.closest('.catalog__filters-item').querySelector('ul li ._selected')) {
+                element.classList.remove('_selected')
+            }
+            else {
+                option.classList.add('_selected')
+            }
+        });
+
+        const filter = target.closest('.catalog__filters-item').querySelector('button span');
+        filter.textContent = e.target.textContent
+
+    })
+});
+
+const filterOpenBtn = document.querySelector('.filter-btn');
+const filterBox = document.querySelector('.filter');
+
+filterOpenBtn.addEventListener('click', (e) => {
+    filterBox.classList.toggle('_active')
+    filterOpenBtn.classList.toggle('_active')
+
+})

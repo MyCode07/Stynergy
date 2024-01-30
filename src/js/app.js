@@ -9,6 +9,7 @@ import "./parts/sliders.js";
 import "./parts/popup.js";
 import "./parts/catalog.js";
 import "./parts/tabs.js";
+import "./parts/filter.js";
 
 accordeon();
 maskInputs('+7 (999) 999-99-99', '._mask-phone')
