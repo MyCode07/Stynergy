@@ -10,6 +10,7 @@ import "./parts/popup.js";
 import "./parts/catalog.js";
 import "./parts/tabs.js";
 import "./parts/filter.js";
+import "./parts/input-hover.js";
 
 accordeon();
 maskInputs('+7 (999) 999-99-99', '._mask-phone')
@@ -20,6 +21,9 @@ stickyHeader();
 import { Fancybox } from "@fancyapps/ui";
 Fancybox.bind("[data-fancybox]", {
 });
+
+
+
 
 
 document.addEventListener('click', function (e) {

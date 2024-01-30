@@ -1,4 +1,6 @@
 .section {
+    margin-bottom: 80px;
+
     // .section__container
 
     &__container {
@@ -48,20 +50,20 @@
             align-items: center;
             justify-content: space-between;
         }
-    }
 
-    // .section__top2
+        // .section__top-accent
 
-    &__top2 {
-        @include adaptive-value("margin-bottom", 40, 20, 1);
-
-        h2 {
-            color: $accent;
-            @include adaptive-value("font-size", 32, 18, 1);
-            line-height: 1.4;
-            letter-spacing: 0;
-            padding-bottom: 16px;
+        &-accent {
+            @include adaptive-value("margin-bottom", 40, 20, 1);
             border-bottom: 1px solid rgba(213, 38, 35, 0.3);
+            padding-bottom: 16px;
+
+            h2 {
+                color: $accent;
+                @include adaptive-value("font-size", 32, 18, 1);
+                line-height: 1.4;
+                letter-spacing: 0;
+            }
         }
     }
 
@@ -417,7 +419,9 @@
         display: block;
 
         & > :not(:last-child) {
-            margin-bottom: 16px;
+            @media (min-width: 769px) {
+                margin-bottom: 16px;
+            }
         }
     }
 }
@@ -441,7 +445,7 @@
         justify-content: flex-start;
         gap: 88px;
 
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
             flex-direction: column;
             justify-content: flex-start;
             align-items: flex-start;
@@ -455,7 +459,8 @@
         h2 {
             @include adaptive-value("font-size", 36, 24, 1);
 
-            @media (max-width: 768px) {
+            @media (min-width: 993px) {
+                max-width: 441px;
             }
         }
     }
@@ -469,6 +474,9 @@
 
         @media (max-width: 992px) {
             width: 100%;
+        }
+
+        @media (max-width: 768px) {
             display: flex;
             flex-direction: column;
             gap: 18px;
@@ -497,10 +505,6 @@
 
 .map-section {
     .text-box {
-        @media (min-width: 1025px) {
-            width: 517px;
-        }
-
         li:before {
             background-image: url("@img/check.svg");
             width: 16px;
@@ -540,12 +544,28 @@
     }
 
     .section__flex-left {
+        @media (min-width: 1025px) {
+            max-width: 517px;
+            flex: 1 1 auto;
+        }
+
         @media (max-width: 1024px) {
             width: 100%;
         }
     }
 
     .section__flex-right {
+        @media (min-width: 1025px) {
+            flex: 1 1 auto;
+            display: flex;
+            justify-content: flex-end;
+
+            div {
+                width: 120%;
+                flex: 0 0 auto;
+            }
+        }
+
         @media (max-width: 1024px) {
             display: none;
         }
@@ -586,7 +606,7 @@
             display: block;
         }
     }
-    
+
     .section__flex-left {
         max-width: 582px;
         width: 100%;

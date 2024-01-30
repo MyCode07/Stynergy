@@ -188,9 +188,62 @@
         @include adaptive-value("padding-bottom", 48, 24, 1);
         @include adaptive-value("padding-inline", 40, 16, 1);
     }
+
+    &.form-hover {
+        .form__item {
+            position: relative;
+
+            span {
+                display: block;
+                position: absolute;
+                left: 20px;
+                top: 50%;
+                transform: translate(0, -50%);
+                transition: all 0.3s ease 0s;
+            }
+
+            &.textarea span {
+                top: 20px;
+                transform: translate(0, 0);
+            }
+
+            input,
+            textarea {
+                &._active,
+                &:focus,
+                &:active {
+                    + span {
+                        font-size: 11px;
+                        top: 9px;
+                        transform: translate(0, 0px);
+                    }
+                }
+            }
+
+            @media (any-hover: hover) {
+                &:hover {
+                    span {
+                        font-size: 11px;
+                        top: 9px;
+                        transform: translate(0, 0px);
+                    }
+                }
+            }
+        }
+    }
 }
 
 .becomeadealer-form {
+    @include adaptive-value("margin-bottom", 100, 60, 1);
+
+    .form__row {
+        gap: 12px;
+    }
+
+    .textarea {
+        margin-top: 0;
+    }
+
     form,
     .form-white {
         max-width: 732px;
@@ -215,43 +268,13 @@
         }
     }
 
-    .form__item {
-        position: relative;
-
-        span {
-            display: block;
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translate(0, -50%);
-            transition: all 0.3s ease 0s;
-        }
-
-        input,
-        textarea {
-            &._active,
-            &:focus,
-            &:active {
-                + span {
-                    font-size: 11px;
-                    top: 9px;
-                    transform: translate(0, 0px);
-                }
-            }
-        }
-
-        @media (any-hover: hover) {
-            &:hover {
-                span {
-                    font-size: 11px;
-                    top: 9px;
-                    transform: translate(0, 0px);
-                }
-            }
-        }
-    }
-
     .form__bottom {
+        margin-top: 32px;
+
+        @media (max-width: 768px) {
+            margin-top: 24px;
+        }
+
         button {
             max-width: 360px;
             width: 100%;
