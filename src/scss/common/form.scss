@@ -189,3 +189,91 @@
         @include adaptive-value("padding-inline", 40, 16, 1);
     }
 }
+
+.becomeadealer-form {
+    form,
+    .form-white {
+        max-width: 732px;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+
+        @media (max-width: 992px) {
+            max-width: 100%;
+        }
+
+        & > :not(:last-child) {
+            margin-bottom: 12px;
+        }
+
+        p {
+            max-width: 348px;
+
+            @media (max-width: 992px) {
+                max-width: unset;
+            }
+        }
+    }
+
+    .form__item {
+        position: relative;
+
+        span {
+            display: block;
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translate(0, -50%);
+            transition: all 0.3s ease 0s;
+        }
+
+        input,
+        textarea {
+            &._active,
+            &:focus,
+            &:active {
+                + span {
+                    font-size: 11px;
+                    top: 9px;
+                    transform: translate(0, 0px);
+                }
+            }
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                span {
+                    font-size: 11px;
+                    top: 9px;
+                    transform: translate(0, 0px);
+                }
+            }
+        }
+    }
+
+    .form__bottom {
+        button {
+            max-width: 360px;
+            width: 100%;
+
+            @media (max-width: 992px) {
+                max-width: unset;
+            }
+        }
+    }
+
+    .certificate {
+        max-width: 329px;
+        width: 100%;
+        flex: 0 0 auto;
+
+        img {
+            height: 100%;
+            object-fit: contain;
+        }
+
+        @media (max-width: 992px) {
+            display: none;
+        }
+    }
+}

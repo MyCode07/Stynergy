@@ -334,6 +334,8 @@
 }
 
 .diller {
+    @include adaptive-value("margin-bottom", 80, 36, 1);
+
     .section__flex {
         @media (max-width: 992px) {
             display: flex;
@@ -426,6 +428,126 @@
 
         @media (max-width: 768px) {
             padding: 17px 0;
+        }
+    }
+}
+
+._accent-becomeadealer {
+    @include adaptive-value("margin-top", 80, 36, 1);
+    @include adaptive-value("margin-bottom", 63, 40, 1);
+
+    .section__top {
+        align-items: flex-end;
+        justify-content: flex-start;
+        gap: 88px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 40px;
+        }
+
+        * {
+            color: $white;
+        }
+
+        h2 {
+            @include adaptive-value("font-size", 36, 24, 1);
+
+            @media (max-width: 768px) {
+            }
+        }
+    }
+
+    .section__flex {
+        width: 60%;
+        margin-left: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px 40px;
+
+        @media (max-width: 992px) {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin-left: unset;
+        }
+    }
+
+    .advantages-item {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+
+        @media (max-width: 768px) {
+            gap: 16px;
+        }
+
+        img {
+            margin: 0;
+        }
+
+        span {
+            margin: 0;
+        }
+    }
+}
+
+.map-section {
+    .text-box {
+        @media (min-width: 1025px) {
+            width: 517px;
+        }
+
+        li:before {
+            background-image: url("@img/check.svg");
+            width: 16px;
+            height: 12px;
+        }
+
+        ol {
+            gap: 12px;
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 28px;
+            @media (max-width: 1024px) {
+                margin-bottom: 16px;
+            }
+        }
+    }
+
+    ._bold-text {
+        color: $text;
+        margin-bottom: 40px;
+        margin-top: 28px;
+
+        @media (max-width: 1024px) {
+            margin-top: 16px;
+            margin-bottom: 36px;
+        }
+    }
+
+    ._btn {
+        color: $white;
+
+        @media (max-width: 1024px) {
+            width: 100%;
+        }
+    }
+
+    .section__flex-left {
+        @media (max-width: 1024px) {
+            width: 100%;
+        }
+    }
+
+    .section__flex-right {
+        @media (max-width: 1024px) {
+            display: none;
         }
     }
 }
