@@ -395,55 +395,6 @@
                 &._active {
                     display: block;
                 }
-
-                // .tab-content__file
-
-                &__downloadfile {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    @include adaptive-value("font-size", 16, 14, 1);
-                    padding: 20px 0;
-                    border-bottom: 1px solid #eaeaea;
-
-                    @media (max-width: 768px) {
-                        padding: 17px 0;
-                    }
-
-                    @media (any-hover: hover) {
-                        &:hover {
-                            span {
-                                color: $accent;
-                            }
-                        }
-                    }
-
-                    span {
-                        transition: all 0.3s ease 0s;
-                    }
-
-                    p {
-                        pointer-events: none;
-                        display: flex;
-                        align-items: center;
-                        gap: 9px;
-
-                        color: $accent;
-
-                        label {
-                            @media (max-width: 425px) {
-                                display: none;
-                            }
-                        }
-
-                        svg {
-                            width: 14px;
-                            height: 14px;
-                            flex: 0 0 auto;
-                            fill: currentColor;
-                        }
-                    }
-                }
             }
         }
     }
@@ -597,6 +548,55 @@
             svg {
                 transform: rotate(-90deg);
             }
+        }
+    }
+}
+
+.tab-content__downloadfile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include adaptive-value("font-size", 16, 14, 1);
+    padding: 20px 0;
+    border-bottom: 1px solid #eaeaea;
+    transition: background-color 0.3s ease 0s;
+
+    @media (max-width: 768px) {
+        padding: 17px 0;
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: #f7f7f7;
+            span {
+                color: $accent;
+            }
+        }
+    }
+
+    span {
+        transition: all 0.3s ease 0s;
+    }
+
+    p {
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        gap: 9px;
+
+        color: $accent;
+
+        label {
+            @media (max-width: 425px) {
+                display: none;
+            }
+        }
+
+        svg {
+            width: 14px;
+            height: 14px;
+            flex: 0 0 auto;
+            fill: currentColor;
         }
     }
 }

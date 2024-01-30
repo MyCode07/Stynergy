@@ -313,6 +313,24 @@ h5 {
     @include adaptive-value("padding-top", 40, 28, 1);
     @include adaptive-value("padding-bottom", 58, 28, 1);
 
+    &.pages-hero-2 {
+        h1 {
+            color: $black;
+        }
+
+        .breadcrumbs {
+            ul {
+                opacity: 1;
+
+                li {
+                    a {
+                        color: $text;
+                    }
+                }
+            }
+        }
+    }
+
     h1 {
         color: $white;
     }

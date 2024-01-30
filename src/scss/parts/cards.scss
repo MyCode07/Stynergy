@@ -560,3 +560,104 @@
         }
     }
 }
+
+.diller-item {
+    display: flex;
+    background-color: $white;
+
+    @media (min-width: 769px) {
+        border-radius: 10px;
+        border: 1px solid #eaeaea;
+        padding: 28px 36px;
+        gap: 296px;
+    }
+
+    @media (max-width: 768px) {
+        border-bottom: 1px solid #eaeaea;
+        flex-direction: column;
+        padding: 20px;
+        gap: 24px;
+
+        width: 100vw;
+        margin-left: -16px;
+    }
+
+    // .diller-item__left
+
+    &__left {
+        p {
+            color: $black;
+            font-size: 18px;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 17px;
+            text-align: left;
+
+            @media (max-width: 768px) {
+                font-size: 17px;
+                margin-bottom: 8px;
+            }
+        }
+
+        label {
+            display: block;
+            color: #a09f9f;
+            font-size: 12px;
+        }
+    }
+
+    // .diller-item__right
+
+    &__right {
+        & > :not(:last-child) {
+            margin-bottom: 16px;
+
+            @media (max-width: 768px) {
+                margin-bottom: 8px;
+            }
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+
+            div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background-color: #f3f3f3;
+
+                img,
+                svg {
+                    flex: 0 0 auto;
+                    width: fit-content;
+                }
+            }
+
+            a {
+                @media (max-width: 768px) {
+                    font-size: 15px;
+                }
+
+                button {
+                    color: $accent;
+                    font-size: 14px;
+
+                    @media (min-width: 769px) {
+                        margin-top: 5px;
+                    }
+                }
+            }
+
+            &._white {
+                color: #a09f9f;
+                margin-top: 2px;
+                padding-left: 36px;
+            }
+        }
+    }
+}
