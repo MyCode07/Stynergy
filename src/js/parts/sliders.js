@@ -92,6 +92,21 @@ if (sliders.length) {
                 },
             });
         }
+        else if (section.classList.contains('text-box__slider')) {
+            new Swiper(slider, {
+                modules: [Pagination, Navigation],
+                slidesPerView: 'auto',
+                spaceBetween: 10,
+                pagination: {
+                    el: pagination,
+                    clickable: true,
+                },
+                navigation: {
+                    prevEl: prev,
+                    nextEl: next,
+                },
+            }) 
+        }
 
     })
 }

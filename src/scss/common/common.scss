@@ -220,6 +220,10 @@ h5 {
     font-weight: 400;
     line-height: 1.3;
 
+    & > :last-child {
+        margin-bottom: 0;
+    }
+
     picture {
         max-width: 100%;
     }
@@ -245,6 +249,10 @@ h5 {
             color: $accent;
         }
 
+        b {
+            font-weight: 600;
+        }
+
         margin-bottom: 23px;
 
         @media (max-width: 768px) {
@@ -253,7 +261,7 @@ h5 {
 
         & + ol,
         & + ul {
-            margin-top: 44px;
+            margin-top: 40px;
 
             @media (max-width: 768px) {
                 margin-top: 20px;
@@ -294,6 +302,132 @@ h5 {
             margin-top: 22px;
         }
     }
+
+    // .text-box__images
+
+    &__images {
+        div {
+            width: 100%;
+            @include adaptive-value("height", 726, 193, 1);
+            margin-bottom: 42px;
+
+            @media (max-width: 768px) {
+                margin-bottom: 32px;
+            }
+
+            img {
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    // .text-box__slider
+
+    &__slider {
+        .swiper-slide {
+            max-width: 469px;
+            min-width: 300px;
+            @include adaptive-value("height", 313, 200, 1);
+
+            @media (max-width: 768px) {
+                width: 300px;
+            }
+
+            img {
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        // .text-box__slider-body
+
+        &-body {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            position: relative;
+
+            button {
+                z-index: 3;
+                position: absolute;
+                top: 50%;
+                transform: translate(0, -50%);
+                z-index: 3;
+
+                &.next {
+                    right: -22px;
+
+                    @media (max-width: 768px) {
+                        right: 16px;
+                    }
+                }
+
+                &.prev {
+                    left: -22px;
+
+                    @media (max-width: 768px) {
+                        left: -16px;
+                    }
+                }
+            }
+        }
+
+        .pagination {
+            margin-top: 36px;
+        }
+    }
+
+    // .text-box__v2
+
+    &__v2 {
+
+        p {
+            span {
+                color: $accent;
+            }
+
+            margin-bottom: 40px;
+
+            @media (max-width: 768px) {
+                margin-bottom: 20px;
+            }
+
+            & + ol,
+            & + ul {
+                margin-top: 40px;
+
+                @media (max-width: 768px) {
+                    margin-top: 20px;
+                }
+            }
+        }
+
+        ol {
+            @include adaptive-value("margin-bottom", 40, 36, 1);
+
+            li {
+                @media (max-width: 768px) {
+                    align-items: flex-start;
+                }
+            }
+
+            li:before {
+                background-image: url("@img/circule.png");
+                width: 4px;
+                height: 4px;
+                flex: 0 0 auto;
+
+                @media (max-width: 768px) {
+                    margin-top: 8px;
+                }
+            }
+        }
+
+        ._bold-text {
+            color: $text;
+        }
+    }
 }
 
 ._accent-section {
@@ -314,6 +448,9 @@ h5 {
     @include adaptive-value("padding-bottom", 58, 28, 1);
 
     &.pages-hero-2 {
+        @include adaptive-value("margin-bottom", 60, 52, 1);
+        padding-bottom: 0;
+
         h1 {
             color: $black;
         }
