@@ -11,6 +11,7 @@ import "./parts/catalog.js";
 import "./parts/tabs.js";
 import "./parts/filter.js";
 import "./parts/input-hover.js";
+import "./parts/instructions-list.js";
 
 accordeon();
 maskInputs('+7 (999) 999-99-99', '._mask-phone')

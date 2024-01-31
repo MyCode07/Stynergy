@@ -92,9 +92,10 @@ if (sliders.length) {
                 },
             });
         }
-        else if (section.classList.contains('text-box__slider')) {
+        else if (slider.closest('.text-box__slider')) {
             new Swiper(slider, {
                 modules: [Pagination, Navigation],
+                loop: true,
                 slidesPerView: 'auto',
                 spaceBetween: 10,
                 pagination: {
@@ -107,9 +108,10 @@ if (sliders.length) {
                 },
             })
         }
-        else if (section.classList.contains('location__slider')) {
+        else if (slider.closest('.location-slider')) {
             new Swiper(slider, {
                 modules: [Pagination, Navigation],
+                loop: true,
                 slidesPerView: 'auto',
                 spaceBetween: 11,
                 pagination: {
