@@ -105,7 +105,22 @@ if (sliders.length) {
                     prevEl: prev,
                     nextEl: next,
                 },
-            }) 
+            })
+        }
+        else if (section.classList.contains('location__slider')) {
+            new Swiper(slider, {
+                modules: [Pagination, Navigation],
+                slidesPerView: 'auto',
+                spaceBetween: 11,
+                pagination: {
+                    el: pagination,
+                    clickable: true,
+                },
+                navigation: {
+                    prevEl: prev,
+                    nextEl: next,
+                },
+            })
         }
 
     })

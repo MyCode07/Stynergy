@@ -1,0 +1,169 @@
+@@include('./html/head.html', {
+"title":"contacts",
+})
+
+@@include('./html/header.html')
+
+<main>
+
+    <section class="section pages-hero pages-hero-2 ">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="breadcrumbs">
+                    <ul>
+                        <li>
+                            <a href="">Главная</a>
+                        </li>
+                        <div></div>
+                        <li>
+                            <a href="">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+                <h1>Контакты</h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="section contacts">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="grid grid-2">
+                    <div class="contact-item">
+                        <div class="contact-item__top">
+                            <label>Дилерский отдел, оптовые продажи производство</label>
+                            <div>
+                                <svg viewBox="0 0 31 31">
+                                    <use xlink:href="@img/svg/icons.svg#contact-1"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="contact-item__bottom">
+                            <div>
+                                <p>Москва и МО</p>
+                                <a href="">+7 (495) 626-23-264<span>, доб. 226, 30</span></a>
+                            </div>
+                            <div>
+                                <p>Email</p>
+                                <a href="">opt@stynergy.ru</a>
+                            </div>
+                            <div>
+                                <p>Другие регионы</p>
+                                <a href="">8 (800) 350-05-96<span>, доб. 231, 206, 207</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item__top">
+                            <label>Консультации, расчет продажи</label>
+                            <div>
+                                <svg viewBox="0 0 52 52">
+                                    <use xlink:href="@img/svg/icons.svg#contact-2"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="contact-item__bottom">
+                            <div>
+                                <p>Телефон</p>
+                                <a href="">8 (499) 472-12-01</a>
+                            </div>
+                            <div>
+                                <p>Email</p>
+                                <a href="">sale@stynergy.ru</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="_email">По вопросам рекламы, полиграфии, продвижения и пр.: <a href="">market@stynergy.ru</a>
+            </p>
+        </div>
+    </section>
+
+    <section class="section location">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="section__top">
+                    <div class="section__top-left">
+                        <h2>Офис продаж №1 Марьино</h2>
+                        <p>109341 Москва, ул. Люблинская, д. 151 бизнес-центр "Марьино"</p>
+                    </div>
+                    <div class="section__top-right">
+                        <div>
+                            <p>Телефон</p>
+                            <a href="">8 (499) 472-12-01</a>
+                        </div>
+                        <div>
+                            <p>Дилерский отдел:</p>
+                            <a href="">+7 (495) 626-23-264<span>, доб. 226, 30</span></a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="section__bottom">
+                    <div class="location__slider">
+                        <div class="location__slider-body">
+                            <button class="prev">
+                                <svg width="6" height="11">
+                                    <use xlink:href="img/svg/icons.svg#slider-controll"></use>
+                                </svg>
+                            </button>
+                            <div class="swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="img/text-box/img-1.png" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="img/text-box/img-2.png" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="img/text-box/img-3.png" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="img/text-box/img-1.png" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="img/text-box/img-2.png" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="img/text-box/img-3.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="next">
+                                <svg width="6" height="11">
+                                    <use xlink:href="img/svg/icons.svg#slider-controll"></use>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="pagination"></div>
+                    </div>
+
+                    <div class="geo">
+                        <img src="img/geo.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section schema">
+        <div class="section__container _container">
+            <div class="section__body">
+                <label>Схема проезда:</label>
+                <div class="schema-img">
+                    <img src="img/schema.png" alt="">
+                </div>
+                <ol class="ooo-details">
+                    <span>Реквизиты ООО "Стинержи"</span>
+                    <li>ИНН 7723592506</li>
+                    <li>ОГРН 1067759966823</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+@@include('./html/footer.html')
+@@include('./html/scripts.html')

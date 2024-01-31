@@ -251,6 +251,7 @@ h5 {
 
         b {
             font-weight: 600;
+            color: $black;
         }
 
         margin-bottom: 23px;
@@ -301,6 +302,10 @@ h5 {
         @media (max-width: 768px) {
             margin-top: 22px;
         }
+    }
+
+    ._red-text {
+        color: $accent;
     }
 
     // .text-box__images
@@ -381,7 +386,6 @@ h5 {
     // .text-box__v2
 
     &__v2 {
-
         p {
             span {
                 color: $accent;
@@ -426,6 +430,75 @@ h5 {
 
         ._bold-text {
             color: $text;
+        }
+    }
+
+    // .text-box__v3
+
+    &__v3 {
+        display: flex;
+        justify-content: space-between;
+        gap: 96px;
+
+        @media (max-width: 992px) {
+            flex-direction: column;
+            gap: 0px;
+
+            & > :nth-child(2) {
+                display: none;
+            }
+        }
+
+        ol {
+            margin-bottom: 0;
+            gap: 5px;
+
+            li {
+                color: $black;
+            }
+        }
+
+        button {
+            display: none;
+            color: #877f7f;
+            font-size: 14px;
+            width: fit-content;
+
+            @media (max-width: 992px) {
+                margin-top: 16px;
+                display: block;
+            }
+        }
+    }
+
+    // .text-box__v4
+
+    &__4 {
+    }
+}
+
+._list {
+    
+    .section__bottom {
+        div {
+            margin: 20px 0;
+            font-size: 20px;
+            line-height: 1.4;
+
+            @media (max-width: 768px) {
+                margin: 16px 0;
+                font-size: 16px;
+            }
+        }
+    }
+
+    .tab-content__downloadfile {
+        padding: 19px 23px;
+        border-top: 1px solid #eaeaea;
+        border-bottom: 0;
+
+        @media (max-width: 768px) {
+            padding: 17px 7px;
         }
     }
 }
@@ -614,5 +687,28 @@ h5 {
 .next {
     svg {
         transform: rotate(180deg);
+    }
+}
+
+.ooo-details {
+    span {
+        display: block;
+        margin-bottom: 23px;
+        color: $black;
+        font-size: 22px;
+        font-weight: 600;
+
+        @media (max-width: 768px) {
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+    }
+
+    li {
+        line-height: 1.5;
+
+        @media (max-width: 768px) {
+            font-size: 15px;
+        }
     }
 }

@@ -997,3 +997,132 @@
         }
     }
 }
+
+.contact-item {
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    padding: 34px;
+    height: 100%;
+    width: 100%;
+
+    @media (max-width: 768px) {
+        padding: 16px;
+    }
+
+    // .contact-item__top
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 42px;
+
+        @media (max-width: 768px) {
+            margin-bottom: 24px;
+        }
+
+        label {
+            color: $black;
+            font-weight: 600;
+            font-size: 22px;
+            max-width: 80%;
+            width: 100%;
+
+            @media (max-width: 768px) {
+                font-size: 17px;
+                line-height: 1.4;
+            }
+        }
+
+        div {
+            width: 52px;
+            height: 52px;
+            flex: 0 0 auto;
+            background-color: #f7f7f7;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @media (max-width: 768px) {
+                width: 41px;
+                height: 41px;
+            }
+
+            svg {
+                width: 31px;
+                height: 31px;
+                flex: 0 0 auto;
+
+                @media (max-width: 768px) {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
+    }
+
+    // .contact-item__bottom
+
+    &__bottom {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+
+        @media (max-width: 768px) {
+            gap: 15px;
+        }
+
+        div {
+            * {
+                @media (max-width: 768px) {
+                    font-size: 15px;
+                }
+            }
+
+            p {
+                display: block;
+                margin-bottom: 10px;
+                color: $black;
+                font-weight: 600;
+
+                @media (max-width: 768px) {
+                    margin-bottom: 8px;
+                }
+            }
+
+            a {
+                color: $accent;
+                line-height: 1.4;
+
+                span {
+                    color: $text;
+                }
+            }
+        }
+    }
+}
+
+.coating-item {
+    span {
+        display: block;
+        color: $accent;
+        margin-bottom: 20px;
+        font-size: 24px;
+        line-height: 1.4;
+
+        @media (max-width: 768px) {
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+    }
+
+    div {
+        @include adaptive-value("height", 354, 197, 1);
+
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
