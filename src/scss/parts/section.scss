@@ -1082,37 +1082,58 @@
         }
     }
 
-    .catalog-content__descr {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 50px;
-        max-width: none;
-        background-color: #f8f8f8;
-        padding: 38px 52px;
-        width: 100%;
-
+    .catalog-content__flex > :not(:last-child) {
         @media (max-width: 768px) {
-            padding: 24px 20px;
-            gap: 24px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .catalog-content__descr {
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 50px;
+            max-width: none;
+            width: 100%;
+
+            @include adaptive-value("padding-top", 38, 24, 1);
+            @include adaptive-value("padding-bottom", 38, 24, 1);
+            @include adaptive-value("padding-inline", 52, 20, 1);
+            background-color: #f8f8f8;
+
+            @media (max-width: 768px) {
+                gap: 24px;
+            }
         }
 
-        ol {
+        ul {
             & > :not(:last-child) {
                 margin-bottom: 10px;
+            }
+
+            & > :first-child {
+                margin-bottom: 23px;
             }
 
             span {
                 color: $black;
                 display: block;
-                margin-bottom: 13px;
                 font-weight: 600;
                 white-space: nowrap;
             }
 
             li {
-                font-size: 14px;
-                white-space: nowrap;
+                a {
+                    color: inherit;
+                    font-size: 14px !important;
+
+                    @media (any-hover: hover) {
+                        &:hover {
+                            color: $accent;
+                        }
+                    }
+                }
             }
         }
     }

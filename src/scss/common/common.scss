@@ -611,6 +611,7 @@ h5 {
     ul {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         gap: 6px;
         opacity: 0.5;
 
@@ -743,6 +744,63 @@ h5 {
 
         @media (max-width: 768px) {
             font-size: 15px;
+        }
+    }
+}
+
+.select {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 100%;
+    transform: translate(0, 10px);
+    background-color: $white;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    padding: 24px 20px 35px 24px;
+
+    // .select-input
+
+    &-input {
+        justify-content: space-between;
+        cursor: pointer;
+        position: relative;
+
+        label,
+        svg {
+            pointer-events: none;
+        }
+
+        svg {
+            width: 10px;
+        }
+    }
+
+    // .select-body
+
+    &-body {
+        max-height: 290px;
+
+        overflow-y: auto;
+
+        @media (any-hover: hover) {
+            &::-webkit-scrollbar {
+                width: 3px;
+                border-radius: 10px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: #d9d9d9;
+            }
+        }
+
+        & > :not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        span {
+            display: block;
+            line-height: 1.5;
         }
     }
 }

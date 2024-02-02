@@ -1,5 +1,5 @@
 .error-404 {
-    @include adaptive-value("padding-top", 200, 100, 1);
+    @include adaptive-value("padding-top", 100, 50, 1);
 
     .section__body {
         display: flex;
