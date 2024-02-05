@@ -39,8 +39,10 @@
 
     .open-catalog-btn {
         width: 100%;
-        border: 1px solid rgba(213, 38, 35, 0.5);
+        border: 1px solid rgba($color: $accent, $alpha: 0.5);
         display: none;
+        color: $accent;
+        background-color: $white;
 
         @media (max-width: 768px) {
             display: flex;
@@ -167,6 +169,13 @@
             }
         }
     }
+
+    .catalog-menu-container {
+        @media (max-width: 768px) {
+            overflow: hidden;
+            padding: 0;
+        }
+    }
 }
 
 .address {
@@ -209,25 +218,6 @@
                 font-size: 12px;
                 pointer-events: none;
             }
-        }
-    }
-}
-
-._toolbar-search {
-    .search {
-        max-width: none !important;
-        display: flex;
-        height: 47px;
-
-        max-width: 259px;
-        flex: 1 1 auto;
-        height: 47px;
-        border-radius: 10px;
-        background: #f7f7f7;
-        padding: 0 20px;
-
-        input {
-            display: block;
         }
     }
 }

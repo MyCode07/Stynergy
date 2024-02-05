@@ -50,7 +50,7 @@
 @import "common/popup";
 
 // load popup
-@import "common/catalog-menu";
+@import "parts/catalog-menu";
 
 // load catalog
 @import "parts/hero";
@@ -75,11 +75,6 @@
 
 // load map
 @import "parts/map";
-
-//000000000000000000000000000 shop 0000000000000000000000000000000000000000000000000
-
-// load _shop-header
-@import "common/_shop-header";
 
 .pages {
     position: fixed;
@@ -151,3 +146,11 @@
 body:has(._nav-page) .pages {
     display: none;
 }
+
+//------------------- shop ------------------------
+
+// load toolbar
+@import "parts/toolbar";
+
+// load _shop-header
+@import "parts/_shop-header";

@@ -10,13 +10,20 @@
 </head>
 
 <body>
-
     <div class="pages">
         <button class="pages-close">X</button>
         <a href="_nav.html">навигация</a>
     </div>
 
-    @@include('popup.html')
+    @@if (type === 'shop') {
+    @@include('shop-parts/catalog-menu.html')
+    @@include('shop-parts/menu.html')
+    @@include('shop-parts/toolbar.html')
+    }
+
+    @@if (type === '') {
+    @@include('catalog-menu.html')
     @@include('menu.html')
-    @@include('catalog.html')
+    }
+
     <div class="wrapper">

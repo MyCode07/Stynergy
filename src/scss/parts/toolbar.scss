@@ -1,0 +1,51 @@
+.toolbar {
+    position: fixed;
+    z-index: 20;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 14px 3px 10px 3px;
+    background-color: $white;
+    border-top: 1px solid #eaeaea;
+
+    display: none;
+
+    @media (max-width: 1024px) {
+        display: block;
+    }
+
+    // .toolbar__container
+
+    &__container {
+    }
+
+    // .toolbar__body
+
+    &__body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    // .toolbar__link
+
+    &__link {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        color: #acacac;
+        font-size: 12px;
+
+        svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+            margin-bottom: 6px;
+        }
+
+        &._active {
+            color: $accent;
+        }
+    }
+}

@@ -1,96 +1,126 @@
 import { lockPadding, unLockPadding } from "../utils/lockPadding.js";
-
+import { closeOpenHeaderSearch } from "./menu.js";
 
 
 const openCatalogBtns = document.querySelectorAll('[data-open-catalog-menu]');
 const catalogMenu = document.querySelector('.catalog-menu');
+const menu = document.querySelector('.menu');
+const burger = document.querySelector('.header__burger');
 
 if (openCatalogBtns.length) {
     openCatalogBtns.forEach(btn => {
+        const label = btn.querySelector('label');
+
         btn.addEventListener('click', (e) => {
+            if (!btn.closest('.menu')) {
+                closeOpenMenu();
+                closeOpenHeaderSearch();
+            }
+
             btn.classList.toggle('_active')
             catalogMenu.classList.toggle('_open')
 
             if (btn.classList.contains('_active')) {
                 lockPadding();
 
+                if (btn.classList.contains('open-catalog-btn')) {
+                    label.textContent = label.dataset.textHide
+                }
             }
             else {
                 unLockPadding();
+
+                if (btn.classList.contains('open-catalog-btn')) {
+                    label.textContent = label.dataset.textShow
+                }
             }
         })
     });
 }
 
 
-
-// const catalogCategories = document.querySelectorAll('.single-page [data-catalog-item]');
-// const catalogCategoriesMenus = document.querySelectorAll('.single-page [data-catalog-menu]');
-
-// if (catalogCategories.length) {
-//     catalogCategories.forEach((cat) => {
-//         const id = cat.dataset.catalogItem;
-
-//         cat.addEventListener('click', (e) => {
-//             e.preventDefault();
-
-//             catalogCategories.forEach(item => {
-//                 const currentId = item.dataset.catalogItem;
-
-//                 if (currentId == id) {
-//                     item.classList.add('_active');
-//                 }
-//                 else {
-//                     item.classList.remove('_active');
-//                 }
-//             });
-
-//             catalogCategoriesMenus.forEach(item => {
-//                 const currentId = item.dataset.catalogMenu;
-
-//                 if (currentId == id) {
-//                     item.classList.add('_active');
-//                 }
-//                 else {
-//                     item.classList.remove('_active');
-//                 }
-//             });
-//         })
-//     });
-// }
-
-// const replaceCatalogMenu = () => {
-//     if (!catalogMenu) return;
-
-//     let lockPosition = true;
-
-//     const width = 768;
-//     const newPosition = document.querySelector('.menu .open-catalog-btn');
-//     const oldPosition = document.body;
-
-//     const newPositionInsertType = 'afterend';
-//     const oldPositionInsertType = 'afterbegin';
+// clsoe catalog menu if its open
+function closeOpenMenu() {
+    if (menu.classList.contains('_open')) {
+        menu.classList.remove('_open')
+        burger.classList.remove('_active')
+    }
+}
 
 
-//     function replace() {
-//         if (window.innerWidth <= width) {
-//             if (lockPosition == true)
-//                 newPosition.insertAdjacentElement(newPositionInsertType, catalogMenu)
-//             lockPosition = false
-//         }
-//         else {
-//             if (lockPosition == false)
-//                 oldPosition.insertAdjacentElement(oldPositionInsertType, catalogMenu)
-//             lockPosition = true
-//         }
 
-//     }
+// catalog sidebar
+const catalogCategories = document.querySelectorAll('.single-page [data-catalog-item]');
+const catalogCategoriesMenus = document.querySelectorAll('.single-page [data-catalog-menu]');
+if (catalogCategories.length) {
+    catalogCategories.forEach((cat) => {
+        const id = cat.dataset.catalogItem;
 
-//     replace()
-//     window.addEventListener('resize', replace)
-// }
+        cat.addEventListener('click', (e) => {
+            e.preventDefault();
 
-// replaceCatalogMenu();
+            catalogCategories.forEach(item => {
+                const currentId = item.dataset.catalogItem;
+
+                if (currentId == id) {
+                    item.classList.add('_active');
+                }
+                else {
+                    item.classList.remove('_active');
+                }
+            });
+
+            catalogCategoriesMenus.forEach(item => {
+                const currentId = item.dataset.catalogMenu;
+
+                if (currentId == id) {
+                    item.classList.add('_active');
+                }
+                else {
+                    item.classList.remove('_active');
+                }
+            });
+        })
+    });
+}
+
+
+
+
+const replaceCatalogMenu = () => {
+    const dillerCatagMenu = document.querySelector('#catalog-menu');
+
+    if (!dillerCatagMenu) return;
+
+    let lockPosition = true;
+
+    const width = 768;
+    const newPosition = document.querySelector('.menu .open-catalog-btn');
+    const oldPosition = document.body;
+
+    const newPositionInsertType = 'afterend';
+    const oldPositionInsertType = 'afterbegin';
+
+
+    function replace() {
+        if (window.innerWidth <= width) {
+            if (lockPosition == true)
+                newPosition.insertAdjacentElement(newPositionInsertType, dillerCatagMenu)
+            lockPosition = false
+        }
+        else {
+            if (lockPosition == false)
+                oldPosition.insertAdjacentElement(oldPositionInsertType, dillerCatagMenu)
+            lockPosition = true
+        }
+
+    }
+
+    replace()
+    window.addEventListener('resize', replace)
+}
+
+replaceCatalogMenu();
 
 const shopCatalogButtons = document.querySelectorAll('.catalog-menu__column button');
 const shopCatalogNav = document.querySelectorAll('.catalog-menu__column nav');
@@ -109,8 +139,6 @@ if (shopCatalogButtons.length) {
             }
             else {
             }
-
-
         })
 
     });
