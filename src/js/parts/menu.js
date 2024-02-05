@@ -58,8 +58,6 @@ if (mobileSearch) {
     })
 }
 
-
-
 if (menuLinks.length) {
     menuLinks.forEach(link => {
         link.addEventListener('click', (е) => {

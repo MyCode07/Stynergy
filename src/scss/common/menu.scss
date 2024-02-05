@@ -110,15 +110,16 @@
         font-weight: 600;
     }
 
-    .mail,
-    .back-index,
-    ._btn {
-        display: none;
-    }
-
     //00000000 shop menu
 
     &._shop-menu {
+        .catalog-menu {
+            @media (max-width: 768px) {
+                display: grid;
+                grid-template-rows: 1fr;
+            }
+        }
+
         .mail {
             margin-top: 20px;
             display: block;
@@ -148,6 +149,22 @@
             width: 100%;
             font-weight: 400;
             font-size: 16px;
+        }
+
+        .address {
+            gap: 9px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f7f7f7;
+
+            a {
+                div {
+                    label {
+                        opacity: 1;
+                        color: $black;
+                        font-size: 15px;
+                    }
+                }
+            }
         }
     }
 }
@@ -192,6 +209,25 @@
                 font-size: 12px;
                 pointer-events: none;
             }
+        }
+    }
+}
+
+._toolbar-search {
+    .search {
+        max-width: none !important;
+        display: flex;
+        height: 47px;
+
+        max-width: 259px;
+        flex: 1 1 auto;
+        height: 47px;
+        border-radius: 10px;
+        background: #f7f7f7;
+        padding: 0 20px;
+
+        input {
+            display: block;
         }
     }
 }
