@@ -124,6 +124,32 @@ if (sliders.length) {
                 },
             })
         }
+        else if (slider.closest('.shop-slider')) {
+            new Swiper(slider, {
+                modules: [Pagination],
+                loop: true,
+                slidesPerView: 'auto',
+                spaceBetween: 11,
+                pagination: {
+                    el: pagination,
+                    clickable: true,
+                },
+
+            })
+        }
+        else if (slider.closest('.offer-slider')) {
+            new Swiper(slider, {
+                modules: [Pagination],
+                loop: true,
+                slidesPerView: 1,
+                spaceBetween: 0,
+                pagination: {
+                    el: pagination,
+                    clickable: true,
+                },
+
+            })
+        }
 
     })
 }
