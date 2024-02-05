@@ -76,6 +76,11 @@
 // load map
 @import "parts/map";
 
+//000000000000000000000000000 shop 0000000000000000000000000000000000000000000000000
+
+// load _shop-header
+@import "common/_shop-header";
+
 .pages {
     position: fixed;
     top: 50%;

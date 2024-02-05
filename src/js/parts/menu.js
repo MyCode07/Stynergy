@@ -24,14 +24,16 @@ if (burger) {
 
         }
         else {
-            search.classList.add('_active')
+            if (search) {
+                search.classList.add('_active')
+                nav.classList.add('_none')
+            }
             headerBottom.classList.add('_active')
-            nav.classList.add('_none')
         }
 
-        if (!header.classList.contains('_scrolled')) {
-            header.classList.toggle('_open');
-        }
+        // if (!header.classList.contains('_scrolled')) {
+        //     header.classList.toggle('_open');
+        // }
 
         if (menu.classList.contains('_open')) {
             lockPadding();

@@ -91,3 +91,27 @@ const replaceCatalogMenu = () => {
 }
 
 replaceCatalogMenu();
+
+const shopCatalogButtons = document.querySelectorAll('.catalog-menu__column button');
+const shopCatalogNav = document.querySelectorAll('.catalog-menu__column nav');
+
+if (shopCatalogButtons.length) {
+    shopCatalogButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            let nav = e.target.closest('nav');
+            nav.classList.toggle('_active')
+
+            if (nav.closest('.catalog-menu__column').querySelector('._active')) {
+                shopCatalogNav.forEach(item => {
+                    item.classList.remove('_active')
+                });
+                nav.classList.toggle('_active')
+            }
+            else {
+            }
+
+
+        })
+
+    });
+}

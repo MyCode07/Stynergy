@@ -109,6 +109,47 @@
         font-size: 15px;
         font-weight: 600;
     }
+
+    .mail,
+    .back-index,
+    ._btn {
+        display: none;
+    }
+
+    //00000000 shop menu
+
+    &._shop-menu {
+        .mail {
+            margin-top: 20px;
+            display: block;
+            color: $accent;
+            font-size: 15px;
+        }
+
+        .back-index {
+            margin-top: 24px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            color: #877f7f;
+
+            svg {
+                width: 10px;
+                height: 10px;
+                flex: 0 0 auto;
+                transform: rotate(270deg);
+                margin-bottom: 11px;
+                fill: #877f7f;
+            }
+        }
+
+        ._btn-white {
+            display: flex;
+            width: 100%;
+            font-weight: 400;
+            font-size: 16px;
+        }
+    }
 }
 
 .address {
