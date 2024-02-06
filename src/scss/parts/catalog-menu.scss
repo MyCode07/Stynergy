@@ -80,7 +80,7 @@
 
             @media (max-width: 768px) {
                 width: 100vw;
-                margin-left: -16px;
+                margin-left: -$padding + px;
                 padding-inline: 16px;
                 overflow-x: auto;
 

@@ -181,6 +181,7 @@
 
         &__flex {
             gap: 30px;
+            align-items: stretch;
 
             @media (max-width: 992px) {
                 display: flex;
@@ -222,15 +223,16 @@
     }
 
     .shop-slider {
-        height: 100%;
         border-radius: 10px;
         overflow: hidden;
+        min-height: 100%;
 
         .swiper-slide {
-            height: 100%;
             border-radius: 10px;
             overflow: hidden;
             position: relative;
+            height: auto;
+
             &:after {
                 position: absolute;
                 content: "";
@@ -260,7 +262,7 @@
 
             @include adaptive-value("padding-top", 63, 18, 1);
             @include adaptive-value("padding-left", 63, 24, 1);
-            @include adaptive-value("padding-bottom", 129, 28, 1);
+            @include adaptive-value("padding-bottom", 140, 31, 1);
 
             h1 {
                 color: $white;
@@ -273,6 +275,9 @@
                 display: flex;
                 flex-direction: column;
                 gap: 7px;
+                @include adaptive-value("font-size", 16, 13, 1);
+                font-weight: 400;
+                line-height: normal;
 
                 @media (max-width: 768px) {
                     gap: 4px;
@@ -285,10 +290,6 @@
                     gap: 10px;
 
                     color: $white;
-                    @include adaptive-value("font-size", 16, 13, 1);
-
-                    font-weight: 400;
-                    line-height: normal;
 
                     position: relative;
 
@@ -313,6 +314,12 @@
                 border-color: $white;
                 color: $white;
                 @include adaptive-value("height", 60, 40, 1);
+
+                @media (any-hover: hover) {
+                    &:hover {
+                        border-color: $accent;
+                    }
+                }
 
                 @media (max-width: 768px) {
                     margin-top: 5px;
@@ -348,7 +355,8 @@
     .offer-slider {
         max-width: 300px;
         width: 100%;
-        height: 100%;
+        min-height: 100%;
+        position: relative;
 
         @media (max-width: 992px) {
             max-width: none;
@@ -358,13 +366,14 @@
             border-radius: 10px;
             border: 1px solid #eaeaea;
             background: #fff;
-            padding: 24px 20px 20px 20px;
+            padding: 23px 20px 51px 20px;
             display: flex;
             align-items: center;
             justify-content: center;
+            height: auto;
 
             @media (max-width: 768px) {
-                padding: 18px 20px;
+                padding: 17px 20px 50px 20px;
             }
 
             * {
@@ -383,9 +392,11 @@
                 font-weight: 600;
             }
 
-            a {
+            ._btn {
+                height: 54px;
                 margin-left: auto;
                 margin-right: auto;
+
                 @media (max-width: 768px) {
                     height: 50px;
                     min-width: 156px;
@@ -397,7 +408,7 @@
 
         &__img {
             margin-top: 38px;
-            margin-bottom: 28px;
+            margin-bottom: 27px;
             height: 142px;
             width: 100%;
 
@@ -417,6 +428,12 @@
         // .offer-slider__info
 
         &__info {
+            margin-bottom: 38px;
+
+            @media (max-width: 768px) {
+                margin-bottom: 24px;
+            }
+
             span {
                 display: block;
                 color: #8d8d8d;
@@ -432,21 +449,19 @@
             p {
                 display: block;
                 margin-top: 12px;
-                margin-bottom: 42px;
                 color: $black;
                 font-size: 14px;
                 font-weight: 600;
                 line-height: 1.3;
-
-                @media (max-width: 768px) {
-                    margin-bottom: 24px;
-                }
             }
         }
-    }
 
-    .swiper {
-        height: 100%;
+        .pagination {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+        }
     }
 
     .erid {
