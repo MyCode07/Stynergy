@@ -150,6 +150,30 @@ if (sliders.length) {
 
             })
         }
+        else if (slider.closest('.article-slider') && window.innerWidth <= 992) {
+            new Swiper(slider, {
+                modules: [Pagination, Autoplay],
+                slidesPerView: 'auto',
+                loop: true,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: pagination,
+                    clickable: true,
+                },
+                breakpoints: {
+                    300: {
+                        spaceBetween: 8,
+                    },
+                    476: {
+                        spaceBetween: 30,
+
+                    },
+                }
+            })
+        }
 
     })
 }
