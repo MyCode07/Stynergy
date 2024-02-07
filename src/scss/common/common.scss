@@ -169,6 +169,22 @@ h5 {
             margin-bottom: 8px;
         }
     }
+
+    // ._btn-green
+
+    &-green {
+        background-color: #4d9a29;
+        color: $white;
+    }
+
+    // ._btn-border
+
+    &-border {
+        background-color: $white;
+
+        color: $accent;
+        border: 1px solid currentColor;
+    }
 }
 
 ._bold-text {
@@ -820,5 +836,129 @@ h5 {
         top: 0;
         width: 100%;
         height: 100%;
+    }
+}
+
+._share {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    font-size: 16px;
+    color: $black;
+    transition: color 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+        &:hover {
+            color: $accent;
+
+            svg {
+                opacity: 1;
+            }
+        }
+    }
+
+    * {
+        pointer-events: none;
+    }
+
+    span {
+        flex: 0 0 auto;
+        width: 47px;
+        height: 1px;
+        height: 47px;
+        border-radius: 10px;
+        background-color: #f7f7f7;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            width: 16px;
+            fill: currentColor;
+            opacity: 0.6;
+
+            transition: opacity 0.3s ease 0s;
+        }
+    }
+}
+
+.price {
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+    white-space: nowrap;
+
+    del {
+        color: #8d8d8d;
+        @include adaptive-value("font-size", 16, 12, 1);
+    }
+
+    ins {
+        color: $accent;
+        @include adaptive-value("font-size", 24, 20, 1);
+        font-weight: 600;
+        text-decoration: none;
+    }
+}
+
+.quantitiy {
+    display: flex;
+    gap: 6px;
+    padding: 6px;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    height: 60px;
+
+    @media (max-width: 768px) {
+        height: 40px;
+    }
+
+    input {
+        flex: 1 1 auto;
+        text-align: center;
+        background-color: #f7f7f7;
+        border-radius: 6px;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+
+    button {
+        flex: 0 0 auto;
+        position: relative;
+        width: 32px;
+
+        &:before,
+        &:after {
+            pointer-events: none;
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            width: 12px;
+            height: 2px;
+            border-radius: 100px;
+            background-color: rgba($color: $black, $alpha: 0.7);
+        }
+
+        &:after {
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+
+        &.miuns {
+            &:after {
+                display: none;
+            }
+        }
+        &.plus {
+        }
     }
 }

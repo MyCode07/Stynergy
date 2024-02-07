@@ -335,8 +335,13 @@
         padding-top: 30px;
         padding-bottom: 20px;
 
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
             height: 130px;
+            padding-top: 20px;
+
+            &:has(ol) {
+                display: flex;
+            }
         }
 
         &-left {
@@ -347,18 +352,86 @@
             span {
                 font-weight: 600;
 
-                @include adaptive-value("font-size", 20, 12, 1);
-                @include adaptive-value("margin-bottom", 12, 5, 1);
+                font-size: 20px;
+                margin-bottom: 12px;
+
+                @media (max-width: 992px) {
+                    font-size: 12px;
+                    margin-bottom: 5px;
+                }
             }
 
             label {
-                @include adaptive-value("font-size", 40, 20, 1);
                 font-weight: 600;
                 flex: 1 1 auto;
+
+                font-size: 40px;
+
+                @media (max-width: 992px) {
+                    font-size: 20px;
+                }
             }
 
             .erid {
                 margin-top: 10px;
+
+                @media (max-width: 992px) {
+                    display: none;
+                }
+            }
+        }
+
+        &-right {
+            ol {
+                background: linear-gradient(180deg, #1f1a17, rgba($color: #422c21, $alpha: 0));
+                color: $white;
+                border-radius: 10px;
+                list-style: inherit;
+
+                font-weight: 600;
+
+                @include adaptive-value("font-size", 20, 12, 1);
+                @include adaptive-value("padding-top", 22, 6, 1);
+                @include adaptive-value("padding-bottom", 22, 6, 1);
+                @include adaptive-value("padding-left", 52, 21, 1);
+                @include adaptive-value("padding-right", 32, 9, 1);
+
+                & > :not(:last-child) {
+                    @include adaptive-value("margin-bottom", 7, 5, 1);
+                }
+
+                li {
+                    list-style: inherit;
+                }
+            }
+
+            &:has(.erid) {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                @media (max-width: 992px) {
+                    margin-top: 15px;
+                    flex-direction: row-reverse;
+                    align-items: center;
+                }
+            }
+
+            ._btn {
+                @include adaptive-value("font-size", 18, 10, 1);
+                @include adaptive-value("padding-left", 25, 10, 1);
+                @include adaptive-value("padding-right", 25, 10, 1);
+                min-width: 110px;
+
+                @media (max-width: 992px) {
+                    height: 38px;
+                }
+            }
+
+            .erid {
+                @media (max-width: 992px) {
+                    padding-right: 12px;
+                }
             }
         }
     }
@@ -367,4 +440,88 @@
         font-size: 12px;
         color: rgba($color: $white, $alpha: 0.6);
     }
+
+    .adv-text {
+        display: flex;
+        gap: 24px;
+
+        @media (max-width: 992px) {
+            gap: 10px;
+            margin-top: 9px;
+        }
+
+        p {
+            max-width: 280px;
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 10px 20px;
+            border-radius: 10px;
+            background: linear-gradient(180deg, #5f6d83, rgba($color: #5f6d83, $alpha: 0));
+            border: 1px solid rgba($color: $white, $alpha: 0.5);
+
+            color: $white;
+            font-weight: 600;
+            text-align: center;
+
+            @media (max-width: 992px) {
+                border-radius: 6px;
+                padding: 5px 10px;
+            }
+
+            label {
+                font-size: 32px;
+
+                @media (max-width: 1200px) {
+                    font-size: 24px;
+                }
+
+                @media (max-width: 992px) {
+                    font-size: 13px;
+                }
+            }
+
+            span {
+                display: block;
+                font-size: 24px;
+
+                @media (max-width: 1200px) {
+                    font-size: 18px;
+                }
+
+                @media (max-width: 992px) {
+                    font-size: 10px;
+                }
+            }
+        }
+
+        div {
+            border-radius: 6px;
+            overflow: hidden;
+            width: 148px;
+
+            @media (max-width: 1200px) {
+                width: 120px;
+            }
+
+            @media (max-width: 992px) {
+                border-radius: 3px;
+                width: 63px;
+            }
+
+            img,
+            svg,
+            picture {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+.section.pages-hero-catalog {
+    @include adaptive-value("margin-bottom", 52, 28, 1);
 }

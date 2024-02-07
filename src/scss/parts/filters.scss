@@ -47,6 +47,16 @@
         ul {
             display: flex;
             flex-wrap: wrap;
+            gap: 8px;
+
+            @media (max-width: 768px) {
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+            }
+
+            @media (max-width: 640px) {
+                grid-template-columns: repeat(4, 1fr);
+            }
 
             li {
                 border: 1px solid #eaeaea;
@@ -63,6 +73,14 @@
                         p {
                             color: $accent;
                         }
+                    }
+                }
+
+                &:has(input:checked) {
+                    border-color: $accent;
+
+                    p {
+                        color: $accent;
                     }
                 }
 
@@ -107,7 +125,7 @@
         }
 
         @media (max-width: 1024px) {
-            display: none;
+            // display: none;
         }
     }
 }
@@ -117,10 +135,7 @@
 
     &-profiles {
         ul {
-            gap: 8px;
-
-            @media (max-width: 768px) {
-                display: grid;
+            @media (max-width: 640px) {
                 grid-template-columns: repeat(3, 1fr);
             }
 
@@ -160,7 +175,7 @@
 
             li {
                 padding: 6px 6px 10px 6px;
-                cursor: pointer;
+
                 @media (max-width: 768px) {
                     padding: 8px;
                 }
@@ -169,8 +184,36 @@
                     div {
                         margin-bottom: 8px;
                         @include adaptive-value("height", 40, 36, 1);
-                        @include adaptive-value("width", 68, 64, 1);
-                        background-color: $accent;
+                        border: 1px solid #eaeaea;
+
+                        @media (min-width: 641px) {
+                            @include adaptive-value("width", 68, 64, 1);
+                        }
+                    }
+
+                    &[for="Бежевый"] div {
+                        background-color: #d9c59f;
+                    }
+                    &[for="Белый"] div {
+                        background-color: #ffffff;
+                    }
+                    &[for="Зеленый"] div {
+                        background-color: #4f8a34;
+                    }
+                    &[for="Коричневый"] div {
+                        background-color: #75341f;
+                    }
+                    &[for="Красный"] div {
+                        background-color: #8b2527;
+                    }
+                    &[for="Серый"] div {
+                        background-color: #6c716f;
+                    }
+                    &[for="Синий"] div {
+                        background-color: #2f6aa0;
+                    }
+                    &[for="Желтый"] div {
+                        background-color: #f2cc53;
                     }
                 }
             }
@@ -188,6 +231,41 @@
             @media (max-width: 768px) {
                 grid-template-columns: 1fr;
                 gap: 12px;
+            }
+        }
+    }
+
+    // .filter-manufactorer
+
+    &-manufactorer {
+        ul {
+            li {
+                padding: 15px;
+
+                @media (max-width: 768px) {
+                    padding: 8px;
+                }
+
+                label {
+                    div {
+                        border-radius: 10px;
+                        @include adaptive-value("height", 80, 50, 1);
+
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        @media (min-width: 641px) {
+                            @include adaptive-value("width", 132, 79, 1);
+                        }
+
+                        img {
+                            width: auto;
+                            max-width: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                }
             }
         }
     }

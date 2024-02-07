@@ -67,7 +67,6 @@
 // load catalog
 @import "parts/catalog";
 
-
 // load filters
 @import "parts/filters";
 
@@ -155,3 +154,6 @@ body:has(._nav-page) .pages {
 
 // load _shop-section
 @import "parts/_shop-section";
+
+// load _shop-single-product
+@import "parts/_shop-single-product";
