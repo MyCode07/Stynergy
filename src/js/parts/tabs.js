@@ -1,34 +1,39 @@
-const tabs = document.querySelectorAll('[data-tab]');
-const content = document.querySelectorAll('[data-tab-content]');
+const tabAreas = document.querySelectorAll('[data-tabs-area]');
 
-if (tabs.length) {
-    tabs.forEach(tab => {
-        const id = tab.dataset.tab;
 
-        tab.addEventListener('click', (e) => {
-            e.preventDefault();
+if (tabAreas.length) {
+    tabAreas.forEach(area => {
+        const tabs = area.querySelectorAll('[data-tab]');
+        const content = area.querySelectorAll('[data-tab-content]');
 
-            tabs.forEach(item => {
-                const currentId = item.dataset.tab;
+        tabs.forEach(tab => {
+            const id = tab.dataset.tab;
 
-                if (currentId == id) {
-                    item.classList.add('_active');
-                }
-                else {
-                    item.classList.remove('_active');
-                }
-            });
+            tab.addEventListener('click', (e) => {
+                e.preventDefault();
 
-            content.forEach(item => {
-                const currentId = item.dataset.tabContent;
+                tabs.forEach(item => {
+                    const currentId = item.dataset.tab;
 
-                if (currentId == id) {
-                    item.classList.add('_active');
-                }
-                else {
-                    item.classList.remove('_active');
-                }
-            });
+                    if (currentId == id) {
+                        item.classList.add('_active');
+                    }
+                    else {
+                        item.classList.remove('_active');
+                    }
+                });
+
+                content.forEach(item => {
+                    const currentId = item.dataset.tabContent;
+
+                    if (currentId == id) {
+                        item.classList.add('_active');
+                    }
+                    else {
+                        item.classList.remove('_active');
+                    }
+                });
+            })
         })
-    });
+    })
 }

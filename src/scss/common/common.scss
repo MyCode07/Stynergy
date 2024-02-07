@@ -65,6 +65,7 @@ h4,
 h5,
 h6 {
     color: $black;
+    font-weight: 600;
 
     span {
         color: $accent;
@@ -72,31 +73,24 @@ h6 {
 }
 
 h1 {
-    font-weight: 600;
-    letter-spacing: -0.5px;
     @include adaptive-value("font-size", 50, 20, 1);
-
-    @media (max-width: 768px) {
-        letter-spacing: -0.2px;
-    }
+    letter-spacing: -0.01em;
 }
 
 h2 {
-    font-weight: 600;
-    letter-spacing: -0.88px;
     @include adaptive-value("font-size", 44, 24, 1);
+    letter-spacing: -0.02em;
 
     @media (max-width: 768px) {
-        letter-spacing: -0.48px;
         line-height: 1;
     }
 }
 
 h3 {
+    @include adaptive-value("font-size", 20, 15, 1);
 }
 
 h4 {
-    font-weight: 600;
     @include adaptive-value("font-size", 30, 20, 1);
 
     @media (max-width: 768px) {
@@ -107,7 +101,6 @@ h4 {
 h5 {
     color: #fff;
     @include adaptive-value("font-size", 20, 14, 1);
-    font-weight: 600;
     text-transform: uppercase;
 
     @media (max-width: 425px) {
@@ -228,6 +221,30 @@ h5 {
         &._active {
             color: $white;
             background-color: $accent;
+        }
+    }
+}
+
+._link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #d52623;
+
+    @media (max-width: 768px) {
+        font-size: 12px;
+        gap: 5px;
+    }
+
+    svg {
+        width: 6px;
+        height: 10px;
+        flex: 0 0 auto;
+        fill: currentColor;
+
+        @media (max-width: 768px) {
+            width: 5px;
+            height: 8px;
         }
     }
 }
@@ -405,6 +422,10 @@ h5 {
     // .text-box__v2
 
     &__v2 {
+        h3 {
+            margin-bottom: 12px;
+        }
+
         p {
             span {
                 color: $accent;
@@ -881,6 +902,47 @@ h5 {
             opacity: 0.6;
 
             transition: opacity 0.3s ease 0s;
+        }
+    }
+}
+
+[data-tabs-area] {
+    [data-tabs] {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: flex-end;
+        width: 100%;
+        gap: 10px;
+        border-bottom: 1px solid #f3f3f3;
+    }
+
+    [data-tab] {
+        border-radius: 10px 10px 0px 0px;
+        background: #f3f3f3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 32px;
+        white-space: nowrap;
+
+        color: $black;
+        font-weight: 600;
+        @include adaptive-value("font-size", 20, 15, 1);
+
+        @media (max-width: 768px) {
+            padding: 15px 18px;
+        }
+
+        &._active {
+            color: $accent;
+        }
+    }
+
+    [data-tab-content] {
+        display: none;
+
+        &._active {
+            display: block;
         }
     }
 }

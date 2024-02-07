@@ -1595,3 +1595,124 @@
         }
     }
 }
+
+.buy-item {
+    display: flex;
+    gap: 16px;
+    background-color: $white;
+    border-radius: 10px;
+    border: 1px solid #eaeaea;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+
+    @include adaptive-value("padding-top", 32, 20, 1);
+    @include adaptive-value("padding-inline", 40, 16, 1);
+    @include adaptive-value("padding-bottom", 48, 28, 1);
+
+    &:not(:last-child) {
+        margin-bottom: 20px;
+
+        @media (max-width: 768px) {
+            margin-bottom: 12px;
+        }
+    }
+
+    // .buy-item__left
+
+    &__left {
+        width: 29%;
+
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+    }
+
+    // .buy-item__right
+
+    &__right {
+        flex: 1 1 auto;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            font-size: 15px;
+            flex: unset;
+        }
+
+        p {
+            @include adaptive-value("margin-bottom", 28, 16, 1);
+            max-width: 560px;
+        }
+
+        div {
+            display: flex;
+            gap: 8px;
+
+            span {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                border: 1px solid #eaeaea;
+                border-radius: 10px;
+
+                width: 132px;
+                height: 80px;
+
+                padding: 20px;
+
+                @media (max-width: 768px) {
+                    width: 100px;
+                    height: 60px;
+                }
+
+                img,
+                svg {
+                    max-height: 38px;
+                    object-fit: contain;
+                }
+            }
+        }
+
+        ol {
+            & > :not(:last-child) {
+                margin-bottom: 12px;
+            }
+
+            li {
+                a {
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+
+                    .icon {
+                        width: 30px;
+                        height: 30px;
+                        flex: 0 0 auto;
+                        border-radius: 50%;
+                        background-color: #f3f3f3;
+
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        svg {
+                            flex: 0 0 auto;
+                            height: 19px;
+                            fill: currentColor;
+                        }
+                    }
+                }
+
+                label {
+                    display: block;
+                    color: #a09f9f;
+
+                    margin-top: 8px;
+                    margin-left: 36px;
+                }
+            }
+        }
+    }
+}

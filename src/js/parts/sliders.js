@@ -175,6 +175,32 @@ if (sliders.length) {
                 }
             })
         }
+        else if (slider.closest('.single-product')) {
+            const thumbs = new Swiper('.swiper[thumbsSlider]', {
+                modules: [
+                    FreeMode
+                ],
+                direction: 'vertical',
+                freeMode: true,
+                watchSlidesProgress: true,
+                slidesPerView: 'auto',
+                spaceBetween: 8,
+            });
 
+            new Swiper('.single-product__images-main .swiper', {
+                modules: [
+                    Thumbs, Pagination
+                ],
+                spaceBetween: 20,
+                slidesPerView: 1,
+                pagination: {
+                    el: pagination,
+                    clickable: true,
+                },
+                thumbs: {
+                    swiper: thumbs,
+                },
+            });
+        }
     })
 }
