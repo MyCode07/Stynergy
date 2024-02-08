@@ -1,0 +1,50 @@
+@@include('./html/head.html', {
+"title":"Доставка образцов",
+"type": "shop"
+})
+
+@@include('./html/shop-parts/header.html')
+
+<main>
+
+    <section class="section pages-hero pages-hero-2 ">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="breadcrumbs">
+                    <ul>
+                        <li>
+                            <a href="">Главная</a>
+                        </li>
+                        <div></div>
+                        <li>
+                            <a href="">Сервис</a>
+                        </li>
+                        <div></div>
+                        <li>
+                            <a href="">Доставка образцов</a>
+                        </li>
+                    </ul>
+                </div>
+                <h1>Доставка образцов</h1>
+                <p>Покупателям и строителям больше не нужно ехать в наши офисы, чтобы посмотреть и потрогать образцы
+                    металла или же
+                    сравнить их с другими материалами.
+                    Теперь можно заказывать доставку образцов через наш сайт или по телефону.
+                    <br><br>
+                    <b>Стоимость выезда курьера с
+                        образцами</b> — 0 ₽,
+                    то есть <b>бесплатно</b>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    @@include('./html/shop-parts/order-form-no-image.html',{
+    "title":"Заказать курьерскую доставку образцов"
+    })
+
+</main>
+
+@@include('./html/footer.html')
+@@include('./html/scripts.html')

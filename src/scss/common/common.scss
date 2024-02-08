@@ -422,6 +422,8 @@ h5 {
     // .text-box__v2
 
     &__v2 {
+        position: relative;
+
         h3 {
             margin-bottom: 12px;
         }
@@ -485,6 +487,14 @@ h5 {
 
         ._bold-text {
             color: $text;
+        }
+
+        ._label {
+            @media (min-width: 769px) {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
         }
     }
 
@@ -1027,5 +1037,28 @@ h5 {
         }
         &.plus {
         }
+    }
+}
+
+._label {
+    background-color: #656565;
+    color: $white;
+    padding: 12px 15px 15px 15px;
+    border-radius: 8px;
+
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.1;
+    width: fit-content;
+
+    @media (max-width: 768px) {
+        font-size: 15px;
+        padding: 11px 15px 12px 15px;
+    }
+
+    label {
+        font-weight: 600;
+        display: block;
+        @include adaptive-value("font-size", 24, 18, 1);
     }
 }

@@ -1,0 +1,91 @@
+@@include('./html/head.html', {
+"title":"Замер/монтаж",
+"type": "shop"
+})
+
+@@include('./html/shop-parts/header.html')
+
+<main>
+
+    <section class="section pages-hero pages-hero-2 ">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="breadcrumbs">
+                    <ul>
+                        <li>
+                            <a href="">Главная</a>
+                        </li>
+                        <div></div>
+                        <li>
+                            <a href="">Сервис</a>
+                        </li>
+                        <div></div>
+                        <li>
+                            <a href="">Замер/монтаж</a>
+                        </li>
+                    </ul>
+                </div>
+                <h1>Замер/монтаж</h1>
+                <p>У STYNERGY на замер выезжают профессиональные кровельщики с многолетним стажем. Они не только снимают
+                    размеры кровли, но
+                    и готовы дать рекомендации по монтажу, рассчитать для вас смету и, если она вас устроит, построить
+                    вам кровлю и дать
+                    гарантию на работу от 2 до 5 лет. Срок гарантии зависит от решений по комплектации и строительству
+                    кровли, принятых
+                    совместно с заказчиком.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="section__top-accent _accent-black">
+                    <h2>Стоимость выезда на замер</h2>
+                </div>
+                <div class="text-box__v2">
+                    <ol>
+                        <li>До 50 км от МКАД — 0 ₽ / <del>3500 ₽</del></li>
+                        <li>До 100 км от МКАД — 0 ₽ / <del>5000 ₽</del></li>
+                    </ol>
+                    <p>Если объект находится дальше, стоимость рассчитывается индивидуально.</p>
+
+                    <div class="_label">
+                        <label>БЕСПЛАТНО</label>
+                        <span>до 100 км от МКАД</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="section__top-accent _accent-black">
+                    <h2>Стоимость монтажа</h2>
+                </div>
+                <div class="text-box__v2">
+                    <ol>
+                        <li>Монтаж водостока — от 350р/м.п</li>
+                        <li>Монтаж подшивки свесов кровли — от 450р/м.п</li>
+                        <li>Демонтаж старой кровли — от 150р/м2</li>
+                        <li>Кровля из Металлочерепицы без утепления — от 900р/м2</li>
+                        <li>Кровля из Металлочерепицы с утеплением — от 1250р/м2</li>
+                        <li>Кровля из Гибкой черепицы без утепления — от 1100р/м2</li>
+                        <li>Кровля из Гибкой черепицы с утеплением — от 1450р/м2</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @@include('./html/shop-parts/order-form.html',{
+    "class":"_bordered",
+    "title":"<h3>Заявка на расчет</h3>"
+    })
+
+</main>
+
+@@include('./html/footer.html')
+@@include('./html/scripts.html')

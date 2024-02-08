@@ -184,6 +184,7 @@
                     div {
                         margin-bottom: 8px;
                         @include adaptive-value("height", 40, 36, 1);
+                        margin-inline:  auto;
                         border: 1px solid #eaeaea;
 
                         @media (min-width: 641px) {

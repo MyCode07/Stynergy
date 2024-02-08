@@ -483,10 +483,12 @@
         @media (max-width: 768px) {
             margin-top: 30px;
         }
+    }
+}
 
-        label {
-            color: $accent;
-        }
+._attention {
+    label {
+        color: $accent;
     }
 }
 
@@ -542,12 +544,3 @@
     }
 }
 
-.where-to-buy {
-    .section__top-accent {
-        border-color: rgba($color: $black, $alpha: 0.1);
-
-        h2 {
-            color: $black;
-        }
-    }
-}
