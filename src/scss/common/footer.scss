@@ -333,3 +333,7 @@
         }
     }
 }
+
+body:has(._close-to-footer) .footer {
+    margin-top: 0 !important;
+}

@@ -283,58 +283,9 @@
         </div>
     </section>
 
-    <section class="section" id="free-estimate">
-        <div class="section__container _container">
-            <div class="section__body">
-                <div class="section__top">
-                    <h2>Получить <span>бесплатный расчет</span> <br> кровли, фасада, забора</h2>
-                </div>
-                <div class="section__flex">
-                    <div class="form form-white">
-                        <form action="#">
-                            <div class="form__row">
-                                <div data-required class="form__item">
-                                    <input type="text" placeholder="Ваше имя">
-                                </div>
-                                <div data-required class="form__item">
-                                    <input type="text" class="_mask-phone" placeholder="Телефон">
-                                </div>
-                                <div data-required class="form__item">
-                                    <input type="text" placeholder="Email">
-                                </div>
-                            </div>
-
-                            <div class="form__item textarea">
-                                <textarea type="text" placeholder="Введите сообщение"></textarea>
-                            </div>
-                            <div class="file">
-                                <label for="file">
-                                    <div class="value filename">
-                                        <svg viewBox="0 0 13 19">
-                                            <use xlink:href="@img/svg/icons.svg#file"></use>
-                                        </svg>
-                                        <span>Прикрепить файл</span>
-                                    </div>
-                                    <input id="file" name="file" type="file">
-                                </label>
-                                <div class="_delete-file">Удалить</div>
-                            </div>
-                            <div class="form__bottom">
-                                <p>Нажимая на кнопку «Отправить заявку» вы соглашаетесь с <a href="">Политикой
-                                        конфиденциальности</a>  и даёте согласие на обработку персональных
-                                    данных.
-                                </p>
-                                <button class="_btn _btn-red">Отправить заявку</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="free-estimate__img">
-                        <img src="img/free-estimate.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    @@include('./html/shop-parts/order-form.html',{
+    "title":"<h2>Получить <span>бесплатный расчет</span> <br> кровли, фасада, забора</h2>"
+    })
 
     <section class="section" id="_shop-services">
         <div class="section__container _container">
@@ -448,50 +399,10 @@
         </div>
     </section>
 
-    <section class="section" id="how-order">
-        <div class="section__container _container">
-            <div class="section__body">
-                <div class="section__top">
-                    <h2>Как заказать</h2>
-                </div>
-                <div class="grid grid-4">
-                    <div class="how-order_item">
-                        <div>
-                            <span class="icon">
-                                <img src="img/order-svg/order-1.svg" alt="">
-                            </span>
-                        </div>
-                        <p>Выберите товар в <a href="">Каталоге</a> или закажите бесплатную <span> курьерскую
-                                доставку образцов</span></p>
-                    </div>
-                    <div class="how-order_item">
-                        <div>
-                            <span class="icon">
-                                <img src="img/order-svg/order-2.svg" alt="">
-                            </span>
-                        </div>
-                        <p>Пришлите чертёж на расчёт</p>
-                    </div>
-                    <div class="how-order_item">
-                        <div>
-                            <span class="icon">
-                                <img src="img/order-svg/order-3.svg" alt="">
-                            </span>
-                        </div>
-                        <p>Дождитесь счёта от менеджера и внесите предоплату на сайте</p>
-                    </div>
-                    <div class="how-order_item">
-                        <div>
-                            <span class="icon">
-                                <img src="img/order-svg/order-4.svg" alt="">
-                            </span>
-                        </div>
-                        <p>Согласуйте с менеджером удобное время доставки</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    @@include('./html/shop-parts/how-order.html',{
+    "title":"Как заказать"
+    })
+
 
     <section class="section" id="directions" data-replace-width="1024">
         <div class="section__container _container">

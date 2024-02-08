@@ -1,0 +1,40 @@
+@@include('./html/head.html', {
+"title":"Отправить заявку на расчет",
+"type": "shop"
+})
+
+@@include('./html/shop-parts/header.html')
+
+<main>
+
+    <section class="section pages-hero pages-hero-2 ">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="breadcrumbs">
+                    <ul>
+                        <li>
+                            <a href="">Главная</a>
+                        </li>
+                        <div></div>
+                        <li>
+                            Отправить заявку на расчет
+                        </li>
+                    </ul>
+                </div>
+                <h1>Отправить заявку на расчет</h1>
+                <p>Оставьте заявку, наш менеджер свяжется с вами в ближайшее время</p>
+            </div>
+        </div>
+    </section>
+
+    @@include('./html/shop-parts/order-form.html',{
+    "class":"_bordered",
+    "title":"<h3>Заявка на расчет</h3>"
+    })
+
+
+
+</main>
+
+@@include('./html/footer.html')
+@@include('./html/scripts.html')

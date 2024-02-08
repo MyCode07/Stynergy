@@ -1,0 +1,155 @@
+@@include('./html/head.html', {
+"title":"Где купить",
+"type": "shop"
+})
+
+@@include('./html/shop-parts/header.html')
+
+<main>
+
+    <section class="section pages-hero pages-hero-2 ">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="breadcrumbs">
+                    <ul>
+                        <li>
+                            <a href="">Главная</a>
+                        </li>
+                        <div></div>
+                        <li>
+                            <a href="">Где купить</a>
+                        </li>
+                    </ul>
+                </div>
+                <h1>Где купить</h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="section _shop-contacts">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="grid grid-2">
+                    <div class="icon">
+                        <svg viewBox="0 0 52 52">
+                            <use xlink:href="img/svg/icons.svg#contact-2"></use>
+                        </svg>
+                    </div>
+                    <div class="_shop-contacts-item">
+                        <h3>График работы на праздничные дни:</h3>
+                        <p>
+                            <span>29.12.2023 — последний рабочий день в 2023 году</span>
+                            <span>09.01.2024 — начало работы</span>
+                        </p>
+
+                        <div>
+                            <p>Связаться с нами через мессенджеры:</p>
+                            <ul>
+                                <li>
+                                    <a href="" target="_blank">
+                                        <img src="img/icons/telegram.svg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" target="_blank">
+                                        <img src="img/icons/whatsapp.svg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" target="_blank">
+                                        <img src="img/icons/phone.svg" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <h3>Реквизиты ООО "Стинержи":</h3>
+                        <p>
+                            <span>ИНН 7723592506</span>
+                            <span>ОГРН 1067759966823</span>
+                        </p>
+                    </div>
+                    <div class="_shop-contacts-item">
+
+                        <h3>Телефон:</h3>
+                        <p><a href="" target="_blank">8 (495) 149-24-29</a></p>
+
+                        <h3>Email:</h3>
+                        <p><a href="" target="_blank">sale@stynergy.ru</a></p>
+
+                        <p>По вопросам рекламы, полиграфии, продвижения и пр.: <a href=""
+                                target="_blank">market@stynergy.ru</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section _container">
+        <a href="contacts.html" style="text-decoration: underline;">Карты и адреса теже что и на странице контактов </a>
+    </div>
+
+    @@include('./html/shop-parts/how-order.html',{
+    "title":"Купить не выходя из дома"
+    })
+
+
+
+    <section class="section _shop-contacts-form _close-to-footer" id="free-estimate">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="section__flex">
+                    <div class="section__flex-left">
+                        <div class="form form-white">
+                            <h3>Заказать доставку</h3>
+                            <p>Если наши офисы расположены неудобно для вас, воспользуйтесь нашей бесплатной курьерской
+                                доставкой образцов на дом</p>
+
+                            <form action="#">
+                                <div class="form__row">
+                                    <div data-required class="form__item">
+                                        <input type="text" placeholder="Ваше имя">
+                                    </div>
+                                    <div data-required class="form__item">
+                                        <input type="text" class="_mask-phone" placeholder="Телефон">
+                                    </div>
+                                </div>
+
+                                <div class="form__row">
+                                    <div class="form__item">
+                                        <input type="text" placeholder="Адрес">
+                                    </div>
+                                </div>
+
+                                <div class="form__bottom">
+                                    <p>Нажимая на кнопку «Отправить заявку» вы соглашаетесь с <a href="">Политикой
+                                            конфиденциальности</a>  и даёте согласие на обработку персональных
+                                        данных.
+                                    </p>
+                                    <button class="_btn _btn-red">Отправить заявку</button>
+                                </div>
+                            </form>
+                            <div class="_shop-contacts-form-reqs">
+                                <h4>Реквизиты ООО "Стинержи"</h4>
+                                <p>
+                                    <span>ИНН 7723592506</span>
+                                    <span>ОГРН 1067759966823</span>
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="section__flex-right">
+                        <div class="free-estimate__img">
+                            <img src="@img/free-estimate.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+@@include('./html/footer.html')
+@@include('./html/scripts.html')
