@@ -90,6 +90,7 @@
 
         &-right {
             flex: 1 1 526px;
+            max-width: 526px;
         }
     }
 
@@ -813,6 +814,125 @@
         ._btn {
             @media (max-width: 992px) {
                 width: 100%;
+            }
+        }
+    }
+}
+
+.consultation {
+    .section__flex {
+        &-left {
+            @media (min-width: 993px) {
+                padding-right: 10px;
+            }
+
+            img {
+                border-radius: 10px;
+                max-width: 619px;
+            }
+        }
+
+        &-right {
+            @media (min-width: 993px) {
+                padding-left: 50px;
+                padding-top: 82px;
+            }
+
+            @media (max-width: 992px) {
+                margin-top: 30px;
+            }
+
+            ol {
+                li {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 12px;
+
+                    font-size: 16px;
+                    color: $black;
+
+                    @media (max-width: 768px) {
+                        font-size: 15px;
+                        gap: 8px;
+                    }
+
+                    a {
+                        color: $accent;
+                        font-size: 20px;
+
+                        @media (max-width: 768px) {
+                            font-size: 15px;
+                        }
+                    }
+
+                    &:before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.playment {
+    .buy-item {
+        justify-content: space-between;
+        gap: 32px;
+
+        &__left {
+            max-width: none;
+            width: auto;
+
+            ol {
+                & > :not(:last-child) {
+                    @include adaptive-value("margin-bottom", 24, 12, 1);
+                }
+
+                li {
+                    display: flex;
+                    gap: 12px;
+                    color: #3ca439;
+
+                    .icon {
+                        width: 16px;
+                        margin-top: 5px;
+
+                        svg {
+                            fill: currentColor;
+                        }
+                    }
+
+                    p {
+                    }
+
+                    label {
+                        @include adaptive-value("font-size", 20, 16, 1);
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        display: block;
+                        margin-bottom: 4px;
+                    }
+
+                    span {
+                        color: $black;
+                    }
+                }
+            }
+        }
+
+        &__right {
+            flex: unset;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            ._link {
+                margin-left: auto;
+
+                @media (max-width: 768px) {
+                    margin-left: 0;
+                    margin-top: 10px;
+                }
             }
         }
     }

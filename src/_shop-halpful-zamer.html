@@ -1,0 +1,50 @@
+@@include('./html/head.html', {
+"title":"Бесплатный замер кровли",
+"type": "shop"
+})
+
+@@include('./html/shop-parts/header.html')
+
+<main>
+
+    <section class="section pages-hero pages-hero-2">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="breadcrumbs">
+                    <ul>
+                        <li>
+                            <a href="">Главная</a>
+                        </li>
+                        <div></div>
+                        <li>
+                            <a href="">Полезная информация</a>
+                        </li>
+                        <div></div>
+                        <li>
+                            <a href="">Бесплатный замер кровли</a>
+                        </li>
+                        <div></div>
+                    </ul>
+                </div>
+                <h1>Бесплатный замер кровли и фасада</h1>
+                <div class="text-box">
+                    <p>Уважаемые клиенты!</p>
+                    <p>Обращаем ваше внимание на наши условия замера: <strong>стоимость выезда на замер = 0 р. для
+                            объектов
+                            до
+                            100км от МКАД</strong>. <br>
+                        Чтобы оставить заявку на замер, заполните форму ниже.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @@include('./html/shop-parts/order-form.html',{
+    "class":"_bordered",
+    "title":"<h3>Заявка на замер/монтаж</h3>"
+    })
+
+</main>
+
+@@include('./html/footer.html')
+@@include('./html/scripts.html')

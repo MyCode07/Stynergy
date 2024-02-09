@@ -1,0 +1,54 @@
+@@include('./html/head.html', {
+"title":"Скидки на металлочерепицу",
+"type": "shop"
+})
+
+@@include('./html/shop-parts/header.html')
+
+<main>
+
+    <section class="section pages-hero pages-hero-2">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="breadcrumbs">
+                    <ul>
+                        <li>
+                            <a href="">Главная</a>
+                        </li>
+                        <div></div>
+                        <li>
+                            <a href="">Полезная информация</a>
+                        </li>
+                        <div></div>
+                        <li>
+                            <a href="">Скидки на металлочерепицу</a>
+                        </li>
+                        <div></div>
+                    </ul>
+                </div>
+                <h1>Скидки на металлочерепицу</h1>
+                <div class="text-box">
+                    <p>Новое спецпредложение!</p>
+
+                    <p><strong>Металлочерепица по специальным ценам!</strong><br>
+                        Предложение действует при заказе на сумму от 30 000 рублей.</p>
+
+                    <a href="" class="_link">
+                        <span>Перейти в каталог</span>
+                        <svg width="7" height="12">
+                            <use xlink:href="img/svg/icons.svg#btn-link"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @@include('./html/shop-parts/order-form-no-image.html',{
+    "title":"Запрос на расчет"
+    })
+
+</main>
+
+@@include('./html/footer.html')
+@@include('./html/scripts.html')

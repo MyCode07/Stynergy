@@ -374,6 +374,7 @@ h5 {
             img {
                 height: 100%;
                 object-fit: cover;
+                border-radius: 10px;
             }
         }
 
@@ -470,9 +471,12 @@ h5 {
             }
         }
 
-        ol,
         ul {
             list-style: inherit;
+        }
+
+        ol,
+        ul {
             padding-left: 1em;
 
             li {
@@ -619,9 +623,25 @@ h5 {
             }
         }
 
-        p {
-            @include adaptive-value("font-size", 20, 15, 1);
+        .text-box {
             @include adaptive-value("margin-top", 52, 28, 1);
+
+            ul {
+                list-style: inherit;
+                padding-left: 1em;
+            }
+
+            li {
+                list-style: inherit;
+            }
+
+            ._link {
+                width: fit-content;
+
+                @media (min-width: 993px) {
+                    margin-left: auto;
+                }
+            }
         }
     }
 
