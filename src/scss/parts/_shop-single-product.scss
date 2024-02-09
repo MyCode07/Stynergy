@@ -544,3 +544,19 @@
     }
 }
 
+.color-map {
+}
+
+.empty-cart {
+    .section__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        text-align: center;
+    }
+
+    img {
+        width: 136px;
+    }
+}

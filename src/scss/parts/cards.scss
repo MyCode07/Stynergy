@@ -1751,11 +1751,143 @@
         line-height: 1.3;
         margin-top: 20px;
         text-align: center;
-        min-width: 91px;
+        min-width: 83px;
+        word-break: break-all;
 
         @media (max-width: 768px) {
             font-size: 12px;
             margin-top: 10px;
+        }
+    }
+}
+
+.painting-color {
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+
+    height: 90px;
+
+    @media (max-width: 768px) {
+        padding: 10px;
+        border-radius: 6px;
+        height: 42px;
+    }
+
+    img {
+        object-fit: cover;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: -1;
+    }
+
+    span {
+        line-height: 1.3;
+        text-align: center;
+        font-weight: 600;
+        color: $white;
+
+        @media (max-width: 768px) {
+            font-size: 12px;
+        }
+    }
+}
+
+.color-map__item {
+    @include adaptive-value("padding-top", 40, 24, 1);
+    @include adaptive-value("padding-bottom", 40, 24, 1);
+    @include adaptive-value("padding-inline", 40, 16, 1);
+    border-radius: 10px;
+    border: 1px solid #eaeaea;
+
+    &:not(:last-child) {
+        margin-bottom: 20px;
+
+        @media (max-width: 768px) {
+            margin-bottom: 12px;
+        }
+    }
+
+    // .color-map__item-top
+
+    &-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 24px;
+        gap: 35px;
+
+        @media (max-width: 768px) {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            @include adaptive-value("font-size", 32, 18, 1);
+        }
+
+        ._label {
+            width: 96px;
+            line-height: 0.9;
+
+            @media (max-width: 768px) {
+                width: 80px;
+            }
+
+            label {
+                display: inline;
+            }
+
+            span {
+                font-size: 12px;
+            }
+        }
+    }
+
+    .section__flex {
+        p {
+            font-weight: 600;
+            margin-bottom: 14px;
+
+            @media (max-width: 768px) {
+                font-size: 15px;
+                margin-bottom: 12px;
+            }
+        }
+
+        &-left {
+            max-width: 500px;
+
+            @media (max-width: 1024px) {
+                max-width: none;
+                margin-bottom: 20px;
+            }
+
+            .grid {
+                width: fit-content;
+                gap: 10px;
+            }
+
+            ._chars {
+                max-width: 330px;
+                @include adaptive-value("margin-bottom", 40, 20, 1);
+            }
+        }
+
+        &-right {
+            .grid {
+                gap: 10px;
+
+                @media (max-width: 1024px) {
+                    grid-template-columns: repeat(4, 1fr);
+                }
+            }
         }
     }
 }

@@ -1,0 +1,44 @@
+@@include('./html/head.html', {
+"title":"Корзина",
+"type": "shop"
+})
+
+@@include('./html/shop-parts/header.html')
+
+<main>
+
+    <section class="section pages-hero pages-hero-2 ">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="breadcrumbs">
+                    <ul>
+                        <li>
+                            <a href="">Главная</a>
+                        </li>
+                        <div></div>
+                        <li>
+                            <a href="">Корзина</a>
+                        </li>
+                    </ul>
+                </div>
+                <h1>Корзина</h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="section empty-cart">
+        <div class="section__container _container">
+            <div class="section__body">
+                <img src="img/icons/empty-cart.svg" alt="">
+                <p>Для оформления заказа нужно добавить хотя бы один товар в корзину.</p>
+                <button class="_btn _btn-border">Перейти в каталог</button>
+            </div>
+        </div>
+    </section>
+
+
+
+</main>
+
+@@include('./html/footer.html')
+@@include('./html/scripts.html')
