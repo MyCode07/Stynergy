@@ -466,6 +466,82 @@
             }
         }
     }
+
+    // .catalog-shop
+
+    &-shop {
+        @media (min-width: 1025px) {
+            border-top: 1px solid #ebebeb;
+        }
+
+        .catalog-content {
+            @media (min-width: 1025px) {
+                border-left: 1px solid #ebebeb;
+            }
+        }
+    }
+
+    // .catalog-search
+
+    &-search {
+        .catalog-content {
+            &:after {
+                display: none;
+            }
+        }
+
+        // .catalog-search__title
+
+        &__title {
+            margin-bottom: 20px;
+
+            @media (max-width: 768px) {
+                font-size: 15px;
+                margin-bottom: 16px;
+            }
+
+            label,
+            span {
+                color: $text;
+            }
+        }
+
+        .search {
+            width: 100%;
+            max-width: none;
+            margin-bottom: 54px;
+
+            @media (max-width: 768px) {
+                margin-bottom: 40px;
+            }
+        }
+
+        // .catalog-search__results
+
+        &__results {
+        }
+
+        .nothing-found {
+            @include adaptive-value("margin-top", 100, 40, 1);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            gap: 12px;
+            max-width: 480px;
+            margin-inline: auto;
+
+            h4 {
+                @include adaptive-value("font-size", 30, 20, 1);
+            }
+
+            p {
+                line-height: 1.3;
+            }
+        }
+    }
 }
 
 .tab-content__downloadfile {
