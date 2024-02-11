@@ -1,3 +1,4 @@
+import { isMobile } from "../utils/isMobile.js";
 import { lockPadding, unLockPadding } from "../utils/lockPadding.js";
 
 
@@ -11,23 +12,27 @@ document.addEventListener('click', function (e) {
 
         if (popup) {
             popup.classList.add('_open')
-            lockPadding();
+
+            if (!isMobile.any()) {
+                lockPadding();
+            }
         }
     }
 
     if (targetEl.classList.contains('popup')) {
         targetEl.classList.remove('_open')
 
-
-        if (!document.querySelector('.header nav._open'))
+        if (!isMobile.any()) {
             unLockPadding();
+        }
     }
 
     if (targetEl.classList.contains('popup__close') || targetEl.hasAttribute('data-close-popup')) {
         const popup = targetEl.closest('.popup');
         popup.classList.remove('_open');
 
-        if (!document.querySelector('.header nav._open'))
+        if (!isMobile.any()) {
             unLockPadding();
+        }
     }
 })

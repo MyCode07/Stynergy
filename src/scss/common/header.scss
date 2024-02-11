@@ -220,12 +220,14 @@
         }
 
         &._white {
-            &:after {
-                display: none;
-            }
+            @media (max-width: 1200px) {
+                &:after {
+                    display: none;
+                }
 
-            .header__bottom-search {
-                display: flex;
+                .header__bottom-search {
+                    display: flex;
+                }
             }
         }
 

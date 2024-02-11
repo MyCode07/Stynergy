@@ -1,6 +1,6 @@
 @@include('./html/head.html', {
 "title":"Каталог",
-"type": "shop"
+"type": "shop-catalog"
 })
 
 @@include('./html/shop-parts/header.html')
@@ -121,11 +121,16 @@
                                         <li><a href="">Зеленый</a></li>
                                         <li><a href="">Покрытие полиэстер</a></li>
                                         <li><a href="">Толщина 0,45 мм</a></li>
+                                        <li><a href="">Коричневый</a></li>
+                                        <li><a href="">Красный</a></li>
+                                        <li><a href="">Зеленый</a></li>
+                                        <li><a href="">Покрытие полиэстер</a></li>
+                                        <li><a href="">Толщина 0,45 мм</a></li>
                                     </ul>
                                 </nav>
                             </div>
-                            <button class="_btn _btn-link">
-                                <span data-text-show="Скрыть теги" data-text-hide="Показать все теги">Показать все
+                            <button class="_btn _btn-link" >
+                                <span data-text-show="Показать все теги" data-text-hide="Скрыть теги">Показать все
                                     теги</span>
                                 <svg viewBox="0 0 11 6">
                                     <use xlink:href="@img/svg/icons.svg#arrow-down"></use>
@@ -286,48 +291,51 @@
                                 <div class="catalog-filters__item filter-pharams">
                                     <h3>Параметры</h3>
                                     <div class="grid grid-3">
-                                        <div class="form__item select-input">
+                                        <div class="form__item select-input" data-custom-field="Толщина металла, мм">
                                             <label>Толщина металла, мм</label>
                                             <svg width="8" height="6" viewBox="0 0 8 6">
                                                 <use xlink:href="img/svg/icons.svg#arrow"></use>
                                             </svg>
                                             <div class="select">
                                                 <div class="select-body">
+                                                    <span data-id="0" data-disabled>Толщина металла, мм</span>
                                                     <span data-id="1">2226</span>
-                                                    <span data-id="1">150</span>
-                                                    <span data-id="1">11</span>
-                                                    <span data-id="1">3</span>
-                                                    <span data-id="1">9.6</span>
+                                                    <span data-id="2">150</span>
+                                                    <span data-id="3">11</span>
+                                                    <span data-id="4">3</span>
+                                                    <span data-id="5">9.6</span>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="form__item select-input">
+                                        <div class="form__item select-input" data-custom-field="Тип покрытия">
                                             <label>Тип покрытия</label>
                                             <svg width="8" height="6" viewBox="0 0 8 6">
                                                 <use xlink:href="img/svg/icons.svg#arrow"></use>
                                             </svg>
                                             <div class="select">
                                                 <div class="select-body">
+                                                    <span data-id="0" data-disabled>Тип покрытия</span>
                                                     <span data-id="1">2226</span>
-                                                    <span data-id="1">150</span>
-                                                    <span data-id="1">11</span>
-                                                    <span data-id="1">3</span>
-                                                    <span data-id="1">9.6</span>
+                                                    <span data-id="2">150</span>
+                                                    <span data-id="3">11</span>
+                                                    <span data-id="4">3</span>
+                                                    <span data-id="5">9.6</span>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="form__item select-input">
-                                            <label>Тип покрытия</label>
+                                        <div class="form__item select-input" data-custom-field="Покрытие">
+                                            <label>Покрытие</label>
                                             <svg width="8" height="6" viewBox="0 0 8 6">
                                                 <use xlink:href="img/svg/icons.svg#arrow"></use>
                                             </svg>
                                             <div class="select">
                                                 <div class="select-body">
+                                                    <span data-id="0" data-disabled>Покрытие</span>
                                                     <span data-id="1">2226</span>
-                                                    <span data-id="1">150</span>
-                                                    <span data-id="1">11</span>
-                                                    <span data-id="1">3</span>
-                                                    <span data-id="1">9.6</span>
+                                                    <span data-id="2">150</span>
+                                                    <span data-id="3">11</span>
+                                                    <span data-id="4">3</span>
+                                                    <span data-id="5">9.6</span>
                                                 </div>
                                             </div>
                                         </div>

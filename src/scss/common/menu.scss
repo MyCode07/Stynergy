@@ -1,7 +1,7 @@
 .menu {
     position: fixed;
     left: 0;
-    top: 137px;
+    top: 124px;
 
     width: 100%;
     min-height: 100vh;
@@ -13,17 +13,25 @@
     padding-bottom: 200px;
     padding-top: 18px;
 
-    transform: translateX(110%);
-    z-index: -1;
+    transform: translate3d(110%, 0, 0);
+    z-index: 15;
+    pointer-events: none;
     transition: all 0.3s ease 0s;
 
-    @media (max-width: 768px) {
-        top: 124px;
-    }
-
     &._open {
-        transform: translateX(0%);
-        z-index: 10;
+        &:not(._shop-menu) {
+            @media (max-width: 1200px) {
+                pointer-events: all;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        &._shop-menu {
+            @media (max-width: 1024px) {
+                pointer-events: all;
+                transform: translate3d(0, 0, 0);
+            }
+        }
     }
 
     // .menu__container
@@ -112,9 +120,13 @@
         font-weight: 600;
     }
 
-    //00000000 shop menu
-
     &._shop-menu {
+        top: 85px;
+
+        nav {
+            margin-top: 25px;
+        }
+
         .catalog-menu {
             @media (max-width: 768px) {
                 display: grid;

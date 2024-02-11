@@ -7,6 +7,7 @@ const catalogMenu = document.querySelector('.catalog-menu');
 const menu = document.querySelector('.menu');
 const burger = document.querySelector('.header__burger');
 
+// open catalog btns
 if (openCatalogBtns.length) {
     openCatalogBtns.forEach(btn => {
         const label = btn.querySelector('label');
@@ -86,7 +87,7 @@ if (catalogCategories.length) {
 
 
 
-
+// replace diller side catalog menu on mobile
 const replaceCatalogMenu = () => {
     const dillerCatagMenu = document.querySelector('#catalog-menu');
 
@@ -122,9 +123,10 @@ const replaceCatalogMenu = () => {
 
 replaceCatalogMenu();
 
+
+// shop catalog
 const shopCatalogButtons = document.querySelectorAll('.catalog-menu__column button');
 const shopCatalogNav = document.querySelectorAll('.catalog-menu__column nav');
-
 if (shopCatalogButtons.length) {
     shopCatalogButtons.forEach(button => {
         button.addEventListener('click', (e) => {
@@ -140,6 +142,25 @@ if (shopCatalogButtons.length) {
             else {
             }
         })
-
     });
+}
+
+
+// catalog tags
+const tagsOpenBtn = document.querySelector('.catalog-tags ._btn');
+const tagsList = document.querySelector('.catalog-tags ul');
+if (tagsOpenBtn && tagsList) {
+    const span = tagsOpenBtn.querySelector('span');
+
+    tagsOpenBtn.addEventListener('click', () => {
+        tagsList.classList.toggle('_open')
+        tagsOpenBtn.classList.toggle('_active')
+
+        if (tagsOpenBtn.classList.contains('_active')) {
+            span.textContent = span.dataset.textHide
+        }
+        else {
+            span.textContent = span.dataset.textShow
+        }
+    })
 }
