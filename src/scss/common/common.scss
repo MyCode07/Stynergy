@@ -514,9 +514,20 @@ h5 {
             gap: 0px;
         }
 
-        ol {
+        ol,
+        ul {
             margin-bottom: 0;
             gap: 5px;
+            display: flex;
+            flex-direction: column;
+
+            @media (min-width: 993px) {
+                width: 50%;
+            }
+
+            @media (max-width: 992px) {
+                width: 100%;
+            }
 
             li {
                 color: $black;
@@ -673,6 +684,10 @@ h5 {
         z-index: 2;
         position: relative;
     }
+
+    &.catalog-hero {
+        margin-bottom: 0;
+    }
 }
 
 .breadcrumbs {
@@ -793,6 +808,10 @@ h5 {
     svg {
         transform: rotate(180deg);
     }
+}
+
+.swiper-button-disabled {
+    opacity: 0.5;
 }
 
 .ooo-details {

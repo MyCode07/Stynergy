@@ -39,7 +39,7 @@
 
         border-radius: 10px;
         border: 1px solid #ddd;
-        background: #fff;
+        background: $white;
         transition: all 0.3s ease 0s;
 
         @media (max-width: 768px) {
@@ -248,15 +248,25 @@
         margin-top: 0;
     }
 
+    .section__flex {
+        &-left {
+            flex: 1 1 auto;
+        }
+
+        &-right {
+            width: auto;
+            flex: 0 0 auto;
+        }
+    }
+
     form,
     .form-white {
-        max-width: 732px;
-        width: 100%;
         padding: 0;
         margin: 0;
+        max-width: 732px;
 
         @media (max-width: 992px) {
-            max-width: 100%;
+            max-width: none;
         }
 
         & > :not(:last-child) {

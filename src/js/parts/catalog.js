@@ -51,8 +51,8 @@ function closeOpenMenu() {
 
 
 // catalog sidebar
-const catalogCategories = document.querySelectorAll('.single-page [data-catalog-item]');
-const catalogCategoriesMenus = document.querySelectorAll('.single-page [data-catalog-menu]');
+const catalogCategories = document.querySelectorAll('[data-catalog-item]');
+const catalogCategoriesMenus = document.querySelectorAll('[data-catalog-menu]');
 if (catalogCategories.length) {
     catalogCategories.forEach((cat) => {
         const id = cat.dataset.catalogItem;

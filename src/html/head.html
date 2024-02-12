@@ -17,11 +17,13 @@
 
     @@if (type === 'shop') {
     @@include('shop-parts/catalog-menu.html')
-    @@include('shop-parts/menu.html') 
+    @@include('shop-parts/menu.html')
     @@include('shop-parts/toolbar.html',{"catalog" : ""})
     }
 
     @@if (type === 'shop-catalog') {
+    @@include('shop-parts/catalog-menu.html')
+    @@include('shop-parts/menu.html')
     @@include('shop-parts/toolbar.html',{"catalog" : "true"})
     }
 

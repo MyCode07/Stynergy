@@ -188,6 +188,34 @@
             padding: 0;
         }
     }
+
+    &:not(._shop-menu) {
+        @media (max-width: 1200px) {
+            nav ul ul {
+                & > :first-child {
+                    margin-top: 16px;
+                }
+
+                & > :last-child {
+                    margin-bottom: 16px;
+                }
+            }
+        }
+    }
+
+    &._shop-menu {
+        @media (max-width: 1024px) {
+            nav ul ul {
+                & > :first-child {
+                    margin-top: 16px;
+                }
+
+                & > :last-child {
+                    margin-bottom: 16px;
+                }
+            }
+        }
+    }
 }
 
 .address {

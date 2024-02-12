@@ -77,12 +77,18 @@
 }
 
 #free-estimate {
-    @include adaptive-value("margin-bottom", 176, 50, 1);
+    &:not(._bordered) {
+        @include adaptive-value("margin-bottom", 176, 50, 1);
+    }
 
     .section__flex {
         align-items: center;
 
         &-left {
+            flex: 1 1 800px;
+            max-width: 800px;
+            width: auto;
+
             @media (min-width: 993px) {
                 margin-right: -32px;
             }
@@ -120,6 +126,7 @@
 
     .free-estimate__img {
         position: relative;
+        z-index: -1;
 
         img {
             position: absolute;
@@ -219,52 +226,10 @@
 }
 
 #how-order {
-    @include adaptive-value("margin-bottom", 90, 32, 1);
+    @include adaptive-value("margin-bottom", 90, 40, 1);
 
-    .step-item__top {
-        div {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            width: 68px;
-            height: 68px;
-
-            border-radius: 5px;
-            background: #d52623;
-
-            @media (max-width: 768px) {
-                width: 38px;
-                height: 38px;
-            }
-
-            img,
-            svg {
-                width: 30px;
-                height: 30px;
-                flex: 0 0 auto;
-
-                @media (max-width: 768px) {
-                    width: 18px;
-                    height: 17px;
-                }
-            }
-        }
-
-        label {
-        }
-    }
-
-    .step-item__bottom {
-        p {
-            span {
-                color: $accent;
-            }
-
-            color: $black;
-            font-weight: 400;
-            @include adaptive-value("font-size", 20, 14, 1);
-        }
+    .step-item p {
+        font-weight: 400;
     }
 }
 
@@ -368,6 +333,7 @@
             display: flex;
             flex-direction: column;
             color: $white;
+            width: auto;
 
             span {
                 font-weight: 600;
@@ -402,6 +368,8 @@
         }
 
         &-right {
+            width: auto;
+
             ol {
                 background: linear-gradient(180deg, #1f1a17, rgba($color: #422c21, $alpha: 0));
                 color: $white;
@@ -734,6 +702,7 @@
         top: 80px;
         max-width: 546px;
         margin-left: auto;
+        z-index: unset;
 
         img {
             position: static;
@@ -800,6 +769,11 @@
 
         &-left {
             line-height: 1.3;
+            width: auto;
+        }
+
+        &-right {
+            width: auto;
         }
 
         ._attention {
