@@ -153,6 +153,10 @@
                         border-radius: 10px;
                         width: 100%;
 
+                        picture {
+                            height: 100%;
+                        }
+
                         img {
                             border-radius: 10px;
                             height: 100%;
@@ -184,7 +188,7 @@
                     div {
                         margin-bottom: 8px;
                         @include adaptive-value("height", 40, 36, 1);
-                        margin-inline:  auto;
+                        margin-inline: auto;
                         border: 1px solid #eaeaea;
 
                         @media (min-width: 641px) {

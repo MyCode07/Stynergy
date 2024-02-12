@@ -704,6 +704,10 @@ h5 {
             color: $white;
             font-size: 13px;
 
+            display: flex;
+            align-items: center;
+            gap: 6px;
+
             @media (max-width: 425px) {
                 font-size: 12px;
             }
