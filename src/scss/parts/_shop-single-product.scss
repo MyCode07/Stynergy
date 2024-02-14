@@ -500,6 +500,10 @@
         @media (max-width: 768px) {
             margin-bottom: 40px;
         }
+
+        .text-box {
+            @include adaptive-value("font-size", 16, 15, 1);
+        }
     }
 
     // .single-product__chars

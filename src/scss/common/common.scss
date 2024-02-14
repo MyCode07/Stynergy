@@ -180,11 +180,6 @@ h5 {
     }
 }
 
-._bold-text {
-    font-weight: 600;
-    color: $black;
-}
-
 ._more {
     margin-top: 40px;
     display: flex;
@@ -250,19 +245,46 @@ h5 {
 }
 
 .text-box {
+    position: relative;
     @include adaptive-value("font-size", 20, 15, 1);
-    font-weight: 400;
     line-height: 1.3;
+
+    & > :not(:last-child) {
+        margin-bottom: 20px;
+    }
 
     & > :last-child {
         margin-bottom: 0;
     }
 
+    img,
     picture {
-        max-width: 100%;
+        width: auto;
+        border-radius: 10px;
     }
 
-    label {
+    picture,
+    iframe {
+        display: block;
+
+        &:not(:last-child) {
+            margin-bottom: 42px;
+
+            @media (max-width: 768px) {
+                margin-bottom: 32px;
+            }
+        }
+    }
+
+    iframe,
+    video {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        aspect-ratio: 16/9;
+    }
+
+    h2 {
         display: block;
         width: 100%;
         padding-bottom: 16px;
@@ -273,9 +295,9 @@ h5 {
         font-weight: 600;
         line-height: 1.4;
 
-        @include adaptive-value("margin-top", 40, 32, 1);
-
-        margin-bottom: 20px;
+        & > :not(:first-child) {
+            @include adaptive-value("margin-top", 40, 32, 1);
+        }
     }
 
     p {
@@ -284,7 +306,6 @@ h5 {
         }
 
         b {
-            font-weight: 600;
             color: $black;
         }
 
@@ -308,26 +329,26 @@ h5 {
         color: $accent;
     }
 
-    ol {
-        display: flex;
-        flex-direction: column;
-        @include adaptive-value("gap", 20, 10, 1);
+    ol,
+    ul {
+        padding-left: 1em;
 
-        li {
-            display: flex;
-            align-items: center;
-            @include adaptive-value("gap", 17, 9, 1);
-            @include adaptive-value("font-size", 20, 15, 1);
-
-            color: $text;
-            font-weight: 400;
-
-            &:before {
-                content: "";
-                background-repeat: no-repeat;
-                background-size: contain;
-            }
+        & > :not(:last-child) {
+            margin-bottom: 10px;
         }
+    }
+
+    ul li {
+        list-style: initial;
+
+        &::marker {
+            font-size: 0.6em;
+            display: block;
+        }
+    }
+
+    ol li {
+        list-style: inherit;
     }
 
     ._btn {
@@ -338,15 +359,23 @@ h5 {
         }
     }
 
-    ._red-text {
-        color: $accent;
-    }
+    &.list-icon {
+        ol,
+        ul {
+            padding-left: 0;
+        }
 
-    img {
-        margin-bottom: 42px;
+        li {
+            list-style: none;
 
-        @media (max-width: 768px) {
-            margin-bottom: 32px;
+            &:before {
+                display: inline-block;
+                content: "";
+                background-image: url("@img/check.svg");
+                width: 16px;
+                height: 12px;
+                margin-right: 12px;
+            }
         }
     }
 
@@ -420,136 +449,59 @@ h5 {
         }
     }
 
-    // .text-box__v2
+    ._label {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
 
-    &__v2 {
-        position: relative;
-
-        h3 {
-            margin-bottom: 12px;
+    &.anchors {
+        @media (min-width: 1025px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
         }
 
-        p {
-            span {
-                color: $accent;
-            }
-
-            margin-bottom: 40px;
-
-            @media (max-width: 768px) {
-                margin-bottom: 20px;
-            }
-
-            & + ol,
-            & + ul {
-                margin-top: 40px;
-
-                @media (max-width: 768px) {
-                    margin-top: 20px;
-                }
+        @media (max-width: 1024px) {
+            & > :not(:last-child) {
+                margin-bottom: 10px;
             }
         }
 
-        ol {
-            @include adaptive-value("margin-bottom", 40, 36, 1);
-
-            li {
-                @media (max-width: 768px) {
-                    align-items: flex-start;
-                }
-            }
-
-            li:before {
-                background-image: url("@img/circule.png");
-                width: 4px;
-                height: 4px;
-                flex: 0 0 auto;
-
-                @media (max-width: 768px) {
-                    margin-top: 8px;
-                }
-            }
+        li a {
+            color: inherit;
         }
 
-        ul {
-            list-style: inherit;
-        }
+        .hide-on-mobile {
+            @media (max-width: 1024px) {
+                margin-top: 5px;
 
-        ol,
-        ul {
-            padding-left: 1em;
-
-            li {
-                display: list-item;
-                list-style: inherit;
-
-                &:before {
+                &:not(._active) {
                     display: none;
                 }
             }
         }
 
-        ._bold-text {
-            color: $text;
-        }
-
-        ._label {
-            @media (min-width: 769px) {
-                position: absolute;
-                right: 0;
-                top: 0;
+        .see-more-lists {
+            @media (min-width: 1025px) {
+                display: none;
             }
         }
     }
 
-    // .text-box__v3
+    // .text-box__catalog
 
-    &__v3 {
-        display: flex;
-        justify-content: space-between;
-        gap: 96px;
+    &__catalog {
+        h2 {
+            color: $black;
 
-        @media (max-width: 992px) {
-            flex-direction: column;
-            gap: 0px;
-        }
+            &:not(:first-child) {
+                margin-top: 60px;
 
-        ol,
-        ul {
-            margin-bottom: 0;
-            gap: 5px;
-            display: flex;
-            flex-direction: column;
-
-            @media (min-width: 993px) {
-                width: 50%;
-            }
-
-            @media (max-width: 992px) {
-                width: 100%;
-            }
-
-            li {
-                color: $black;
+                @media (max-width: 768px) {
+                    margin-top: 40px;
+                }
             }
         }
-
-        button {
-            display: none;
-            color: #877f7f;
-            font-size: 14px;
-            width: fit-content;
-
-            @media (max-width: 992px) {
-                margin-top: 16px;
-                display: block;
-            }
-        }
-    }
-
-    // .text-box__v4
-
-    &__4 {
     }
 }
 
@@ -649,7 +601,7 @@ h5 {
             ._link {
                 width: fit-content;
 
-                @media (min-width: 993px) {
+                @media (min-width: 1025px) {
                     margin-left: auto;
                 }
             }

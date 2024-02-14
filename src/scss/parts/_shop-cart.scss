@@ -1,9 +1,9 @@
 .shop-cart {
-    @media (min-width: 993px) {
+    @media (min-width: 1025px) {
         border-top: 1px solid #ebebeb;
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: 1024px) {
         padding-bottom: 80px;
     }
 
@@ -13,7 +13,7 @@
 
     .section__flex {
         &-left {
-            @media (min-width: 993px) {
+            @media (min-width: 1025px) {
                 width: auto;
                 flex: 1 1 auto;
                 position: relative;
@@ -34,12 +34,12 @@
         }
 
         &-right {
-            @media (min-width: 993px) {
+            @media (min-width: 1025px) {
                 width: 280px;
                 flex: 0 0 auto;
             }
 
-            @media (max-width: 992px) {
+            @media (max-width: 1024px) {
                 margin-top: 50px;
             }
         }
@@ -70,7 +70,7 @@
             font-size: 13px;
             margin-bottom: 28px;
 
-            @media (max-width: 992px) {
+            @media (max-width: 1024px) {
                 display: none;
             }
         }
@@ -79,7 +79,7 @@
             & > :not(:last-child) {
                 margin-bottom: 28px;
 
-                @media (max-width: 992px) {
+                @media (max-width: 1024px) {
                     margin-bottom: 16px;
                 }
             }
@@ -92,7 +92,7 @@
                 grid-template-columns: 1fr 0.4fr 0.3fr;
                 gap: 12px;
 
-                @media (max-width: 992px) {
+                @media (max-width: 1024px) {
                     padding-bottom: 16px;
                     display: flex;
                     flex-wrap: wrap;
@@ -107,7 +107,7 @@
                     @include adaptive-value("font-size", 20, 13, 1);
                     color: $black;
 
-                    @media (max-width: 992px) {
+                    @media (max-width: 1024px) {
                         width: 100%;
                         flex: 0 0 auto;
                     }
@@ -158,7 +158,7 @@
             font-size: 20px;
             color: $black;
 
-            @media (max-width: 992px) {
+            @media (max-width: 1024px) {
                 font-size: 18px;
                 margin-top: 12px;
                 justify-content: space-between;
@@ -173,7 +173,7 @@
     // .shop-cart__total
 
     &__total {
-        @media (min-width: 993px) {
+        @media (min-width: 1025px) {
             padding: 40px 0 100px 0;
             position: sticky;
             top: 200px;
@@ -212,7 +212,7 @@
         button {
             margin-top: 40px;
 
-            @media (max-width: 992px) {
+            @media (max-width: 1024px) {
                 width: 100%;
             }
         }

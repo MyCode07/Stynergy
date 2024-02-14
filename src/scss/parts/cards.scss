@@ -159,7 +159,7 @@
 }
 
 .advantages-item {
-    @media (max-width: 992px) {
+    @media (max-width: 1024px) {
         display: flex;
         gap: 16px;
     }
@@ -188,7 +188,7 @@
         font-weight: 600;
         line-height: 1.2;
 
-        @media (max-width: 992px) {
+        @media (max-width: 1024px) {
             margin-bottom: 13px;
         }
     }
@@ -412,7 +412,7 @@
             align-items: center;
             gap: 12px;
 
-            @media (max-width: 992px) {
+            @media (max-width: 1024px) {
                 width: 100%;
             }
         }
@@ -878,13 +878,8 @@
             padding: 0 16px 20px 16px;
         }
 
-        span {
-            display: block;
+        h3 {
             margin-bottom: 20px;
-            color: $black;
-            font-weight: 600;
-            line-height: 1.3;
-            letter-spacing: -0.48px;
             @include adaptive-value("font-size", 24, 18, 1);
 
             @media (max-width: 768px) {
@@ -893,22 +888,21 @@
             }
         }
 
-        p,
-        ol {
-            @include adaptive-value("font-size", 20, 15, 1);
-            line-height: 1.3;
-        }
+        .text-box {
+            & > :not(:last-child) {
+                margin-bottom: 5px;
+            }
 
-        p {
-        }
+            * {
+                margin-top: 0;
+            }
 
-        ol {
-            padding-left: 1em;
-        }
-
-        ol,
-        li {
-            list-style: inherit;
+            ul,
+            ol {
+                & > :not(:last-child) {
+                    margin-bottom: 2px;
+                }
+            }
         }
     }
 }
@@ -1379,7 +1373,7 @@
     div {
         margin-bottom: 32px;
 
-        @media (max-width: 992px) {
+        @media (max-width: 1024px) {
             margin-bottom: 16px;
         }
 
@@ -1415,7 +1409,7 @@
         & > :not(:last-child) {
             margin-bottom: 14px;
 
-            @media (max-width: 992px) {
+            @media (max-width: 1024px) {
                 margin-bottom: 8px;
             }
         }
@@ -1427,7 +1421,7 @@
             font-size: 17px;
             position: relative;
 
-            @media (max-width: 992px) {
+            @media (max-width: 1024px) {
                 font-size: 15px;
             }
 
@@ -1458,7 +1452,7 @@
         height: 181px;
         position: relative;
 
-        @media (max-width: 992px) {
+        @media (max-width: 1024px) {
             height: 171px;
             margin-bottom: 16px;
         }
@@ -1488,7 +1482,7 @@
             color: $white;
             font-size: 14px;
 
-            @media (max-width: 992px) {
+            @media (max-width: 1024px) {
                 left: 15px;
                 top: 15px;
                 font-size: 12px;
@@ -1502,7 +1496,7 @@
         font-size: 20px;
         font-weight: 600;
 
-        @media (max-width: 992px) {
+        @media (max-width: 1024px) {
             font-size: 16px;
         }
     }

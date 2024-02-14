@@ -152,7 +152,7 @@ if (sliders.length) {
                 },
             })
         }
-        else if (slider.closest('#useful-articles') && window.innerWidth <= 992) {
+        else if (slider.closest('#useful-articles') && window.innerWidth <= 1024) {
             new Swiper(slider, {
                 modules: [Pagination, Autoplay],
                 slidesPerView: 'auto',

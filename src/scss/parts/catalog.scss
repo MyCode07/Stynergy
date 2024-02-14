@@ -375,6 +375,14 @@
             &-content {
             }
         }
+
+        .text-box {
+            margin-top: 60px;
+
+            @media (max-width: 768px) {
+                margin-top: 40px;
+            }
+        }
     }
 
     // .catalog-tags

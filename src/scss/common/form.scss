@@ -265,7 +265,7 @@
         margin: 0;
         max-width: 732px;
 
-        @media (max-width: 992px) {
+        @media (max-width: 1024px) {
             max-width: none;
         }
 
@@ -276,7 +276,7 @@
         p {
             max-width: 348px;
 
-            @media (max-width: 992px) {
+            @media (max-width: 1024px) {
                 max-width: unset;
             }
         }
@@ -293,7 +293,7 @@
             max-width: 360px;
             width: 100%;
 
-            @media (max-width: 992px) {
+            @media (max-width: 1024px) {
                 max-width: unset;
             }
         }
@@ -309,7 +309,7 @@
             object-fit: contain;
         }
 
-        @media (max-width: 992px) {
+        @media (max-width: 1024px) {
             display: none;
         }
     }
