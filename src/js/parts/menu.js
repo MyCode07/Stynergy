@@ -38,7 +38,7 @@ if (burger) {
 
 
 // clsoe catalog menu if its open
-function closeOpenCatalogMenu() {
+export function closeOpenCatalogMenu() {
     if (catalogMenu.classList.contains('_open')) {
         catalogMenu.classList.remove('_open')
         openCatalogMenuBtns.forEach(item => {

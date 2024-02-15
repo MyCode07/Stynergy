@@ -1,4 +1,7 @@
 import { isMobile } from '../utils/isMobile.js';
+import { closeOpenMenu } from './catalog.js';
+import { closeOpenCatalogMenu } from './menu.js';
+
 
 document.addEventListener('click', function (e) {
     let targetEl = e.target;
@@ -20,5 +23,17 @@ document.addEventListener('click', function (e) {
 
         label.textContent = targetEl.textContent
         select.classList.remove('_active')
+
+    }
+
+    if (targetEl.hasAttribute('data-open-filter')) {
+        closeOpenMenu();
+        closeOpenCatalogMenu();
+        document.querySelector('.catalog-filters__wrapper').classList.toggle('_open');
+    }
+
+    if (targetEl.classList.contains('catalog-filters__wrapper')) {
+        document.querySelector('.catalog-filters__wrapper').classList.remove('_open');
+
     }
 })

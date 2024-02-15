@@ -41,7 +41,7 @@ if (openCatalogBtns.length) {
 
 
 // clsoe catalog menu if its open
-function closeOpenMenu() {
+export function closeOpenMenu() {
     if (menu.classList.contains('_open')) {
         menu.classList.remove('_open')
         burger.classList.remove('_active')

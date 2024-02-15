@@ -140,7 +140,7 @@
 
                         <div class="catalog-filters">
 
-                            <button class="catalog-filters__open _btn _btn-red">
+                            <button class="catalog-filters__open _btn _btn-red" data-open-filter>
                                 <span data-text-show="Закрыть фильтр" data-text-hide="Открыть фильтр">Открыть
                                     фильтр</span>
                                 <svg width="25" height="22" viewBox="0 0 25 22">
@@ -148,194 +148,205 @@
                                 </svg>
                             </button>
 
-                            <div class="catalog-filters__body">
-                                <div class="catalog-filters__item filter-profiles">
-                                    <h3>Выбрать профиль</h3>
-                                    <ul>
-                                        <li>
-                                            <label for="garda">
-                                                <input id="garda" name="profile" type="checkbox">
-                                                <div>
-                                                    <img src="img/filter.png" alt="">
-                                                </div>
-                                                <p>Garda</p>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label for="stestellalla">
-                                                <input id="stestellalla" type="checkbox" name="profile">
-                                                <div>
-                                                    <img src="img/filter.png" alt="">
-                                                </div>
-                                                <p>Stella</p>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label for="СМ Классик (Монтеррей)">
-                                                <input id="СМ Классик (Монтеррей)" type="checkbox" name="profile">
-                                                <div>
-                                                    <img src="img/filter.png" alt="">
-                                                </div>
-                                                <p>СМ Классик (Монтеррей)</p>
-                                            </label>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="catalog-filters__item filter-colors">
-                                    <h3>Выбрать цвет</h3>
-                                    <ul>
-                                        <li>
-                                            <label for="Бежевый">
-                                                <input id="Бежевый" name="color" type="checkbox">
-                                                <div></div>
-                                                <p>Бежевый</p>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label for="Белый">
-                                                <input id="Белый" name="color" type="checkbox">
-                                                <div></div>
-                                                <p>Белый</p>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label for="Зеленый">
-                                                <input id="Зеленый" name="color" type="checkbox">
-                                                <div></div>
-                                                <p>Зеленый</p>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label for="Коричневый">
-                                                <input id="Коричневый" name="color" type="checkbox">
-                                                <div></div>
-                                                <p>Коричневый</p>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label for="Красный">
-                                                <input id="Красный" name="color" type="checkbox">
-                                                <div></div>
-                                                <p>Красный</p>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label for="Серый">
-                                                <input id="Серый" name="color" type="checkbox">
-                                                <div></div>
-                                                <p>Серый</p>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label for="Синий">
-                                                <input id="Синий" name="color" type="checkbox">
-                                                <div></div>
-                                                <p>Синий</p>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label for="Желтый">
-                                                <input id="Желтый" name="color" type="checkbox">
-                                                <div></div>
-                                                <p>Желтый</p>
-                                            </label>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="catalog-filters__item filter-manufactorer">
-                                    <h3>Выбрать производителя</h3>
-                                    <ul>
-                                        <li>
-                                            <label for="cedral">
-                                                <input id="cedral" name="manufactorer" type="checkbox">
-                                                <div>
-                                                    <img src="img/manufactorer/cedral.png" alt="">
-                                                </div>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label for="decover">
-                                                <input id="decover" name="manufactorer" type="checkbox">
-                                                <div>
-                                                    <img src="img/manufactorer/decover.png" alt="">
-                                                </div>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label for="docke">
-                                                <input id="docke" name="manufactorer" type="checkbox">
-                                                <div>
-                                                    <img src="img/manufactorer/docke.png" alt="">
-                                                </div>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label for="grand-line">
-                                                <input id="grand-line" name="manufactorer" type="checkbox">
-                                                <div>
-                                                    <img src="img/manufactorer/grand-line.png" alt="">
-                                                </div>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label for="alta-profil">
-                                                <input id="alta-profil" name="manufactorer" type="checkbox">
-                                                <div>
-                                                    <img src="img/manufactorer/alta-profil.png" alt="">
-                                                </div>
-                                            </label>
-                                        </li>
-                                    </ul>
-                                </div>
+                            <div class="catalog-filters__wrapper">
+                                <div class="catalog-filters__body">
+                                    <div class="filter-top">
+                                        <h3>Фильтр</h3>
+                                        <button data-open-filter>
+                                            <svg width="22" height="22" viewBox="0 0 22 22">
+                                                <use xlink:href='img/svg/icons.svg#close' />
+                                            </svg>
+                                        </button>
 
-                                <div class="catalog-filters__item filter-pharams">
-                                    <h3>Параметры</h3>
-                                    <div class="grid grid-3">
-                                        <div class="form__item select-input" data-custom-field="Толщина металла, мм">
-                                            <label>Толщина металла, мм</label>
-                                            <svg width="8" height="6" viewBox="0 0 8 6">
-                                                <use xlink:href="img/svg/icons.svg#arrow"></use>
-                                            </svg>
-                                            <div class="select">
-                                                <div class="select-body">
-                                                    <span data-id="0" data-disabled>Толщина металла, мм</span>
-                                                    <span data-id="1">2226</span>
-                                                    <span data-id="2">150</span>
-                                                    <span data-id="3">11</span>
-                                                    <span data-id="4">3</span>
-                                                    <span data-id="5">9.6</span>
+                                    </div>
+                                    <div class="catalog-filters__item filter-profiles">
+                                        <h3>Выбрать профиль</h3>
+                                        <ul>
+                                            <li>
+                                                <label for="garda">
+                                                    <input id="garda" name="profile" type="checkbox">
+                                                    <div>
+                                                        <img src="img/filter.png" alt="">
+                                                    </div>
+                                                    <p>Garda</p>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="stestellalla">
+                                                    <input id="stestellalla" type="checkbox" name="profile">
+                                                    <div>
+                                                        <img src="img/filter.png" alt="">
+                                                    </div>
+                                                    <p>Stella</p>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="СМ Классик (Монтеррей)">
+                                                    <input id="СМ Классик (Монтеррей)" type="checkbox" name="profile">
+                                                    <div>
+                                                        <img src="img/filter.png" alt="">
+                                                    </div>
+                                                    <p>СМ Классик (Монтеррей)</p>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="catalog-filters__item filter-colors">
+                                        <h3>Выбрать цвет</h3>
+                                        <ul>
+                                            <li>
+                                                <label for="Бежевый">
+                                                    <input id="Бежевый" name="color" type="checkbox">
+                                                    <div></div>
+                                                    <p>Бежевый</p>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="Белый">
+                                                    <input id="Белый" name="color" type="checkbox">
+                                                    <div></div>
+                                                    <p>Белый</p>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="Зеленый">
+                                                    <input id="Зеленый" name="color" type="checkbox">
+                                                    <div></div>
+                                                    <p>Зеленый</p>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="Коричневый">
+                                                    <input id="Коричневый" name="color" type="checkbox">
+                                                    <div></div>
+                                                    <p>Коричневый</p>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="Красный">
+                                                    <input id="Красный" name="color" type="checkbox">
+                                                    <div></div>
+                                                    <p>Красный</p>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="Серый">
+                                                    <input id="Серый" name="color" type="checkbox">
+                                                    <div></div>
+                                                    <p>Серый</p>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="Синий">
+                                                    <input id="Синий" name="color" type="checkbox">
+                                                    <div></div>
+                                                    <p>Синий</p>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="Желтый">
+                                                    <input id="Желтый" name="color" type="checkbox">
+                                                    <div></div>
+                                                    <p>Желтый</p>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="catalog-filters__item filter-manufactorer">
+                                        <h3>Выбрать производителя</h3>
+                                        <ul>
+                                            <li>
+                                                <label for="cedral">
+                                                    <input id="cedral" name="manufactorer" type="checkbox">
+                                                    <div>
+                                                        <img src="img/manufactorer/cedral.png" alt="">
+                                                    </div>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="decover">
+                                                    <input id="decover" name="manufactorer" type="checkbox">
+                                                    <div>
+                                                        <img src="img/manufactorer/decover.png" alt="">
+                                                    </div>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="docke">
+                                                    <input id="docke" name="manufactorer" type="checkbox">
+                                                    <div>
+                                                        <img src="img/manufactorer/docke.png" alt="">
+                                                    </div>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="grand-line">
+                                                    <input id="grand-line" name="manufactorer" type="checkbox">
+                                                    <div>
+                                                        <img src="img/manufactorer/grand-line.png" alt="">
+                                                    </div>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="alta-profil">
+                                                    <input id="alta-profil" name="manufactorer" type="checkbox">
+                                                    <div>
+                                                        <img src="img/manufactorer/alta-profil.png" alt="">
+                                                    </div>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="catalog-filters__item filter-pharams">
+                                        <h3>Параметры</h3>
+                                        <div class="grid grid-3">
+                                            <div class="form__item select-input"
+                                                data-custom-field="Толщина металла, мм">
+                                                <label>Толщина металла, мм</label>
+                                                <svg width="8" height="6" viewBox="0 0 8 6">
+                                                    <use xlink:href="img/svg/icons.svg#arrow"></use>
+                                                </svg>
+                                                <div class="select">
+                                                    <div class="select-body">
+                                                        <span data-id="0" data-disabled>Толщина металла, мм</span>
+                                                        <span data-id="1">2226</span>
+                                                        <span data-id="2">150</span>
+                                                        <span data-id="3">11</span>
+                                                        <span data-id="4">3</span>
+                                                        <span data-id="5">9.6</span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="form__item select-input" data-custom-field="Тип покрытия">
-                                            <label>Тип покрытия</label>
-                                            <svg width="8" height="6" viewBox="0 0 8 6">
-                                                <use xlink:href="img/svg/icons.svg#arrow"></use>
-                                            </svg>
-                                            <div class="select">
-                                                <div class="select-body">
-                                                    <span data-id="0" data-disabled>Тип покрытия</span>
-                                                    <span data-id="1">2226</span>
-                                                    <span data-id="2">150</span>
-                                                    <span data-id="3">11</span>
-                                                    <span data-id="4">3</span>
-                                                    <span data-id="5">9.6</span>
+                                            <div class="form__item select-input" data-custom-field="Тип покрытия">
+                                                <label>Тип покрытия</label>
+                                                <svg width="8" height="6" viewBox="0 0 8 6">
+                                                    <use xlink:href="img/svg/icons.svg#arrow"></use>
+                                                </svg>
+                                                <div class="select">
+                                                    <div class="select-body">
+                                                        <span data-id="0" data-disabled>Тип покрытия</span>
+                                                        <span data-id="1">2226</span>
+                                                        <span data-id="2">150</span>
+                                                        <span data-id="3">11</span>
+                                                        <span data-id="4">3</span>
+                                                        <span data-id="5">9.6</span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="form__item select-input" data-custom-field="Покрытие">
-                                            <label>Покрытие</label>
-                                            <svg width="8" height="6" viewBox="0 0 8 6">
-                                                <use xlink:href="img/svg/icons.svg#arrow"></use>
-                                            </svg>
-                                            <div class="select">
-                                                <div class="select-body">
-                                                    <span data-id="0" data-disabled>Покрытие</span>
-                                                    <span data-id="1">2226</span>
-                                                    <span data-id="2">150</span>
-                                                    <span data-id="3">11</span>
-                                                    <span data-id="4">3</span>
-                                                    <span data-id="5">9.6</span>
+                                            <div class="form__item select-input" data-custom-field="Покрытие">
+                                                <label>Покрытие</label>
+                                                <svg width="8" height="6" viewBox="0 0 8 6">
+                                                    <use xlink:href="img/svg/icons.svg#arrow"></use>
+                                                </svg>
+                                                <div class="select">
+                                                    <div class="select-body">
+                                                        <span data-id="0" data-disabled>Покрытие</span>
+                                                        <span data-id="1">2226</span>
+                                                        <span data-id="2">150</span>
+                                                        <span data-id="3">11</span>
+                                                        <span data-id="4">3</span>
+                                                        <span data-id="5">9.6</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -348,15 +359,22 @@
                         <div class="filter-orderlist">
                             <div><span>Найдено:</span> <label>25 товаров</label></div>
 
-                            <ul>
+                            <div>
                                 <p>Сортировка:</p>
-                                <button class="_active">
-                                    <span>Популярные +/-</span>
-                                </button>
-                                <button>
-                                    <span>Цена</span>
-                                </button>
-                            </ul>
+                                <div class="form__item catalog-sort select-input">
+                                    <label>По умолчанию</label>
+                                    <svg width="8" height="6" viewBox="0 0 8 6">
+                                        <use xlink:href="img/svg/icons.svg#arrow"></use>
+                                    </svg>
+                                    <div class="select">
+                                        <div class="select-body">
+                                            <span data-id="0" data-disabled="">По умолчанию</span>
+                                            <span data-id="1">Сначала дешевые</span>
+                                            <span data-id="2">Сначала дорогие</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="grid grid-2">
