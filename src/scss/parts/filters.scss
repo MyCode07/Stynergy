@@ -202,6 +202,14 @@
                 }
             }
         }
+
+        ._btn {
+            width: 100%;
+
+            @media (min-width: 1025px) {
+                display: none;
+            }
+        }
     }
 
     // .catalog-filters__wrapper
