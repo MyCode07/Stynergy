@@ -1080,3 +1080,62 @@ h5 {
         @include adaptive-value("font-size", 24, 18, 1);
     }
 }
+
+ul.page-numbers {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    @media (max-width: 768px) {
+        margin-top: 36px;
+    }
+
+    a,
+    .current {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+
+        width: 48px;
+        height: 48px;
+
+        font-weight: 400;
+        line-height: 1.4;
+
+        border: 1px solid #eaeaea;
+        background: #fff;
+        color: $text;
+
+        @media (max-width: 768px) {
+            width: 34px;
+            height: 34px;
+            font-size: 14px;
+        }
+
+        transition: all 0.3s ease 0s;
+    }
+
+    a {
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: #fae9e9;
+                box-shadow: 0px -10px 24px rgba(202, 202, 202, 0.25);
+            }
+        }
+    }
+
+    .next,
+    .prev {
+        width: fit-content;
+        padding: 0 10px;
+    }
+
+    .current {
+        color: $white;
+        background-color: $accent;
+    }
+}
