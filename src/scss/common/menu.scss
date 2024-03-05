@@ -110,12 +110,8 @@
         }
     }
 
-    ._demibold {
-        a {
-            color: #d52623 !important;
-        }
-
-        color: #d52623 !important;
+    ._demibold > a {
+        color: $accent !important;
         font-size: 15px;
         font-weight: 600;
     }
