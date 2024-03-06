@@ -295,17 +295,15 @@
 
     &__top {
         position: relative;
-        @include adaptive-value("height", 330, 119, 1);
-        @include adaptive-value("margin-bottom", 40, 12, 1);
         display: block;
-        border: 1px solid #eaeaea;
-        border-radius: 2px;
+        @include adaptive-value("margin-bottom", 40, 12, 1);
     }
 
     // .catalog-item__img
 
     &__img {
         @include adaptive-value("height", 330, 117, 1);
+        border: 1px solid #eaeaea;
 
         picture {
             width: 100%;
@@ -315,7 +313,7 @@
         img {
             border-radius: 2px;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
         }
     }
 
@@ -853,7 +851,8 @@
 
     &__left {
         max-width: 383px;
-        @include adaptive-value("height", 283, 230, 1);
+        width: 100%;
+        @include adaptive-value("min-height", 283, 230, 1);
 
         @media (max-width: 768px) {
             max-width: 100%;
@@ -1062,7 +1061,9 @@
                 height: 41px;
             }
 
-            svg {
+            svg,
+            img,
+            picture {
                 width: 31px;
                 height: 31px;
                 flex: 0 0 auto;
