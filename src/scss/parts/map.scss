@@ -157,8 +157,14 @@
     // .map-map
 
     &-map {
+        height: 100%;
         border-radius: 10px;
         overflow: hidden;
+
+        .ymaps-2-1-79-map {
+            height: 100%;
+            width: 100%;
+        }
     }
 
     // .map-items

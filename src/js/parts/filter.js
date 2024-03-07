@@ -1,4 +1,3 @@
-import { isMobile } from '../utils/isMobile.js';
 import { closeOpenMenu } from './catalog.js';
 import { closeOpenCatalogMenu } from './menu.js';
 
@@ -22,8 +21,8 @@ document.addEventListener('click', function (e) {
         const label = select.querySelector('label')
 
         label.textContent = targetEl.textContent
+        label.dataset.id = targetEl.dataset.id
         select.classList.remove('_active')
-
     }
 
     if (targetEl.hasAttribute('data-open-filter')) {

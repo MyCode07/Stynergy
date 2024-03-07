@@ -3,7 +3,7 @@
         <div class="map-flex">
             <div class="map-flex__left">
                 <div class="form__item map-select select-input">
-                    <label>Регион</label>
+                    <label data-id="1">Москва</label>
                     <svg width="8" height="6" viewBox="0 0 8 6">
                         <use xlink:href='img/svg/icons.svg#arrow' />
                     </svg>
@@ -25,7 +25,7 @@
             </div>
             <div class="map-flex__right">
                 <div class="form__item map-select select-input">
-                    <label>Офис продаж</label>
+                    <label data-id="0">Офис продаж</label>
                     <svg width="8" height="6" viewBox="0 0 8 6">
                         <use xlink:href='img/svg/icons.svg#arrow' />
                     </svg>
@@ -49,9 +49,7 @@
     <div class="map-content">
         <div class="map-flex">
             <div class="map-flex__left">
-                <div class="map-map">
-                    <img src="@img/map-map.png" alt="">
-                </div>
+                <div class="map-map" id="dealer-map"></div>
             </div>
             <div class="map-flex__right">
                 <div class="map-items">
