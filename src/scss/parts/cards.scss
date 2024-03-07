@@ -615,8 +615,9 @@
     // .diller-item__right
 
     &__right {
-        @media (min-width: 769) {
+        @media (min-width: 769px) {
             flex: 1 1 auto;
+            max-width: 835px;
         }
 
         & > :not(:last-child) {
