@@ -5,6 +5,7 @@ import { stickyHeader } from "./parts/header.js";
 
 import "./parts/menu.js";
 
+import "./parts/quantity.js";
 import "./parts/sliders.js";
 import "./parts/popup.js";
 import "./parts/catalog.js";
