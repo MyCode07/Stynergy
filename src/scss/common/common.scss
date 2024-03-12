@@ -824,6 +824,13 @@ h5 {
             pointer-events: none;
         }
 
+        label {
+            white-space: nowrap;
+            max-width: calc(100% - 20px);
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
         svg {
             width: 10px;
             transition: transform 0.3s ease 0s;
@@ -1120,7 +1127,8 @@ h5 {
         }
     }
 
-    button,a {
+    button,
+    a {
         flex: 0 0 auto;
         position: relative;
         width: 32px;

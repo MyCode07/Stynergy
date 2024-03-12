@@ -25,6 +25,10 @@ document.addEventListener('click', function (e) {
         select.classList.remove('_active')
     }
 
+    if (!targetEl.classList.contains('select-input') && !targetEl.closest('.select-input') && document.querySelector('.select-input._active')) {
+        document.querySelector('.select-input._active').classList.remove('_active')
+    }
+
     if (targetEl.hasAttribute('data-open-filter')) {
         closeOpenMenu();
         closeOpenCatalogMenu();
@@ -33,6 +37,5 @@ document.addEventListener('click', function (e) {
 
     if (targetEl.classList.contains('catalog-filters__wrapper')) {
         document.querySelector('.catalog-filters__wrapper').classList.remove('_open');
-
     }
 })

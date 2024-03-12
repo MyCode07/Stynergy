@@ -5,7 +5,7 @@
         padding-top: 47px;
         background-color: #fafafa;
 
-        .map-search {
+        .section__bottom {
             @media (max-width: 1024px) {
                 display: none;
             }
@@ -29,6 +29,10 @@
     }
 
     .section__top {
+        @media (max-width: 1024px) {
+            margin-bottom: 0;
+        }
+
         span {
             @media (max-width: 1024px) {
                 display: none;
