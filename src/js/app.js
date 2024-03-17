@@ -4,6 +4,7 @@ import { accordeon } from "./static/accordeon.js";
 import { stickyHeader } from "./parts/header.js";
 
 import "./parts/menu.js";
+import "./parts/forms.js";
 
 import "./parts/quantity.js";
 import "./parts/sliders.js";

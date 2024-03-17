@@ -33,6 +33,7 @@
         display: flex;
         align-items: center;
         flex-direction: column;
+        position: relative;
 
         color: #acacac;
         font-size: 12px;
@@ -50,6 +51,25 @@
 
         * {
             pointer-events: none;
+        }
+
+
+        .cart-count {
+            position: absolute;
+            right: 10px;
+            top: 0;
+            transform: translate(50%, -50%);
+            width: 21px;
+            height: 21px;
+            background-color: #d52623;
+            border-radius: 50%;
+            font-size: 13px;
+            color: #ffffff;
+            font-style: normal;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
     }
 }

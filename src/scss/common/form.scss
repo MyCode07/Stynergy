@@ -54,6 +54,19 @@
             }
         }
 
+        &._error {
+            border-color: $accent;
+
+            input,
+            textarea {
+                color: $accent;
+
+                &::placeholder {
+                    color: $accent;
+                }
+            }
+        }
+
         input,
         textarea {
             width: 100%;
@@ -79,7 +92,7 @@
 
     .file {
         display: flex;
-        gap: 30px;
+        gap: 20px;
         align-items: center;
         margin-top: 12px;
 
@@ -87,18 +100,17 @@
             margin-top: 16px;
         }
 
-        @media (any-hover: hover) {
-            &:hover {
-                label {
+        label {
+            cursor: pointer;
+            max-width: calc(100% - 150px);
+
+            @media (any-hover: hover) {
+                &:hover {
                     div {
                         background: linear-gradient(0deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.05) 100%), #efefef;
                     }
                 }
             }
-        }
-
-        label {
-            cursor: pointer;
 
             div {
                 transition: all 0.3s ease 0s;
@@ -108,11 +120,14 @@
                 justify-content: center;
                 align-items: center;
 
-                width: 176px;
                 padding: 10px;
                 gap: 10px;
 
                 span {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+
                     @media (max-width: 768px) {
                         font-size: 15px;
                     }
@@ -127,13 +142,25 @@
         svg {
             width: 11px;
             height: 17px;
-            flex-wrap: 0 0 auto;
+            flex: 0 0 auto;
             fill: currentColor;
         }
     }
 
     ._delete-file {
         display: none;
+        cursor: pointer;
+        padding: 6px 12px;
+        border-radius: 10px;
+        transition: all 0.3s ease 0s;
+        border: 1px solid $accent;
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $accent;
+                color: $white;
+            }
+        }
     }
 
     // .form__bottom
@@ -311,6 +338,58 @@
 
         @media (max-width: 1024px) {
             display: none;
+        }
+    }
+}
+
+form {
+    position: relative;
+
+    &:after {
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: $white, $alpha: 0.7);
+        display: none;
+    }
+
+    &:before {
+        position: absolute;
+        content: "";
+        left: calc(50% - 25px);
+        top: calc(50% - 25px);
+        z-index: 1;
+
+        display: block;
+        border: 6px solid $accent;
+        border-radius: 50%;
+        border-top: 6px solid $white;
+        width: 50px;
+        height: 50px;
+        margin-left: 0.5em;
+        animation: spinner 2s linear infinite;
+
+        @keyframes spinner {
+            0% {
+                transform: rotate(0);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        display: none;
+    }
+
+    &._sending {
+        pointer-events: none;
+
+        &:before,
+        &:after {
+            display: block;
         }
     }
 }

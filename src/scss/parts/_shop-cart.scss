@@ -103,7 +103,7 @@
                     max-width: 137px;
                 }
 
-                a {
+                & > a {
                     @include adaptive-value("font-size", 20, 13, 1);
                     color: $black;
 

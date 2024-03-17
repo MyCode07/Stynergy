@@ -383,6 +383,13 @@
         .grid {
             @media (max-width: 768px) {
                 grid-template-columns: 1fr;
+                gap: 0;
+
+                & > :not(:last-child) {
+                    margin-bottom: 16px;
+                    padding-bottom: 16px;
+                    border-bottom: 1px solid #eaeaea;
+                }
             }
 
             & > ul {
@@ -513,8 +520,8 @@
     }
 }
 
-.menu{
-    .catalog-menu{
+.menu {
+    .catalog-menu {
         height: auto;
     }
 }

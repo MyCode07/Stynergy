@@ -451,9 +451,17 @@ h5 {
     }
 
     ._label {
-        position: absolute;
-        top: 0;
-        right: 0;
+        @media (min-width: 1025px) {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        @media (max-width: 1024px) {
+            &:not(:last-child) {
+                margin-bottom: 15px;
+            }
+        }
     }
 
     &.anchors {
@@ -1152,7 +1160,7 @@ h5 {
             transform: translate(-50%, -50%) rotate(90deg);
         }
 
-        &.miuns {
+        &.minus {
             &:after {
                 display: none;
             }

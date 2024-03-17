@@ -1,63 +1,78 @@
 "use strict"
 
-const url = '';
+import { lockPadding } from "../utils/lockPadding.js";
+
+const url = adminajaxurl.ajaxurl;
+const sentPopup = document.querySelector('.popup#thanks');
+const errorPopup = document.querySelector('.popup#error');
 
 document.addEventListener('DOMContentLoaded', function () {
     const forms = document.querySelectorAll('form')
 
     if (forms.length) {
         forms.forEach(form => {
-            form.addEventListener('submit', async function (e) {
-                e.preventDefault();
+            if (form.closest('.form') && (form.closest('.section') || form.closest('.popup'))) {
+                let titleElem = '';
 
-                let error = validateForm(form)
+                if (form.closest('.section')) {
+                    titleElem = form.closest('.section').querySelector('n2');
 
-                let formData = new FormData(form);
-
-                if (formFile && formFile.files[0]) {
-                    formData.append('file', formFile.files[0]);
+                    if (!titleElem) {
+                        titleElem = form.closest('.section').querySelector('h3');
+                    }
+                }
+                else {
+                    titleElem = form.closest('.popup').querySelector('h4');
                 }
 
-                if (error === 0) {
-                    form.classList.add('_sending');
+                form.addEventListener('submit', async function (e) {
+                    e.preventDefault();
 
-                    let response = await fetch(url, {
-                        method: 'POST',
-                        body: formData
-                    });
+                    let error = validateForm(form)
 
+                    let formData = new FormData(form);
 
-                    if (response.ok) {
-                        sentMessage(form)
-                        form.reset();
-                        form.classList.remove('_sending');
+                    if (formFile && formFile.files[0]) {
+                        formData.append('file', formFile.files[0]);
+                    }
 
-                        setTimeout(() => {
-                            resetForm(form)
-                        }, 5000);
+                    formData.append('title', titleElem.textContent);
+                    formData.append('page_url', window.location.href);
+                    formData.append('action', 'ajax_forms');
+
+                    if (error === 0) {
+                        form.classList.add('_sending');
+
+                        let response = await fetch(url, {
+                            method: 'POST',
+                            body: formData
+                        });
+
+                        let result = await response.json();
+
+                        if (response.ok) {
+                            console.log(result);
+                            sentMessage(form)
+                            form.reset();
+                            resetForm();
+                            form.classList.remove('_sending');
+                        }
+                        else {
+                            console.log(result);
+                            failMessage(form)
+                            resetForm();
+                            form.classList.remove('_sending');
+                        }
                     }
                     else {
-                        failMessage(form)
+                        fillAllFields(form)
+                        resetForm();
                         form.classList.remove('_sending');
-
-                        setTimeout(() => {
-                            resetForm(form)
-                        }, 5000);
                     }
-                }
+                })
 
-                else {
-                    fillAllFields(form)
-
-                    form.classList.remove('_sending');
-                    setTimeout(() => {
-                        resetForm(form)
-                    }, 5000);
-                }
-
-            })
-
-            checkCheckBoxes(form)
+                checkCheckBoxes(form)
+            }
         })
     }
 
@@ -74,7 +89,6 @@ document.addEventListener('DOMContentLoaded', function () {
             input.addEventListener('input', function () {
                 formRemoveError(input);
                 validateInput()
-                resetForm(form)
             })
 
             function validateInput() {
@@ -106,11 +120,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function formAddError(input) {
-        input.closest('.form__input').classList.add('_error');
+        input.closest('.form__item').classList.add('_error');
     }
 
     function formRemoveError(input) {
-        input.closest('.form__input').classList.remove('_error');
+        input.closest('.form__item').classList.remove('_error');
     }
 
     function emailTest(input) {
@@ -118,51 +132,98 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function sentMessage(form) {
-        const submitBtn = form.querySelector('.form__button button')
+        const activePopup = document.querySelector('.popup._open');
+        if (activePopup) {
+            activePopup.classList.remove('_open')
+        }
 
-        submitBtn.classList.add('_sent');
+        sentPopup.classList.add('_open')
+        lockPadding();
     }
 
     function failMessage(form) {
-        const submitBtn = form.querySelector('.form__button button')
-        submitBtn.classList.add('_fail');
+        errorPopup.classList.add('_open')
+        lockPadding();
     }
 
     function fillAllFields(form) {
-        const submitBtn = form.querySelector('.form__button button')
-        submitBtn.classList.add('_error');
+        console.log('Запольните все поля');
     }
 
-    function resetForm(form) {
-        const submitBtn = form.querySelector('.form__button button')
-        submitBtn.classList.remove('_error');
-        submitBtn.classList.remove('_fail');
-        submitBtn.classList.remove('_sent');
+    function resetForm() {
+        if (formFile) {
+            const fileElem = formFile.closest('.file')
+            const fileNameElem = fileElem.querySelector('.filename span');
+            const deleteFileElem = fileElem.querySelector('._delete-file');
+
+            fileNameElem.innerHTML = 'Прикрепить файл';
+            formFile.value = '';
+
+            deleteFileElem.style.display = 'none';
+        }
     }
 
+    const allowedFileTypes = [
+        'image/x-png',
+        'image/png',
+        'image/avif',
+        'image/webp',
+        'image/png',
+        'image/jpg',
+        'image/jpeg',
+        'text/plain',
+        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        '.csv',
+        'text/csv',
+        'application/vnd.ms-excel',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        'application/msword',
+        'application/pdf',
+        'application/vnd.ms-powerpoint',
+    ];
 
     const formFile = document.querySelector('input[name="file"]');
+
     if (formFile) {
+        const fileElem = formFile.closest('.file')
+        const fileNameElem = fileElem.querySelector('.filename span');
+        const deleteFileElem = fileElem.querySelector('._delete-file');
+
         formFile.addEventListener('change', () => {
             uploadFile(formFile.files[0]);
         });
 
+        deleteFileElem.addEventListener('click', () => {
+            fileNameElem.innerHTML = 'Прикрепить файл';
+            formFile.value = '';
+
+            deleteFileElem.style.display = 'none';
+        })
+
         function uploadFile(file) {
-            if (!['application/msword', 'application/pdf', 'application/vnd.ms-powerpoint', 'text/plain'].includes(file.type)) {
-                alert('Разрешены только текстовые документы.');
-                document.querySelector('#filename').innerHTML = '';
+            console.log(file.type);
+
+            if (!allowedFileTypes.includes(file.type)) {
+                alert('Разрешены только текстовые документы и изображения.');
+                fileNameElem.innerHTML = 'Прикрепить файл';
                 formFile.value = '';
+
+                deleteFileElem.style.display = 'none';
                 return;
             }
-            if (file.size > 2 * 1024 * 1024) {
-                alert('Файл должен быть менее 2 МБ.');
+            if (file.size > 20 * 1024 * 1024) {
+                alert('Файл должен быть менее 20 МБ.');
+
+                deleteFileElem.style.display = 'none';
                 return;
             }
+
+            deleteFileElem.style.display = 'block';
 
             var reader = new FileReader();
 
             reader.onload = function (e) {
-                document.querySelector('#filename').innerHTML = file.name;
+                fileNameElem.innerHTML = file.name;
             };
 
             reader.onerror = function (e) {
@@ -172,6 +233,7 @@ document.addEventListener('DOMContentLoaded', function () {
             reader.readAsDataURL(file);
         }
     }
+
 
 });
 
