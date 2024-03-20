@@ -46,8 +46,7 @@
                 justify-content: space-between;
             }
 
-            & > button,
-            a {
+            .send-request {
                 font-size: 15px;
                 color: $accent;
                 padding: 5px 9px;

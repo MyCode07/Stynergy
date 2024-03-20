@@ -793,6 +793,57 @@
             }
         }
     }
+
+    &__colors {
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+
+            @media (max-width: 768px) {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            li {
+                a {
+                    display: block;
+                    border: 1px solid #eaeaea;
+                    background-color: $white;
+                    border-radius: 10px;
+                    height: auto;
+                    padding: 6px 6px 10px 6px;
+
+                    text-align: center;
+                    font-size: 12px;
+                    line-height: 1.3;
+
+                    @media (max-width: 1024px) {
+                        padding: 8px;
+                    }
+
+                    picture,
+                    figure {
+                        height: fit-content;
+                        width: fit-content;
+                    }
+
+                    img {
+                        border-radius: 10px;
+                        margin-bottom: 8px;
+                        margin-inline: auto;
+                        border: 1px solid #eaeaea;
+
+                        @include adaptive-value("height", 40, 36, 1);
+
+                        @media (min-width: 769px) {
+                            @include adaptive-value("width", 68, 64, 1);
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 .consultation {

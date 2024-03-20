@@ -94,6 +94,8 @@
                 }
 
                 label {
+                    text-transform: capitalize;
+
                     cursor: pointer;
                     input:checked + li {
                         border-color: $accent;
@@ -260,10 +262,16 @@
 
                 label {
                     div {
-                        @include adaptive-value("height", 100, 57, 1);
                         @include adaptive-value("margin-bottom", 24, 16, 1);
                         border-radius: 10px;
+                        border-radius: 10px;
                         width: 100%;
+
+                        @include adaptive-value("height", 100, 57, 1);
+
+                        @media (min-width: 1025px) {
+                            @include adaptive-value("width", 162, 95, 1);
+                        }
 
                         picture {
                             height: 100%;
@@ -274,9 +282,139 @@
                             height: 100%;
                             object-fit: cover;
                         }
+
+                        background-repeat: no-repeat;
+                        background-size: cover;
                     }
 
                     p {
+                    }
+
+                    &[for="Smart Фальц Pro"] div {
+                        background-image: url("@img/filter-images/Smart Фальц Pro.png");
+                    }
+                    &[for="Smart Фальц Pro гофрированный"] div {
+                        background-image: url("@img/filter-images/Smart Фальц Pro гофрированный.png");
+                    }
+                    &[for="Smart Фальц Pro узкое ребро жесткости"] div {
+                        background-image: url("@img/filter-images/Smart Фальц Pro узкое ребро жесткости.png");
+                    }
+                    &[for="Smart Фальц Pro широкое ребро жесткости"] div {
+                        background-image: url("@img/filter-images/Smart Фальц Pro широкое ребро жесткости.png");
+                    }
+                    &[for="Garda"] div {
+                        background-image: url("@img/filter-images/Garda.jpg");
+                    }
+                    &[for="Stella"] div {
+                        background-image: url("@img/filter-images/Stella.jpg");
+                    }
+                    &[for="СМ Классик (Монтеррей)"] div {
+                        background-image: url("@img/filter-images/СМ Классик (Монтеррей).jpg");
+                    }
+                    &[for="G"] div {
+                        background-image: url("@img/filter-images/G.jpg");
+                    }
+                    &[for="S"] div {
+                        background-image: url("@img/filter-images/S.jpg");
+                    }
+                    &[for="K"] div {
+                        background-image: url("@img/filter-images/K.jpg");
+                    }
+                    &[for="Полукруглая черепица"] div {
+                        background-image: url("@img/filter-images/Полукруглая черепица.png");
+                    }
+                    &[for="Прямоугольная ассиметричная / дранка черепица"] div {
+                        background-image: url("@img/filter-images/Прямоугольная ассиметричная-дранка черепица.png");
+                    }
+                    &[for="Прямоугольная черепица"] div {
+                        background-image: url("@img/filter-images/Прямоугольная черепица.png");
+                    }
+                    &[for="Ромбовидная черепица"] div {
+                        background-image: url("@img/filter-images/Ромбовидная черепица.png");
+                    }
+                    &[for="Трапециевидная черепица"] div {
+                        background-image: url("@img/filter-images/Трапециевидная черепица.png");
+                    }
+                    &[for="Шестиугольная / шестигранник черепица"] div {
+                        background-image: url("@img/filter-images/Шестиугольная-шестигранник черепица.png");
+                    }
+                    &[for="С8"] div {
+                        background-image: url("@img/filter-images/c-8-filtr.jpg");
+                    }
+                    &[for="ST15"] div {
+                        background-image: url("@img/filter-images/st-15-filtr.jpg");
+                    }
+                    &[for="С20"] div {
+                        background-image: url("@img/filter-images/c-20-filtr.jpg");
+                    }
+                    &[for="С21"] div {
+                        background-image: url("@img/filter-images/c-21-filtr.jpg");
+                    }
+                    &[for="НС35"] div {
+                        background-image: url("@img/filter-images/ns-35-filtr.jpg");
+                    }
+                    &[for="НС44"] div {
+                        background-image: url("@img/filter-images/NS44.jpg");
+                    }
+                    &[for="Н60"] div {
+                        background-image: url("@img/filter-images/n-60-filtr.jpg");
+                    }
+                    &[for="Н75"] div {
+                        background-image: url("@img/filter-images/n-75-180.jpg");
+                    }
+                    &[for="Н50Z-600"] div {
+                        background-image: url("@img/filter-images/Н50Z-600-filtr.jpg");
+                    }
+                    &[for="Н57-750"] div {
+                        background-image: url("@img/filter-images/Н57-750-filtr.jpg");
+                    }
+                    &[for="Н90Z-1000"] div {
+                        background-image: url("@img/filter-images/Н90Z-1000-filtr.jpg");
+                    }
+                    &[for="Н114-750"] div {
+                        background-image: url("@img/filter-images/Н114-750-filtr.jpg");
+                    }
+                    &[for="Н127-1100"] div {
+                        background-image: url("@img/filter-images/Н127-1100-filtr.jpg");
+                    }
+                    &[for="Н135-1000"] div {
+                        background-image: url("@img/filter-images/Н-135-1000-filtr.jpg");
+                    }
+                    &[for="Н153-900"] div {
+                        background-image: url("@img/filter-images/Н153-900-filtr.jpg");
+                    }
+                    &[for="Н157-800"] div {
+                        background-image: url("@img/filter-images/Н157-800-filtr.jpg");
+                    }
+                    &[for="Под бревно"] div {
+                        background-image: url("@img/filter-images/Под бревно.jpg");
+                    }
+                    &[for="Под брус"] div {
+                        background-image: url("@img/filter-images/Под-брус.jpg");
+                    }
+                    &[for="Под дерево, доски"] div {
+                        background-image: url("@img/filter-images/Под дерево, доски.jpg");
+                    }
+                    &[for="М-образный"] div {
+                        background-image: url("@img/filter-images/М-образный.jpg");
+                    }
+                    &[for="П-образный"] div {
+                        background-image: url("@img/filter-images/П-образный.jpg");
+                    }
+                    &[for="Полукруглый"] div {
+                        background-image: url("@img/filter-images/Полукруглый.jpg");
+                    }
+                    &[for="Заклепка вытяжная"] div {
+                        background-image: url("@img/filter-images/Заклепка вытяжная.jpg");
+                    }
+                    &[for="Краска-корректор с кисточкой"] div {
+                        background-image: url("@img/filter-images/Краска-корректор с кисточкой.jpg");
+                    }
+                    &[for="Краска акриловая"] div {
+                        background-image: url("@img/filter-images/Краска акриловая.jpg");
+                    }
+                    &[for="Саморез кровельный"] div {
+                        background-image: url("@img/filter-images/Саморез кровельный.jpg");
                     }
                 }
             }
@@ -302,35 +440,55 @@
                         @include adaptive-value("height", 40, 36, 1);
                         margin-inline: auto;
                         border: 1px solid #eaeaea;
+                        background-repeat: no-repeat;
+                        background-size: cover;
 
                         @media (min-width: 1025px) {
                             @include adaptive-value("width", 68, 64, 1);
                         }
                     }
 
-                    &[for="Бежевый"] div {
+                    &[for="бежевый"] div {
                         background-color: #d9c59f;
                     }
-                    &[for="Белый"] div {
-                        background-color: #ffffff;
+                    &[for="белый"] div {
+                        background-color: #fff;
                     }
-                    &[for="Зеленый"] div {
+                    &[for="черный"] div {
+                        background-color: #000;
+                    }
+                    &[for="зеленый"] div {
                         background-color: #4f8a34;
                     }
-                    &[for="Коричневый"] div {
+                    &[for="коричневый"] div {
                         background-color: #75341f;
                     }
-                    &[for="Красный"] div {
+                    &[for="красный"] div {
                         background-color: #8b2527;
                     }
-                    &[for="Серый"] div {
+                    &[for="серый"] div {
                         background-color: #6c716f;
                     }
-                    &[for="Синий"] div {
+                    &[for="синий"] div {
                         background-color: #2f6aa0;
                     }
-                    &[for="Желтый"] div {
+                    &[for="желтый"] div {
                         background-color: #f2cc53;
+                    }
+                    &[for="голубой"] div {
+                        background-color: #f2cc53;
+                    }
+                    &[for="оцинкованный"] div {
+                        background-color: #fff;
+                    }
+                    &[for="под дерево"] div {
+                        background-image: url("@img/filter-colors/Под-дерево 1.png");
+                    }
+                    &[for="под камень"] div {
+                        background-image: url("@img/filter-colors/Под-дерево 1.png");
+                    }
+                    &[for="цинк"] div {
+                        background: linear-gradient(180deg, #929292, rgb(212, 212, 212) 292);
                     }
                 }
             }

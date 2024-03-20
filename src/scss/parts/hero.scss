@@ -112,7 +112,9 @@
 
         &-slide {
             @include adaptive-value("padding-top", 58, 11, 1);
-            @include adaptive-value("padding-bottom", 157, 16, 1);
+            @media (min-width: 769px) {
+                @include adaptive-value("padding-bottom", 58, 16, 1);
+            }
 
             position: relative;
         }
@@ -138,37 +140,24 @@
         color: $text;
         font-size: 12px;
         position: relative;
+        margin-top: 50px;
 
         @media (max-width: 768px) {
+            margin-top: 20px;
             font-size: 10px;
+            margin-left: auto;
+            right: -16px;
         }
 
         label {
-            position: absolute;
-            left: 0;
-
-            @media (min-width: 769px) {
-                @include adaptive-value("bottom", 60, 0, 1);
-            }
-
+            display: block;
             @media (max-width: 768px) {
-                bottom: 24px;
-                right: -16px;
-                left: unset;
                 padding: 5px 10px;
                 background-color: rgba(255, 255, 255, 0.4);
-            }
-
-            @media (max-width: 425px) {
                 max-width: 150px;
                 width: 100%;
             }
         }
-    }
-
-    &:not(:has(.pagination)) .erid label,
-    &:has(.pagination.swiper-pagination-lock) .erid label {
-        bottom: 0;
     }
 }
 
@@ -265,7 +254,7 @@
 
             @include adaptive-value("padding-top", 63, 18, 1);
             @include adaptive-value("padding-left", 63, 24, 1);
-            @include adaptive-value("padding-bottom", 140, 31, 1);
+            @include adaptive-value("padding-bottom", 54, 20, 1);
 
             h1 {
                 color: $white;
@@ -467,31 +456,25 @@
     }
 
     .erid {
-        position: absolute;
-        left: 70px;
-        bottom: 53px;
         z-index: 2;
-        color: $white;
+        color: rgba($color: $white, $alpha: 0.3);
         font-size: 12px;
-        opacity: 0.3;
-        z-index: 2;
-        width: fit-content;
+        position: relative;
+        margin-top: 40px;
 
         @media (max-width: 768px) {
+            margin-top: 20px;
             font-size: 10px;
-            bottom: 37px;
-            left: unset;
-            right: 10px;
-            opacity: 0.6;
+            margin-left: auto;
+            color: rgba($color: $white, $alpha: 0.6);
         }
 
         label {
+            display: block;
+            @media (max-width: 768px) {
+                padding: 5px 10px;
+            }
         }
-    }
-
-    &:not(:has(.pagination)) .erid label,
-    &:has(.pagination.swiper-pagination-lock) .erid label {
-        bottom: 0;
     }
 }
 

@@ -472,39 +472,22 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: 10px;
         background-color: #f7f7f7;
         flex: 0 0 auto;
 
-        @media (min-width: 426px) {
-            @include adaptive-value("height", 60, 47, 1);
-            @include adaptive-value("width", 60, 47, 1);
-        }
+        @include adaptive-value("height", 60, 32, 1);
+        @include adaptive-value("width", 60, 32, 1);
+        @include adaptive-value("border-radius", 10, 6, 1);
 
-        @media (max-width: 425px) {
-            width: 32px;
-            height: 32px;
-        }
-
-        @media (any-hover: hover) {
-            &:hover {
-                svg {
-                    opacity: 1;
-                }
-            }
-        }
-
+        img,
         svg {
-            transition: opacity 0.3s ease 0s;
-            opacity: 0.6;
             flex: 0 0 auto;
-            fill: $black;
+            fill: $accent;
 
-            width: 33%;
-        }
+            width: 50%;
+            height: 50%;
 
-        @media (max-width: 768px) {
-            display: none;
+            pointer-events: none;
         }
     }
 
@@ -533,6 +516,81 @@
 
         @media (max-width: 768px) {
             order: -1;
+        }
+    }
+}
+
+.product {
+    .catalog-item__info .price {
+        flex-wrap: nowrap;
+        margin-left: 0;
+        margin-bottom: 40px;
+
+        order: unset !important;
+
+        @media (max-width: 768px) {
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 425px) {
+            letter-spacing: -0.03em;
+        }
+    }
+
+    .catalog-item__info h5 {
+        @media (min-width: 769px) {
+            margin-bottom: 20px !important;
+        }
+    }
+
+    .catalog-item__actions {
+        @media (max-width: 1240px) {
+            flex-wrap: wrap;
+
+            ._btn {
+                max-width: none;
+                width: 100%;
+            }
+        }
+    }
+
+    .add-to-cart-loop {
+        width: 100%;
+        display: flex;
+        gap: 15px;
+
+        @media (max-width: 425px) {
+            justify-content: space-between;
+        }
+    }
+
+    .quantity {
+        @include adaptive-value("height", 60, 32, 1);
+        @include adaptive-value("border-radius", 10, 6, 1);
+
+        @media (max-width: 425px) {
+            padding: 4px 10px;
+        }
+
+        input {
+            @media (max-width: 768px) {
+                width: 32px;
+                border-radius: 6px;
+                height: 22px;
+            }
+        }
+
+        button {
+            @include adaptive-value("border-radius", 10, 6, 1);
+
+            @media (max-width: 425px) {
+                width: 16px;
+            }
+
+            &:before,
+            &:after {
+                width: 8px;
+            }
         }
     }
 }
