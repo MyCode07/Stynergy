@@ -35,4 +35,13 @@ document.addEventListener('click', function (e) {
             unLockPadding();
         }
     }
+
+    if (targetEl.classList.contains('phone-popup__open')) {
+        targetEl.closest('.phone-popup').classList.toggle('_open');
+    }
+
+    if (!targetEl.closest('.phone-popup') && !targetEl.classList.contains('phone-popup') && document.querySelector('.phone-popup._open')) {
+        document.querySelector('.phone-popup._open').classList.remove('_open');
+    }
+
 })

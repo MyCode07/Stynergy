@@ -1330,3 +1330,11 @@
         }
     }
 }
+
+.section-payment {
+    .section__flex-left {
+        @media (min-width: 1025px) {
+            @include adaptive-value("padding-bottom", 100, -20, 1);
+        }
+    }
+}

@@ -174,11 +174,101 @@
         }
     }
 
+    // .popup-order
+
+    &-order {
+        p {
+            @include adaptive-value("font-size", 20, 16, 1);
+            margin-bottom: 1em;
+            color: $black;
+
+            & > :not(:last-child) {
+                margin-bottom: 10px;
+            }
+
+            span {
+                color: $black;
+                display: flex;
+                justify-content: space-between;
+                padding-bottom: 5px;
+                border-bottom: 1px dashed rgba($color: $black, $alpha: 0.3);
+            }
+
+            b,
+            strong {
+                color: $accent;
+                width: 40%;
+            }
+        }
+
+        a {
+            width: 100%;
+        }
+    }
+
     .file {
     }
 
     .filename {
     }
     ._delete-file {
+    }
+}
+
+.phone-popup {
+    position: fixed;
+    right: 20px;
+    bottom: 24px;
+    z-index: 13;
+
+    @media (max-width: 1024px) {
+        right: 16px;
+        bottom: 28px;
+    }
+
+    &._open {
+        ul {
+            max-height: 125px;
+            pointer-events: all;
+        }
+    }
+
+    ul {
+        margin-bottom: 5px;
+        border-radius: 100px;
+
+        pointer-events: none;
+        max-height: 0;
+        overflow: hidden;
+
+        transition: all 0.3s ease 0s;
+
+        & > :not(:last-child) {
+            margin-bottom: 5px;
+        }
+    }
+
+    button,
+    a {
+        width: 60px;
+        height: 60px;
+
+        img,
+        svg {
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+    }
+
+    // .phone-popup__open
+
+    &__open {
+    }
+}
+
+body:has(.shop-header) .phone-popup {
+    @media (max-width: 1024px) {
+        bottom: 93px;
     }
 }

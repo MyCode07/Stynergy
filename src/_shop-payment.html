@@ -96,10 +96,46 @@
     </section>
 
 
-    @@include('./html/shop-parts/order-form.html',{
-    "class":"_bordered",
-    "title":"<h3>Оплатить заказ</h3>"
-    })
+    <section class="section section-payment _bordered" id="free-estimate">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="section__top">
+                    <h3>Оплатить заказ</h3>
+                </div>
+                <div class="section__flex">
+                    <div class="section__flex-left">
+                        <div class="form form-payment">
+                            <form action="#">
+                                <div class="form__row">
+                                    <div class="form__item" data-required="">
+                                        <input type="text" name="nomer" placeholder="Номер счета" inputmode="text">
+                                    </div>
+                                </div>
+                                <div class="form__row" data-required="">
+                                    <div class="form__item">
+                                        <input type="text" name="summ" placeholder="Сумма">
+                                    </div>
+                                </div>
+                                <div class="form__bottom">
+                                    <p>Нажимая на&nbsp;кнопку «Оплатить заказ» вы&nbsp;соглашаетесь с
+                                        <a href="/politika-konfidentsialnosti/" target="_blank">Политикой
+                                            конфиденциальности</a>&nbsp; и&nbsp;даёте согласие на&nbsp;обработку
+                                        персональных данных.
+                                    </p>
+                                    <button class="_btn _btn-red">Оплатить заказ</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="section__flex-right">
+                        <div class="free-estimate__img">
+                            <img src="img/free-estimate.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <section class="section">

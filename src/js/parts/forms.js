@@ -14,62 +14,95 @@ document.addEventListener('DOMContentLoaded', function () {
             if (form.closest('.form') && (form.closest('.section') || form.closest('.popup'))) {
                 let titleElem = '';
 
-                if (form.closest('.section')) {
-                    titleElem = form.closest('.section').querySelector('n2');
+                if (form.closest('.form-payment')) {
+                    form.addEventListener('submit', async function (e) {
+                        e.preventDefault();
 
-                    if (!titleElem) {
-                        titleElem = form.closest('.section').querySelector('h3');
-                    }
+                        let error = validateForm(form)
+
+                        let formData = new FormData(form);
+
+                        formData.append('action', 'payment');
+
+                        if (error === 0) {
+                            form.classList.add('_sending');
+
+                            let response = await fetch(url, {
+                                method: 'POST',
+                                body: formData
+                            });
+
+                            let result = await response.json();
+
+                            if (response.ok) {
+                                console.log(result);
+                                window.location.href = result.paymentUrl
+                            }
+                            else {
+                                console.log(result);
+                                form.classList.remove('_sending');
+                            }
+                        }
+                    })
                 }
                 else {
-                    titleElem = form.closest('.popup').querySelector('h4');
-                }
+                    if (form.closest('.section')) {
+                        titleElem = form.closest('.section').querySelector('n2');
 
-                form.addEventListener('submit', async function (e) {
-                    e.preventDefault();
-
-                    let error = validateForm(form)
-
-                    let formData = new FormData(form);
-
-                    if (formFile && formFile.files[0]) {
-                        formData.append('file', formFile.files[0]);
-                    }
-
-                    formData.append('title', titleElem.textContent);
-                    formData.append('page_url', window.location.href);
-                    formData.append('action', 'ajax_forms');
-
-                    if (error === 0) {
-                        form.classList.add('_sending');
-
-                        let response = await fetch(url, {
-                            method: 'POST',
-                            body: formData
-                        });
-
-                        let result = await response.json();
-
-                        if (response.ok) {
-                            console.log(result);
-                            sentMessage(form)
-                            form.reset();
-                            resetForm();
-                            form.classList.remove('_sending');
-                        }
-                        else {
-                            console.log(result);
-                            failMessage(form)
-                            resetForm();
-                            form.classList.remove('_sending');
+                        if (!titleElem) {
+                            titleElem = form.closest('.section').querySelector('h3');
                         }
                     }
                     else {
-                        fillAllFields(form)
-                        resetForm();
-                        form.classList.remove('_sending');
+                        titleElem = form.closest('.popup').querySelector('h4');
                     }
-                })
+
+                    form.addEventListener('submit', async function (e) {
+                        e.preventDefault();
+
+                        let error = validateForm(form)
+
+                        let formData = new FormData(form);
+
+                        if (formFile && formFile.files[0]) {
+                            formData.append('file', formFile.files[0]);
+                        }
+
+                        formData.append('title', titleElem.textContent);
+                        formData.append('page_url', window.location.href);
+                        formData.append('action', 'ajax_forms');
+
+                        if (error === 0) {
+                            form.classList.add('_sending');
+
+                            let response = await fetch(url, {
+                                method: 'POST',
+                                body: formData
+                            });
+
+                            let result = await response.json();
+
+                            if (response.ok) {
+                                console.log(result);
+                                sentMessage(form)
+                                form.reset();
+                                resetForm();
+                                form.classList.remove('_sending');
+                            }
+                            else {
+                                console.log(result);
+                                failMessage(form)
+                                resetForm();
+                                form.classList.remove('_sending');
+                            }
+                        }
+                        else {
+                            fillAllFields(form)
+                            resetForm();
+                            form.classList.remove('_sending');
+                        }
+                    })
+                }
 
                 checkCheckBoxes(form)
             }
@@ -89,6 +122,19 @@ document.addEventListener('DOMContentLoaded', function () {
             input.addEventListener('input', function () {
                 formRemoveError(input);
                 validateInput()
+
+                if (input.getAttribute('name') === 'summ') {
+                    input.value = input.value.replace(/[^0-9-\.\,]/g, '');
+                    input.value = input.value.replace(/[\,]/g, '.');
+
+                    if (input.value.indexOf('.') >= 0) {
+                        input.value = input.value.replace('.', '');
+                    }
+
+                    if (input.value[0] == 0) {
+                        input.value = 0
+                    }
+                }
             })
 
             function validateInput() {
@@ -104,7 +150,18 @@ document.addEventListener('DOMContentLoaded', function () {
                             formAddError(input);
                             error++;
                         }
-
+                    }
+                    else if (input.getAttribute('name') === 'nomer') {
+                        if (/[_]/.test(input.value) || input.value.length < 11) {
+                            formAddError(input);
+                            error++;
+                        }
+                    }
+                    else if (input.getAttribute('name') === 'summ') {
+                        if (+input.value <= 0) {
+                            formAddError(input);
+                            error++;
+                        }
                     }
                     else {
                         if (input.value.length < 2) {
