@@ -202,5 +202,21 @@ if (sliders.length) {
                 },
             });
         }
+        else if (section.classList.contains('adv')) {
+            new Swiper(slider, {
+                modules: [Pagination, Autoplay],
+                spaceBetween: 0,
+                loop: true,
+                slidesPerView: 1,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: pagination,
+                    clickable: true,
+                },
+            })
+        }
     })
 }

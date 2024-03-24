@@ -296,6 +296,79 @@
     position: relative;
     margin-bottom: 0 !important;
 
+    .swiper {
+        @media (max-width: $containerWithPadding + px) {
+            // padding-inline: 30px;
+        }
+
+        @media (max-width: 1024px) {
+            // padding-inline: $padding + px;
+        }
+
+        &-slide {
+            a {
+                display: block;
+                height: 180px;
+
+                @media (max-width: 768px) {
+                    height: 130px;
+                }
+
+                * {
+                    pointer-events: none;
+                }
+
+                picture {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                & > :first-child {
+                    @media (max-width: 768px) {
+                        display: none;
+                    }
+                }
+
+                & > :last-child {
+                    display: none;
+
+                    @media (max-width: 768px) {
+                        display: block;
+                    }
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+
+                    @media (max-width: $containerWithPadding + px) {
+                        object-position: -290px;
+                    }
+
+                    @media (max-width: 1024px) {
+                        object-position: -300px;
+                    }
+
+                    @media (max-width: 768px) {
+                        object-position: unset;
+                    }
+                }
+            }
+        }
+    }
+
+    .pagination {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translate(-50%, 0);
+
+        @media (max-width: 768px) {
+            bottom: 5px;
+        }
+    }
+
     .section__bgi {
         position: absolute;
         width: 100%;
