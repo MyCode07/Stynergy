@@ -737,12 +737,18 @@
                 }
             }
 
-            a {
+            button {
+                text-align: left;
+                
                 @media (max-width: 768px) {
                     font-size: 15px;
                 }
 
-                button {
+                span {
+                    display: block;
+                }
+
+                & > :last-child {
                     color: $accent;
                     font-size: 14px;
 

@@ -15,6 +15,7 @@ import "./parts/filter.js";
 import "./parts/input-hover.js";
 import "./parts/instructions-list.js";
 import { createMap } from "./parts/map.js";
+import { createDealerPopupMap } from "./parts/dealer-map.js";
 import { copyToClipboard } from "./parts/copy-to-clipboard.js";
 
 maskInputs('+7 (999) 999-99-99', '._mask-phone')
@@ -24,6 +25,7 @@ accordeon();
 replaceDomElements();
 stickyHeader();
 createMap()
+createDealerPopupMap()
 copyToClipboard();
 
 import { Fancybox } from "@fancyapps/ui";

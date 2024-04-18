@@ -13,27 +13,21 @@ document.addEventListener('click', function (e) {
         if (popup) {
             popup.classList.add('_open')
 
-            if (!isMobile.any()) {
-                lockPadding();
-            }
+            lockPadding();
         }
     }
 
     if (targetEl.classList.contains('popup')) {
         targetEl.classList.remove('_open')
 
-        if (!isMobile.any()) {
-            unLockPadding();
-        }
+        unLockPadding();
     }
 
     if (targetEl.classList.contains('popup__close') || targetEl.hasAttribute('data-close-popup')) {
         const popup = targetEl.closest('.popup');
         popup.classList.remove('_open');
 
-        if (!isMobile.any()) {
-            unLockPadding();
-        }
+        unLockPadding();
     }
 
     if (targetEl.classList.contains('phone-popup__open')) {
