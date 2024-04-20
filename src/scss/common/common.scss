@@ -657,9 +657,20 @@ h5 {
     ul {
         display: flex;
         align-items: center;
-        flex-wrap: wrap;
         gap: 6px;
         opacity: 0.5;
+
+        @media (max-width: 1024px) {
+            width: 100vw;
+            padding-inline: 16px;
+            margin-left: -16px;
+
+            overflow-x: auto;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
 
         li {
             color: $white;
@@ -668,6 +679,11 @@ h5 {
             display: flex;
             align-items: center;
             gap: 6px;
+
+            @media (max-width: 1024px) {
+                flex: 0 0 auto;
+                white-space: nowrap;
+            }
 
             @media (max-width: 425px) {
                 font-size: 12px;
@@ -1258,4 +1274,8 @@ time {
 
 sup {
     font-size: 0.5em;
+}
+
+.swiper-button-lock {
+    display: none !important;
 }

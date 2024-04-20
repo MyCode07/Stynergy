@@ -429,15 +429,23 @@
 
     .open-catalog-btn {
         text-transform: uppercase;
+        transition: all 0.3s ease 0s;
 
-        ._active {
+        &._active {
             background-color: $white;
             color: $accent;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $white;
+                color: $accent;
+            }
         }
     }
 }
 
-._demibold > a{
+._demibold > a {
     font-weight: 600;
 }
 
@@ -512,6 +520,26 @@
             &:last-child {
                 width: 50%;
                 top: 12px;
+            }
+        }
+    }
+
+    &._active {
+        & > span {
+            & > :first-child {
+                width: 100%;
+                top: 50%;
+                transform: translate(0, -50%) rotate(45deg);
+            }
+
+            & > :nth-child(2) {
+                width: 0;
+            }
+
+            & > :last-child {
+                width: 100%;
+                top: 50%;
+                transform: translate(0, -50%) rotate(-45deg);
             }
         }
     }

@@ -590,6 +590,7 @@
     padding: 20px 0;
     border-bottom: 1px solid #eaeaea;
     transition: background-color 0.3s ease 0s;
+    gap: 10px;
 
     @media (max-width: 768px) {
         padding: 17px 0;
@@ -606,9 +607,11 @@
 
     span {
         transition: all 0.3s ease 0s;
+        flex: 1 1 auto;
     }
 
     p {
+        flex: 0 0 auto;
         pointer-events: none;
         display: flex;
         align-items: center;
@@ -616,7 +619,12 @@
 
         color: $accent;
 
+        @media (min-width: 426px) {
+            min-width: 95px;
+        }
+
         label {
+            flex: 0 0 auto;
             @media (max-width: 425px) {
                 display: none;
             }

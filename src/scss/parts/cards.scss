@@ -739,7 +739,7 @@
 
             button {
                 text-align: left;
-                
+
                 @media (max-width: 768px) {
                     font-size: 15px;
                 }
@@ -1165,6 +1165,7 @@
                 width: 31px;
                 height: 31px;
                 flex: 0 0 auto;
+                fill: $accent;
 
                 @media (max-width: 768px) {
                     width: 24px;
@@ -1262,6 +1263,14 @@
 
         &:first-child {
             border-top: 1xp solid #efefef;
+        }
+    }
+
+    &._clicked {
+        background-color: #f3f3f3;
+
+        a .icon {
+            background-color: $white;
         }
     }
 
