@@ -61,6 +61,15 @@
                     border: 0;
                     font-size: 13px;
                 }
+
+                transition: all 0.3s ease 0s;
+
+                @media (any-hover: hover) {
+                    &:hover {
+                        color: $white;
+                        background-color: $accent;
+                    }
+                }
             }
 
             & > ul {
@@ -89,8 +98,6 @@
 
                     @media (any-hover: hover) {
                         &:hover {
-                            color: $accent;
-
                             svg {
                                 transform: rotate(180deg);
                             }
@@ -112,6 +119,14 @@
                             fill: currentColor;
 
                             transition: all 0.3s ease 0s;
+                        }
+                    }
+
+                    a {
+                        @media (any-hover: hover) {
+                            &:hover {
+                                color: $accent;
+                            }
                         }
                     }
 
@@ -166,6 +181,12 @@
         text-align: center;
         font-size: 14px;
         transition: all 0.3s ease 0s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $accent;
+            }
+        }
 
         @media (max-width: 1200px) {
             display: none;
@@ -226,6 +247,8 @@
             @media (max-width: 1024px) {
                 display: none;
             }
+
+           
         }
     }
 
@@ -371,6 +394,7 @@
 
     .open-catalog-btn {
         margin-right: 40px;
+        border: 1px solid currentColor;
 
         @media (max-width: 1200px) {
             margin-right: 20px;
@@ -382,6 +406,20 @@
 
         label {
             max-width: 62px;
+        }
+
+        transition: all 0.3s ease 0s;
+
+        &._active {
+            background-color: $white;
+            color: $accent;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $white;
+                color: $accent;
+            }
         }
     }
 }

@@ -153,6 +153,19 @@
             gap: 6px;
             margin-bottom: 2px;
 
+            color: $black;
+            transition: all 0.3s ease 0s;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    color: $accent;
+                    
+                    a {
+                        color: $accent;
+                    }
+                }
+            }
+
             svg {
                 fill: currentColor;
                 flex: 0 0 auto;
@@ -170,6 +183,8 @@
                 font-size: 18px;
                 font-weight: 600;
                 white-space: nowrap;
+
+                transition: all 0.3s ease 0s;
 
                 @media (max-width: 1024px) {
                     font-size: 17px;
