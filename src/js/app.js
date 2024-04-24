@@ -40,3 +40,15 @@ document.addEventListener('click', function (e) {
         document.querySelector('.pages').classList.toggle('_hide');
     }
 })
+
+
+document.addEventListener('DOMContentLoaded', function (e) {
+    const links = [...document.querySelectorAll(`.catalog-sidebar nav a`)];
+    if (links.length && currentPageUrl) {
+        links.forEach(link => {
+            if (link.href == currentPageUrl && link.closest('.sub-menu')) {
+                link.closest('.sub-menu').closest('li').setAttribute('data-open', 'true')
+            }
+        });
+    }
+})

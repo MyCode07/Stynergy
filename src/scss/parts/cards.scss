@@ -1269,8 +1269,14 @@
     &._clicked {
         background-color: #f3f3f3;
 
-        a .icon {
+        .icon {
             background-color: $white;
+        }
+    }
+
+    &._open {
+        .map-item__hidden {
+            display: block;
         }
     }
 
@@ -1278,7 +1284,7 @@
         &:hover {
             background-color: #f3f3f3;
 
-            a .icon {
+            .icon {
                 background-color: $white;
             }
         }
@@ -1290,6 +1296,7 @@
         display: flex;
         justify-content: space-between;
         gap: 10px;
+        pointer-events: none;
 
         h4 {
             font-size: 17px;
@@ -1311,10 +1318,17 @@
             margin: 24px 0 18px 0;
         }
 
-        a {
-            display: flex;
-            align-items: center;
-            gap: 6px;
+        li {
+            & > div,
+            button {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+            }
+
+            & > :not(:last-child) {
+                margin-bottom: 10px;
+            }
 
             .icon {
                 width: 30px;
@@ -1335,10 +1349,34 @@
                     max-width: 14px;
                 }
             }
+
+            span span {
+                display: block;
+                color: $accent;
+                font-size: 14px;
+                text-align: left;
+
+                @media (min-width: 769px) {
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+
+    // .map-item__hidden
+
+    &__hidden {
+        margin: 0 !important;
+        display: none;
+
+        li {
+            margin-top: 22px;
+            padding-top: 22px;
+            border-top: 1px solid #dddddd;
         }
 
-        & > :not(:last-child) {
-            margin-bottom: 10px;
+        button * {
+            pointer-events: none;
         }
     }
 
@@ -1346,7 +1384,20 @@
 
     &__bottom {
         display: flex;
+        align-items: center;
         gap: 30px;
+        font-size: 14px;
+
+        button {
+            color: #877f7f;
+            transition: color 0.3s ease 0s;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    color: $accent;
+                }
+            }
+        }
 
         a {
             display: flex;
@@ -1354,13 +1405,22 @@
             justify-content: center;
             gap: 4px;
 
-            font-size: 14px;
             color: $accent;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    svg {
+                        transform: translate(2px, -2px);
+                    }
+                }
+            }
 
             svg {
                 flex: 0 0 auto;
                 fill: currentColor;
                 width: 10px;
+
+                transition: transform 0.3s ease 0s;
             }
         }
     }

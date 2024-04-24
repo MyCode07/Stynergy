@@ -148,6 +148,14 @@
                 }
             }
         }
+
+        & > ul > li [aria-current="page"] {
+            font-weight: 600;
+        }
+
+        ul ul [aria-current="page"] {
+            color: red;
+        }
     }
 }
 
