@@ -28,6 +28,7 @@
             align-items: center;
             @include adaptive-value("gap", 10, 5, 1);
             color: $accent;
+            white-space: nowrap;
 
             span {
                 @include adaptive-value("font-size", 16, 12, 1);
@@ -1022,9 +1023,21 @@
         }
     }
 
+    .swiper {
+        @media (max-width: 1024px) {
+            width: 100vw;
+            margin-left: -16px;
+            padding-inline: 16px;
+        }
+    }
+
     .swiper-slide {
-        width: 300px;
+        width: 315px;
         height: 200px;
+
+        @media (max-width: 1024px) {
+            width: 300px;
+        }
 
         a,
         picture {

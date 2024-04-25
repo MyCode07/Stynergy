@@ -7,7 +7,7 @@ const zoom = 8;
 const coords = moscow_coords;
 let collection = null;
 const scrollElem = document.querySelector('.map-content .map-flex__right');
-const geoObjects = [];
+let geoObjects = [];
 
 export const createMap = () => {
     if (!map) return;
@@ -131,4 +131,100 @@ export const createMap = () => {
             // const index = [...mapItem.parentElement.children].indexOf(mapItem);
         }
     })
+
+    const searchBtn = document.querySelector('#map .map-search button');
+    if (map && !searchBtn.hasAttribute('disabled')) {
+        searchBtn.addEventListener('click', ajaxDealers);
+    }
+
+    function ajaxDealers() {
+        const map = document.querySelector('#map');
+
+        let cat = map.querySelector('.select-region').dataset.id;
+
+        let vidTochki = '';
+
+        const showroom = map.querySelector('.select-showroom');
+        if (showroom.dataset.id != 0) {
+            vidTochki = showroom.textContent;
+        }
+
+        const parent = map.querySelector('.map-items');
+        const childs = parent.querySelectorAll('.map-item');
+
+        childs.forEach(item => item.remove());
+
+        let data = {
+            'action': 'load_ajax_dealers',
+            'cat': cat,
+            'vid_tochki': vidTochki,
+        }
+
+        console.log(data);
+
+        $.ajax({
+            url: adminajaxurl.ajaxurl,
+            data: data,
+            type: 'POST',
+            beforeSend: function (xhr) {
+                searchBtn.setAttribute('disabled', true)
+                searchBtn.textContent = 'Загрузка...';
+            },
+            success: function (data) {
+                data = JSON.parse(data);
+                console.log(data);
+                if (data.posts) {
+                    if (typeof data.posts == "object" && data.posts.length) {
+                        parent.insertAdjacentHTML('beforeend', (data.posts).join(''));
+
+                        changeMapLocation(data.coords)
+                    }
+                    else {
+                        parent.insertAdjacentHTML('beforeend', data.posts);
+                    }
+                }
+            },
+            complete: function () {
+                searchBtn.removeAttribute('disabled')
+                searchBtn.textContent = 'Найти';
+            },
+        });
+
+        function changeMapLocation(coords) {
+            if (dealersMap && dealersMap.geoObjects) {
+                dealersMap.geoObjects.removeAll();
+                geoObjects = []
+                collection.removeAll();
+            }
+
+            dealersMap.setCenter(coords[0]['coords'][0]);
+            dealersMap.setZoom(14)
+
+            for (let i = 0; i < coords.length; i++) {
+                const marks = coords[i]['coords']
+                const dealerName = coords[i]['dealer']
+
+                for (let k = 0; k < marks.length; k++) {
+                    const placeMark = new ymaps.Placemark(
+                        marks[k],
+                        {
+                            parent_id: i,
+                            id: i,
+                            hintContent: `${dealerName}, prant_id: ${i}, id: ${k}`,
+                        },
+                        {
+                            iconLayout: 'default#image',
+                            iconImageHref: mapIconPath,
+                            iconImageSize: [45, 70]
+                        }
+                    );
+
+                    geoObjects.push(placeMark)
+                }
+
+            };
+            collection.add(geoObjects);
+            dealersMap.geoObjects.add(collection);
+        }
+    }
 }
