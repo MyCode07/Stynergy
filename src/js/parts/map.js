@@ -5,9 +5,11 @@ const mapIconPath = '/wp-content/themes/blank-sheet/assets/img/icons/map-icon.sv
 const map = document.querySelector('#dealer-map');
 const zoom = 8;
 const coords = moscow_coords;
-let collection = null;
+let clusterer = null;
 const scrollElem = document.querySelector('.map-content .map-flex__right');
 let geoObjects = [];
+
+
 
 export const createMap = () => {
     if (!map) return;
@@ -17,10 +19,10 @@ export const createMap = () => {
             zoom: zoom,
         });
 
-        // collection = new ymaps.GeoObjectCollection(null, {
+        // clusterer = new ymaps.GeoObjectclusterer(null, {
         //     preset: 'default#image'
         // });
-        collection = new ymaps.Clusterer({
+        clusterer = new ymaps.Clusterer({
             preset: 'islands#invertedRedClusterIcons',
             clusterHideIconOnBalloonOpen: false,
             geoObjectHideIconOnBalloonOpen: false,
@@ -49,16 +51,21 @@ export const createMap = () => {
             }
 
         };
-        collection.add(geoObjects);
-        dealersMap.geoObjects.add(collection);
+        clusterer.add(geoObjects);
+        dealersMap.geoObjects.add(clusterer);
 
 
-        collection.events.add('click', function (e) {
+        clusterer.events.add('click', function (e) {
             const obj = e.get('target');
             console.log(obj.options);
             // if click is on a placemark, not on the cluster
             if (typeof obj.getGeoObjects == 'undefined') {
                 const objectId = obj.properties._data.parent_id;
+
+                const geoObjects = clusterer.getGeoObjects();
+                for (let i = 0; i < geoObjects.length; i++) {
+                    geoObjects[i].options.set('iconImageHref', mapIconPath);
+                };
 
                 obj.options.set('iconImageHref', mapIconClickedPath);
 
@@ -88,9 +95,18 @@ export const createMap = () => {
             dealersMap.setCenter(coords[index]['coords'][0]);
             dealersMap.setZoom(14)
 
-            var geoObjects = collection.getGeoObjects();
-            console.log(geoObjects[index]);
-            geoObjects[index].options.set('iconImageHref', mapIconClickedPath);
+            const geoObjects = clusterer.getGeoObjects();
+
+            for (let i = 0; i < geoObjects.length; i++) {
+                const obj = geoObjects[i]
+                const objectId = obj.properties._data.parent_id;
+
+                obj.options.set('iconImageHref', mapIconPath);
+                if (objectId == index) {
+                    obj.options.set('iconImageHref', mapIconClickedPath);
+                    break;
+                }
+            };
 
             document.querySelectorAll('.map-item').forEach(item => {
                 item.classList.remove('_clicked')
@@ -123,7 +139,7 @@ export const createMap = () => {
             dealersMap.setCenter(coords[perntIndex]['coords'][currentIndex]);
             dealersMap.setZoom(14)
 
-            var geoObjects = collection.getGeoObjects();
+            var geoObjects = clusterer.getGeoObjects();
             console.log(geoObjects[index]);
             geoObjects[index].options.set('iconImageHref', mapIconClickedPath);
 
@@ -194,7 +210,7 @@ export const createMap = () => {
             if (dealersMap && dealersMap.geoObjects) {
                 dealersMap.geoObjects.removeAll();
                 geoObjects = []
-                collection.removeAll();
+                clusterer.removeAll();
             }
 
             dealersMap.setCenter(coords[0]['coords'][0]);
@@ -223,8 +239,8 @@ export const createMap = () => {
                 }
 
             };
-            collection.add(geoObjects);
-            dealersMap.geoObjects.add(collection);
+            clusterer.add(geoObjects);
+            dealersMap.geoObjects.add(clusterer);
         }
     }
 }
