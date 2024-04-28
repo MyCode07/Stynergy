@@ -64,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                         let formData = new FormData(form);
 
+                        const formFile = form.querySelector('input[name="file"]');
                         if (formFile && formFile.files[0]) {
                             formData.append('file', formFile.files[0]);
                         }
@@ -105,6 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
 
                 checkCheckBoxes(form)
+                checkFiles(form)
             }
         })
     }
@@ -239,9 +241,11 @@ document.addEventListener('DOMContentLoaded', function () {
         'application/vnd.ms-powerpoint',
     ];
 
-    const formFile = document.querySelector('input[name="file"]');
+    function checkFiles(form) {
+        const formFile = form.querySelector('input[name="file"]');
 
-    if (formFile) {
+        if (!formFile) return;
+
         const fileElem = formFile.closest('.file')
         const fileNameElem = fileElem.querySelector('.filename span');
         const deleteFileElem = fileElem.querySelector('._delete-file');
@@ -252,14 +256,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         deleteFileElem.addEventListener('click', () => {
             fileNameElem.innerHTML = 'Прикрепить файл';
-            formFile.value = '';
+            formFile.value = ''; 
 
             deleteFileElem.style.display = 'none';
         })
 
         function uploadFile(file) {
-            console.log(file.type);
-
             if (!allowedFileTypes.includes(file.type)) {
                 alert('Разрешены только текстовые документы и изображения.');
                 fileNameElem.innerHTML = 'Прикрепить файл';

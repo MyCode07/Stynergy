@@ -1799,6 +1799,7 @@
 
     &__left {
         width: 29%;
+        flex: 0 0 auto;
 
         @media (max-width: 768px) {
             width: 100%;
@@ -1887,6 +1888,34 @@
 
                     margin-top: 8px;
                     margin-left: 36px;
+                }
+            }
+        }
+    }
+
+    // .buy-item__ofice
+
+    &__ofice {
+        .buy-item__right {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+
+            .icon {
+                width: 30px;
+                height: 30px;
+                flex: 0 0 auto;
+                border-radius: 50%;
+                background-color: #f3f3f3;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                svg {
+                    flex: 0 0 auto;
+                    height: 19px;
+                    fill: currentColor;
                 }
             }
         }

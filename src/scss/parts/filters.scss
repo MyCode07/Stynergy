@@ -64,6 +64,7 @@
                 transition: border-color 0.3s ease 0s;
                 height: auto;
                 cursor: pointer;
+                max-width: 178px;
 
                 @media (any-hover: hover) {
                     &:hover {
@@ -113,7 +114,7 @@
                         line-height: 1.3;
                         pointer-events: none;
 
-                        @media (max-width:768px){
+                        @media (max-width: 768px) {
                             word-break: break-word;
                         }
                     }
@@ -553,6 +554,38 @@
                             max-width: 100%;
                             object-fit: cover;
                         }
+
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center;
+                    }
+
+                    &[for="Docke"] div {
+                        background-image: url("@img/filter-brands/docke.png");
+                    }
+                    &[for="Tegola"] div {
+                        background-image: url("@img/filter-brands/tegola.png");
+                    }
+                    &[for="Технониколь"] div {
+                        background-image: url("@img/filter-brands/tekhnonikol.png");
+                    }
+                    &[for="Katepal"] div {
+                        background-image: url("@img/filter-brands/katepal.png");
+                    }
+                    &[for="Cedral"] div {
+                        background-image: url("@img/filter-brands/cedral.png");
+                    }
+                    &[for="Decover"] div {
+                        background-image: url("@img/filter-brands/decover.png");
+                    }
+                    &[for="Alta Profil"] div {
+                        background-image: url("@img/filter-brands/alta-profil.png");
+                    }
+                    &[for="Grand Line"] div {
+                        background-image: url("@img/filter-brands/grand-line.png");
+                    }
+                    &[for="STYNERGY"] div {
+                        background-image: url("@img/filter-brands/stynergy.svg");
                     }
                 }
             }
