@@ -1303,3 +1303,16 @@ sup {
 .swiper-button-lock {
     display: none !important;
 }
+
+[data-inner-tabs-area] {
+    [data-inner-tab] {
+    }
+
+    [data-inner-tab-content] {
+        display: none;
+
+        &._active {
+            display: block;
+        }
+    }
+}
