@@ -344,18 +344,23 @@
                     }
                 }
             }
+        }
+
+        // .catalog-content__btns
+
+        &__btns {
+            margin-top: 40px;
+
+            @media (max-width: 768px) {
+                margin-top: 24px;
+            }
+
+            & > :nth-child(2) {
+                margin-top: 12px;
+            }
 
             ._btn {
                 width: 100%;
-
-                &:not(:last-child) {
-                    margin-top: 40px;
-                    margin-bottom: 12px;
-
-                    @media (max-width: 768px) {
-                        margin-top: 24px;
-                    }
-                }
             }
         }
 
@@ -880,7 +885,7 @@
                         width: 25px;
                         height: 25px;
                         flex: 0 0 auto;
-                        
+
                         img,
                         picture {
                             width: 100%;
