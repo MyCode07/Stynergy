@@ -6,6 +6,52 @@ const openCatalogBtns = document.querySelectorAll('[data-open-catalog-menu]');
 const catalogMenu = document.querySelector('.catalog-menu');
 const menu = document.querySelector('.menu');
 const burger = document.querySelector('.header__burger');
+const headerBottom = document.querySelector('.header__bottom');
+
+
+
+function openCatalogBtn() {
+    const headerCatalogBtn = document.querySelector('header .open-catalog-btn');
+    const menuCatalogBtn = document.querySelector('.menu .open-catalog-btn');
+    const toolbarCatalgBtn = document.querySelector('.toolbar [data-open-catalog-menu]');
+
+    let btns = []
+
+    if (headerCatalogBtn) {
+        btns.push(headerCatalogBtn)
+    }
+    if (menuCatalogBtn) {
+        btns.push(menuCatalogBtn)
+    }
+    if (toolbarCatalgBtn) {
+        btns.push(toolbarCatalgBtn)
+    }
+
+    if (!btns.length) return;
+
+    btns.forEach(btn => {
+        const label = btn.querySelector('label');
+
+        if (label) {
+            label.textContent = label.dataset.textHide
+        }
+
+        btn.classList.add('_active')
+        catalogMenu.classList.add('_open')
+
+        if (window.innerWidth <= 768) {
+            menu.classList.add('_open')
+
+            if (!toolbarCatalgBtn) {
+                burger.classList.add('_active')
+            }
+
+            if (headerBottom) {
+                headerBottom.classList.add('_white')
+            }
+        }
+    })
+}
 
 // open catalog btns
 if (openCatalogBtns.length) {
@@ -13,6 +59,8 @@ if (openCatalogBtns.length) {
         const label = btn.querySelector('label');
 
         btn.addEventListener('click', (e) => {
+            e.preventDefault();
+
             if (!btn.closest('.menu')) {
                 closeOpenMenu();
                 closeOpenHeaderSearch();
@@ -34,6 +82,10 @@ if (openCatalogBtns.length) {
                 if (btn.classList.contains('open-catalog-btn')) {
                     label.textContent = label.dataset.textShow
                 }
+            }
+
+            if (btn.closest('section')) {
+                openCatalogBtn();
             }
         })
     });

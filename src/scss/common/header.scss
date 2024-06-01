@@ -181,7 +181,7 @@
             a {
                 color: $black;
                 font-size: 18px;
-                font-weight: 600;
+                font-weight: 500;
                 white-space: nowrap;
 
                 transition: all 0.3s ease 0s;
@@ -274,7 +274,7 @@
 
                     li {
                         font-size: 13px;
-                        font-weight: 600;
+                        font-weight: 500;
 
                         a {
                             text-transform: uppercase;
@@ -461,7 +461,7 @@
 }
 
 ._demibold > a {
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .open-catalog-btn {
@@ -482,7 +482,7 @@
     color: $white;
     text-align: center;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
     margin-right: 77px;
 
     @media (max-width: 1200px) {

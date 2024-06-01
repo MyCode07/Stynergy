@@ -42,7 +42,13 @@ export function closeOpenCatalogMenu() {
     if (catalogMenu.classList.contains('_open')) {
         catalogMenu.classList.remove('_open')
         openCatalogMenuBtns.forEach(item => {
+            const label = item.querySelector('label');
+
             item.classList.remove('_active')
+
+            if (label) {
+                label.textContent = label.dataset.textShow
+            }
         });
     }
 }

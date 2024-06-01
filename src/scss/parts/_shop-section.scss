@@ -48,7 +48,7 @@
         }
     }
 
-    .grid-6 {
+    .grid {
         gap: 19px;
 
         @media (max-width: 1024px) {
@@ -56,7 +56,7 @@
             grid-template-columns: repeat(3, 1fr);
         }
 
-        a {
+        a,div {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -411,7 +411,7 @@
             width: auto;
 
             span {
-                font-weight: 600;
+                font-weight: 500;
 
                 font-size: 20px;
                 margin-bottom: 12px;
@@ -423,7 +423,7 @@
             }
 
             label {
-                font-weight: 600;
+                font-weight: 500;
                 flex: 1 1 auto;
 
                 font-size: 40px;
@@ -451,7 +451,7 @@
                 border-radius: 10px;
                 list-style: inherit;
 
-                font-weight: 600;
+                font-weight: 500;
 
                 @include adaptive-value("font-size", 20, 12, 1);
                 @include adaptive-value("padding-top", 22, 6, 1);
@@ -526,7 +526,7 @@
             border: 1px solid rgba($color: $white, $alpha: 0.5);
 
             color: $white;
-            font-weight: 600;
+            font-weight: 500;
             text-align: center;
 
             @media (max-width: 1024px) {
@@ -1012,7 +1012,7 @@
 
                     label {
                         @include adaptive-value("font-size", 20, 16, 1);
-                        font-weight: 600;
+                        font-weight: 500;
                         text-transform: uppercase;
                         display: block;
                         margin-bottom: 4px;

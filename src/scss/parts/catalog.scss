@@ -50,7 +50,7 @@
         span {
             color: $white;
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 500;
         }
     }
 
@@ -95,7 +95,7 @@
                         }
 
                         & > a {
-                            font-weight: 600;
+                            font-weight: 500;
                         }
                     }
 
@@ -150,7 +150,7 @@
         }
 
         & > ul > li [aria-current="page"] {
-            font-weight: 600;
+            font-weight: 500;
         }
 
         ul ul [aria-current="page"] {
@@ -785,7 +785,7 @@
 
             &._active {
                 color: $accent;
-                font-weight: 600;
+                font-weight: 500;
 
                 @media (max-width: 1024px) {
                     background-color: $accent;
@@ -872,7 +872,7 @@
                     display: block;
                     margin-bottom: 20px;
                     font-size: 16px;
-                    font-weight: 600;
+                    font-weight: 500;
                     color: $black;
                 }
 

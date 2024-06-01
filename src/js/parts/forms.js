@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
                 else {
                     if (form.closest('.section')) {
-                        titleElem = form.closest('.section').querySelector('n2');
+                        titleElem = form.closest('.section').querySelector('h2');
 
                         if (!titleElem) {
                             titleElem = form.closest('.section').querySelector('h3');
@@ -69,7 +69,13 @@ document.addEventListener('DOMContentLoaded', function () {
                             formData.append('file', formFile.files[0]);
                         }
 
-                        formData.append('title', titleElem.textContent);
+                        if (form.closest('.shop-cart')) {
+                            formData.append('title', 'Заказ с сайта');
+                        }
+                        else {
+                            formData.append('title', titleElem.textContent);
+                        }
+
                         formData.append('page_url', window.location.href);
                         formData.append('action', 'ajax_forms');
 
@@ -87,19 +93,24 @@ document.addEventListener('DOMContentLoaded', function () {
                                 console.log(result);
                                 sentMessage(form)
                                 form.reset();
-                                resetForm();
+                                resetForm(formFile);
                                 form.classList.remove('_sending');
+
+                                if (form.closest('.shop-cart') && result.show_empty_cart) {
+                                    document.querySelector('.shop-cart').remove();
+                                    document.querySelector('main').insertAdjacentHTML('beforeend', result.show_empty_cart);
+                                }
                             }
                             else {
                                 console.log(result);
                                 failMessage(form)
-                                resetForm();
+                                resetForm(formFile);
                                 form.classList.remove('_sending');
                             }
                         }
                         else {
                             fillAllFields(form)
-                            resetForm();
+                            resetForm(formFile);
                             form.classList.remove('_sending');
                         }
                     })
@@ -209,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('Запольните все поля');
     }
 
-    function resetForm() {
+    function resetForm(formFile) {
         if (formFile) {
             const fileElem = formFile.closest('.file')
             const fileNameElem = fileElem.querySelector('.filename span');
@@ -256,7 +267,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         deleteFileElem.addEventListener('click', () => {
             fileNameElem.innerHTML = 'Прикрепить файл';
-            formFile.value = ''; 
+            formFile.value = '';
 
             deleteFileElem.style.display = 'none';
         })

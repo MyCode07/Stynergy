@@ -44,7 +44,7 @@
             margin-bottom: 16px;
             color: $black;
             @include adaptive-value("font-size", 20, 15, 1);
-            font-weight: 600;
+            font-weight: 500;
         }
 
         ul {
@@ -285,11 +285,11 @@
                         img {
                             border-radius: 10px;
                             height: 100%;
-                            object-fit: cover;
+                            object-fit: contain;
                         }
 
                         background-repeat: no-repeat;
-                        background-size: cover;
+                        background-size: contain;
                     }
 
                     p {
@@ -446,7 +446,7 @@
                         margin-inline: auto;
                         border: 1px solid #eaeaea;
                         background-repeat: no-repeat;
-                        background-size: cover;
+                        background-size: contain;
 
                         @media (min-width: 1025px) {
                             @include adaptive-value("width", 68, 64, 1);
@@ -552,7 +552,7 @@
                         img {
                             width: auto;
                             max-width: 100%;
-                            object-fit: cover;
+                            object-fit: contain;
                         }
 
                         background-repeat: no-repeat;
@@ -575,7 +575,7 @@
                     &[for="Cedral"] div {
                         background-image: url("@img/filter-brands/cedral.png");
                     }
-                    &[for="Decover"] div {
+                    &[for="Decontain"] div {
                         background-image: url("@img/filter-brands/decover.png");
                     }
                     &[for="Alta Profil"] div {
