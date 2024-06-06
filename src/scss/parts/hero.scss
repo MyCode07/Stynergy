@@ -185,6 +185,11 @@
                 width: 100%;
                 flex: 1 1 auto;
 
+                @media (min-width: 1025px) {
+                    width: 50%;
+                    max-width: 960px;
+                }
+
                 .pagination {
                     @media (min-width: 992px) {
                         position: absolute;

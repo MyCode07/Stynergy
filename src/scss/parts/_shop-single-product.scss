@@ -550,6 +550,8 @@
                 img {
                     border-radius: 10px;
                     height: auto;
+                    max-height: 400px;
+                    object-fit: contain;
                 }
             }
 
@@ -587,4 +589,106 @@
     img {
         width: 136px;
     }
+}
+
+._chars-color {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+    overflow: hidden;
+    flex: 0 0 auto;
+    margin-left: 5px;
+}
+
+[data-bccolor="RAL 1014"] {
+    background: #ddc49a;
+}
+
+[data-bccolor="RAL 1015"] {
+    background: #e6d2b5;
+}
+
+[data-bccolor="RAL 1018"] {
+    background: #faca30;
+}
+
+[data-bccolor="RAL 3003"] {
+    background: #861a22;
+}
+
+[data-bccolor="RAL 3005"] {
+    background: #59191f;
+}
+
+[data-bccolor="RAL 3009"] {
+    background: #6d342d;
+}
+
+[data-bccolor="RAL 3011"] {
+    background: #792423;
+}
+
+[data-bccolor="RAL 3020"] {
+    background: #bb1e10;
+}
+
+[data-bccolor="RAL 5005"] {
+    background: #005387;
+}
+
+[data-bccolor="RAL 5021"] {
+    background: #007577;
+}
+
+[data-bccolor="RAL 5024"] {
+    background: #6093ac;
+}
+
+[data-bccolor="RAL 6002"] {
+    background: #325928;
+}
+
+[data-bccolor="RAL 6005"] {
+    background: #114232;
+}
+
+[data-bccolor="RAL 7004"] {
+    background: #9b9b9b;
+}
+
+[data-bccolor="RAL 7011"] {
+    background: #52595d;
+}
+
+[data-bccolor="RAL 7016"] {
+    background: #383e42;
+}
+
+[data-bccolor="RAL 7024"] {
+    background: #45494e;
+}
+
+[data-bccolor="RAL 8004"] {
+    background: #8d4931;
+}
+
+[data-bccolor="RAL 8017"] {
+    background: #442f29;
+}
+
+[data-bccolor="RAL 9002"] {
+    background: #d7d5cb;
+}
+
+[data-bccolor="RAL 9003"] {
+    background: #ecece7;
+}
+
+[data-bccolor="RAL 9005"] {
+    background: #0e0e10;
+}
+
+[data-bccolor="RR_32"] {
+    background: #292a2a;
 }

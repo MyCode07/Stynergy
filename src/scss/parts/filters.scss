@@ -289,6 +289,7 @@
                         }
 
                         background-repeat: no-repeat;
+                        background-position: center;
                         background-size: contain;
                     }
 
@@ -406,6 +407,9 @@
                     &[for="П-образный"] div {
                         background-image: url("@img/filter-images/П-образный.jpg");
                     }
+                    &[for="К"] div {
+                        background-image: url("@img/filter-images/K.jpg");
+                    }
                     &[for="Полукруглый"] div {
                         background-image: url("@img/filter-images/Полукруглый.jpg");
                     }
@@ -420,6 +424,14 @@
                     }
                     &[for="Саморез кровельный"] div {
                         background-image: url("@img/filter-images/Саморез кровельный.jpg");
+                    }
+                    &[for="Под-камень"] div,
+                    &[for="Под камень"] div {
+                        background-image: url("@img/filter-images/Под-камень.jpg");
+                    }
+                    &[for="Под-кирпич"] div,
+                    &[for="Под кирпич"] div {
+                        background-image: url("@img/filter-images/Под-кирпич.jpg");
                     }
                 }
             }
@@ -446,7 +458,8 @@
                         margin-inline: auto;
                         border: 1px solid #eaeaea;
                         background-repeat: no-repeat;
-                        background-size: contain;
+                        background-size: cover;
+                        background-position: center;
 
                         @media (min-width: 1025px) {
                             @include adaptive-value("width", 68, 64, 1);
@@ -572,13 +585,15 @@
                     &[for="Katepal"] div {
                         background-image: url("@img/filter-brands/katepal.png");
                     }
-                    &[for="Cedral"] div {
+                    &[for="Cedral"] div,
+                    &[for="CEDRAL"] div {
                         background-image: url("@img/filter-brands/cedral.png");
                     }
                     &[for="Decontain"] div {
                         background-image: url("@img/filter-brands/decover.png");
                     }
-                    &[for="Alta Profil"] div {
+                    &[for="Alta Profil"] div,
+                    &[for="Альта Профиль"] div {
                         background-image: url("@img/filter-brands/alta-profil.png");
                     }
                     &[for="Grand Line"] div {
@@ -586,6 +601,10 @@
                     }
                     &[for="STYNERGY"] div {
                         background-image: url("@img/filter-brands/stynergy.svg");
+                    }
+
+                    &[for="DECOVER"] div {
+                        background-image: url("@img/filter-brands/decover.png");
                     }
                 }
             }
@@ -638,4 +657,10 @@
             }
         }
     }
+}
+
+[data-category="76"] li:has([for="Под камень"]),
+[data-category="76"] li:has([for="С20"]),
+[data-category="76"] li:has([for="Под кирпич"]) {
+    display: none !important;
 }

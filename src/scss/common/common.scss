@@ -1321,3 +1321,11 @@ sup {
         }
     }
 }
+
+.discount {
+    display: none !important;
+}
+
+[data-open-catalog-menu] * {
+    pointer-events: none;
+}

@@ -54,41 +54,44 @@ function openCatalogBtn() {
 }
 
 // open catalog btns
-if (openCatalogBtns.length) {
-    openCatalogBtns.forEach(btn => {
-        const label = btn.querySelector('label');
+document.addEventListener('click', function (e) {
+    let targetEl = e.target;
 
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
+    if (targetEl.hasAttribute('data-open-catalog-menu')) {
+        e.preventDefault();
+        clickOnCatalogBtn(targetEl)
+    }
+})
 
-            if (!btn.closest('.menu')) {
-                closeOpenMenu();
-                closeOpenHeaderSearch();
-            }
+function clickOnCatalogBtn(btn) {
+    const label = btn.querySelector('label');
 
-            btn.classList.toggle('_active')
-            catalogMenu.classList.toggle('_open')
+    if (!btn.closest('.menu')) {
+        closeOpenMenu();
+        closeOpenHeaderSearch();
+    }
 
-            if (btn.classList.contains('_active')) {
-                lockPadding();
+    btn.classList.toggle('_active')
+    catalogMenu.classList.toggle('_open')
 
-                if (btn.classList.contains('open-catalog-btn')) {
-                    label.textContent = label.dataset.textHide
-                }
-            }
-            else {
-                unLockPadding();
+    if (btn.classList.contains('_active')) {
+        lockPadding();
 
-                if (btn.classList.contains('open-catalog-btn')) {
-                    label.textContent = label.dataset.textShow
-                }
-            }
+        if (btn.classList.contains('open-catalog-btn')) {
+            label.textContent = label.dataset.textHide
+        }
+    }
+    else {
+        unLockPadding();
 
-            if (btn.closest('section')) {
-                openCatalogBtn();
-            }
-        })
-    });
+        if (btn.classList.contains('open-catalog-btn')) {
+            label.textContent = label.dataset.textShow
+        }
+    }
+
+    if (btn.closest('section')) {
+        openCatalogBtn();
+    }
 }
 
 
