@@ -1,43 +1,71 @@
 import { lockPadding } from "../utils/lockPadding.js";
+import { mapIconPath, mapIconClickedPath } from "./map.js";
 
-// const mapIconPath = '/img/icons/map-icon.svg';
-const mapIconPath = '/wp-content/themes/blank-sheet/assets/img/icons/map-icon.svg';
 const popup = document.querySelector('.popup#dealer-map-popup');
 const map = document.querySelector('#popup-map');
 const zoom = 12;
 const dealerItems = document.querySelectorAll('.diller-item');
 const coords = dealer_data;
+let clusterer = null;
+let geoObjects = [];
+
 
 export const createDealerPopupMap = () => {
     if (!map || !dealerItems) return;
 
     ymaps.ready(function () {
         dealer_data_map = new ymaps.Map('popup-map', {
-            center: moscow_coords[0],
+            center: coords['coords'][0],
             zoom: zoom,
         });
 
-        for (let i = 0; i < coords.length; i++) {
+        clusterer = new ymaps.Clusterer({
+            preset: 'islands#invertedRedClusterIcons',
+            clusterHideIconOnBalloonOpen: false,
+            geoObjectHideIconOnBalloonOpen: false,
+        });
+
+        for (let i = 0; i < coords['coords'].length; i++) {
             const myPlacemark = new ymaps.Placemark(
-                coords[i],
-                {},
+                coords['coords'][i],
+                {
+                    id: i,
+                    hintContent: `${coords['addresses'][i]}, id: ${i}`,
+                },
                 {
                     iconLayout: 'default#image',
                     iconImageHref: mapIconPath,
                     iconImageSize: [45, 70]
                 }
             );
-
-            dealer_data_map.geoObjects.add(myPlacemark);
+            geoObjects.push(myPlacemark)
         };
+        clusterer.add(geoObjects);
+        dealer_data_map.geoObjects.add(clusterer);
     });
 
-    dealerItems.forEach((dealer, i) => {
+    dealerItems.forEach((dealer, index) => {
         const btn = dealer.querySelector('button');
         btn.addEventListener('click', () => {
-            dealer_data_map.setCenter(coords[i]);
+            dealer_data_map.setCenter(coords['coords'][index]);
+            dealer_data_map.setZoom(zoom)
+
             popup.classList.add('_open')
             lockPadding();
+
+            const geoObjects = clusterer.getGeoObjects();
+
+            for (let i = 0; i < geoObjects.length; i++) {
+                const obj = geoObjects[i]
+                const objectId = obj.properties._data.id;
+
+                obj.options.set('iconImageHref', mapIconPath);
+                if (objectId == index) {
+                    obj.options.set('iconImageHref', mapIconClickedPath);
+                    break;
+                }
+            };
+
         })
     });
 }

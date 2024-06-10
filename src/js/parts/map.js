@@ -1,21 +1,21 @@
-// const mapIconPath = '/img/icons/map-icon.svg';
-// const mapIconClickedPath = '/img/icons/map-icon-clicked.svg';
-const mapIconClickedPath = '/wp-content/themes/blank-sheet/assets/img/icons/map-icon-clicked.svg';
-const mapIconPath = '/wp-content/themes/blank-sheet/assets/img/icons/map-icon.svg';
+// export const mapIconPath = '/img/icons/map-icon.svg';
+// export const mapIconClickedPath = '/img/icons/map-icon-clicked.svg';
+export const mapIconPath = '/wp-content/themes/blank-sheet/assets/img/icons/map-icon.svg';
+export const mapIconClickedPath = '/wp-content/themes/blank-sheet/assets/img/icons/map-icon-clicked.svg';
+
 const map = document.querySelector('#dealer-map');
 const zoom = 8;
 const coords = moscow_coords;
-let clusterer = null;
 const scrollElem = document.querySelector('.map-content .map-flex__right');
+let clusterer = null;
 let geoObjects = [];
-
-
-
+ 
+ 
 export const createMap = () => {
     if (!map) return;
     ymaps.ready(function () {
         dealersMap = new ymaps.Map('dealer-map', {
-            center: coords[0]['coords'][0],
+            center: coords[0]['coords']['coords'][0],
             zoom: zoom,
         });
 
@@ -29,8 +29,10 @@ export const createMap = () => {
         });
 
         for (let i = 0; i < coords.length; i++) {
-            const marks = coords[i]['coords']
+            const marks = coords[i]['coords']['coords']
+            const addresses = coords[i]['coords']['addresses']
             const dealerName = coords[i]['dealer']
+
 
             for (let k = 0; k < marks.length; k++) {
                 const placeMark = new ymaps.Placemark(
@@ -38,7 +40,7 @@ export const createMap = () => {
                     {
                         parent_id: i,
                         id: i,
-                        hintContent: `${dealerName}, prant_id: ${i}, id: ${k}`,
+                        hintContent: `${dealerName}, ${addresses[k]} prant_id: ${i}, id: ${k}`,
                     },
                     {
                         iconLayout: 'default#image',
@@ -92,7 +94,7 @@ export const createMap = () => {
         if (targetEl.classList.contains('map-item')) {
             const index = [...targetEl.parentElement.children].indexOf(targetEl);
 
-            dealersMap.setCenter(coords[index]['coords'][0]);
+            dealersMap.setCenter(targetEl.dataset.firstCoords.split(','));
             dealersMap.setZoom(14)
 
             const geoObjects = clusterer.getGeoObjects();
@@ -100,6 +102,8 @@ export const createMap = () => {
             for (let i = 0; i < geoObjects.length; i++) {
                 const obj = geoObjects[i]
                 const objectId = obj.properties._data.parent_id;
+
+                console.log(objectId, index);
 
                 obj.options.set('iconImageHref', mapIconPath);
                 if (objectId == index) {
@@ -136,7 +140,7 @@ export const createMap = () => {
             const index = [...allAddresses].indexOf(li);
             console.log(perntIndex, currentIndex, coords[perntIndex]['coords'][currentIndex]);
 
-            dealersMap.setCenter(coords[perntIndex]['coords'][currentIndex]);
+            dealersMap.setCenter(coords[perntIndex]['coords']['coords'][currentIndex]);
             dealersMap.setZoom(14)
 
             var geoObjects = clusterer.getGeoObjects();
@@ -213,11 +217,12 @@ export const createMap = () => {
                 clusterer.removeAll();
             }
 
-            dealersMap.setCenter(coords[0]['coords'][0]);
+            dealersMap.setCenter(coords[0]['coords']['coords'][0]);
             dealersMap.setZoom(14)
 
             for (let i = 0; i < coords.length; i++) {
-                const marks = coords[i]['coords']
+                const marks = coords[i]['coords']['coords']
+                const addresses = coords[i]['coords']['addresses']
                 const dealerName = coords[i]['dealer']
 
                 for (let k = 0; k < marks.length; k++) {
@@ -226,7 +231,7 @@ export const createMap = () => {
                         {
                             parent_id: i,
                             id: i,
-                            hintContent: `${dealerName}, prant_id: ${i}, id: ${k}`,
+                            hintContent: `${dealerName}, ${addresses[k]} prant_id: ${i}, id: ${k}`,
                         },
                         {
                             iconLayout: 'default#image',
