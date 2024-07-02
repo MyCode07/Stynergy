@@ -40,7 +40,7 @@ export const createMap = () => {
                     {
                         parent_id: i,
                         id: i,
-                        hintContent: `${dealerName}, ${addresses[k]} prant_id: ${i}, id: ${k}`,
+                        hintContent: `${dealerName}, ${addresses[k]}`,
                     },
                     {
                         iconLayout: 'default#image',
@@ -231,7 +231,7 @@ export const createMap = () => {
                         {
                             parent_id: i,
                             id: i,
-                            hintContent: `${dealerName}, ${addresses[k]} prant_id: ${i}, id: ${k}`,
+                            hintContent: `${dealerName}, ${addresses[k]}`,
                         },
                         {
                             iconLayout: 'default#image',

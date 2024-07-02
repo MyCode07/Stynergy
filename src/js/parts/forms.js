@@ -99,6 +99,8 @@ document.addEventListener('DOMContentLoaded', function () {
                                 if (form.closest('.shop-cart') && result.show_empty_cart) {
                                     document.querySelector('.shop-cart').remove();
                                     document.querySelector('main').insertAdjacentHTML('beforeend', result.show_empty_cart);
+                                    document.querySelectorAll('.cart-count').forEach(item => item.textContent = 0);
+                                    document.querySelector('.shop-header__cart .price span').textContent = 0;
                                 }
                             }
                             else {

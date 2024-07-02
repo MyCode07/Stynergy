@@ -822,8 +822,8 @@
 
 .new {
     .section__flex-left {
-        max-width: 742px;
-        flex: 1;
+        max-width: 828px;
+        flex: 1 1 auto;
 
         @media (max-width: 1024px) {
             margin-bottom: 60px;
@@ -833,6 +833,11 @@
 
     .section__flex-right {
         max-width: 414px;
+
+        // & > div {
+        //     position: sticky;
+        //     top: 0;
+        // }
 
         @media (max-width: 1024px) {
             max-width: 100%;

@@ -30,7 +30,7 @@ export const createDealerPopupMap = () => {
                 coords['coords'][i],
                 {
                     id: i,
-                    hintContent: `${coords['addresses'][i]}, id: ${i}`,
+                    hintContent: `${coords['addresses'][i]}`,
                 },
                 {
                     iconLayout: 'default#image',
