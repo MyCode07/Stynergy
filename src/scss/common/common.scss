@@ -1329,3 +1329,15 @@ sup {
 [data-open-catalog-menu] * {
     pointer-events: none;
 }
+
+._desc {
+    @media (max-width: 1024px) {
+        display: none;
+    }
+}
+
+._mob {
+    @media (min-width: 1025px) {
+        display: none;
+    }
+}

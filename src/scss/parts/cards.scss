@@ -170,9 +170,11 @@
 
     img,
     svg {
+        flex: 0 0 auto;
         width: 52px;
         height: 52px;
         margin-bottom: 13px;
+        fill: currentColor;
 
         @media (max-width: 768px) {
             width: 42px;
@@ -1774,6 +1776,45 @@
             @media (max-width: 768px) {
                 font-size: 15px;
             }
+        }
+    }
+}
+
+.offices-no-img {
+    ._shop-contacts-item div {
+        margin-bottom: 0;
+    }
+
+    .section__top {
+        align-items: center;
+    }
+
+    .office-item__info {
+        border: 1px solid rgba($color: $black, $alpha: 0.2);
+        border-radius: 8px;
+        @include adaptive-value("padding", 20, 15, 1);
+
+        align-items: flex-start;
+
+        * {
+            text-align: left;
+        }
+
+        label {
+            margin-top: 0;
+        }
+
+        span {
+            display: block;
+
+            &:not(:last-child) {
+                margin-bottom: 5px;
+            }
+        }
+
+        button {
+            color: $accent;
+            margin-top: 1em;
         }
     }
 }

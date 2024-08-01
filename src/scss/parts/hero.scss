@@ -159,6 +159,52 @@
             }
         }
     }
+
+    &.hero-white {
+        .hero-slider__content {
+            position: relative;
+
+            * {
+                color: $white;
+            }
+
+            p {
+                @include adaptive-value("font-size", 40, 20, 1);
+                margin-bottom: 1em;
+            }
+
+            span {
+                @include adaptive-value("font-size", 20, 15, 1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .swiper-slide {
+                padding-top: 25px !important;
+                padding-bottom: 40px;
+            }
+        }
+
+        .hero-mark {
+            position: absolute;
+            bottom: 100px;
+            right: 100px;
+            transform: rotate(15deg);
+
+            @include adaptive-value("font-size", 28, 14, 1);
+            font-weight: 500;
+            padding: 0.5em 1em;
+            border: 3px solid currentColor;
+            text-align: center;
+
+            @media (max-width: 768px) {
+                padding: 0.3em 0.75em;
+                right: 0;
+                bottom: -20px;
+                border-width: 2px;
+            }
+        }
+    }
 }
 
 ._shop-hero {

@@ -56,7 +56,8 @@
             grid-template-columns: repeat(3, 1fr);
         }
 
-        a,div {
+        a,
+        div {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -754,6 +755,10 @@
             h3 {
                 margin-bottom: 16px;
                 @include adaptive-value("font-size", 30, 20, 1);
+            }
+
+            h2 {
+                margin-bottom: 16px;
             }
 
             & > p {
