@@ -305,8 +305,6 @@ document.addEventListener('DOMContentLoaded', function () {
             reader.readAsDataURL(file);
         }
     }
-
-
 });
 
 function checkCheckBoxes(form) {
