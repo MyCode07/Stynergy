@@ -92,8 +92,9 @@
 
     .file {
         display: flex;
-        gap: 20px;
-        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
         margin-top: 12px;
 
         @media (max-width: 768px) {
@@ -101,6 +102,7 @@
         }
 
         label {
+            width: fit-content;
             cursor: pointer;
             max-width: calc(100% - 150px);
 
@@ -148,6 +150,8 @@
     }
 
     ._delete-file {
+        height: fit-content;
+        width: fit-content;
         display: none;
         cursor: pointer;
         padding: 6px 12px;
@@ -161,6 +165,14 @@
                 color: $white;
             }
         }
+    }
+
+    .file-upload {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        flex: 0 0 auto;
     }
 
     // .form__bottom
