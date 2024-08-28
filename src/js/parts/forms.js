@@ -55,6 +55,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             if (response.ok) {
                                 console.log(result);
                                 window.location.href = result.paymentUrl
+
+                                ym(37559085, 'reachGoal', 'pay_im_formnew')
                             }
                             else {
                                 console.log(result);
@@ -66,16 +68,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 else {
                     if (form.closest('.shop-cart')) {
-                        if (form.closest('.section')) {
-                            let titleElem = form.closest('.section').querySelector('h2');
+                        let titleElem = form.closest('.section').querySelector('h2');
 
-                            if (!titleElem) {
-                                titleElem = form.closest('.section').querySelector('h3');
-                            }
+                        if (!titleElem) {
+                            titleElem = form.closest('.section').querySelector('h3');
                         }
-                        else {
-                            titleElem = form.closest('.popup').querySelector('h4');
-                        }
+
 
                         form.addEventListener('submit', async function (e) {
                             e.preventDefault();
@@ -116,12 +114,14 @@ document.addEventListener('DOMContentLoaded', function () {
                                     resetForm(formFile);
                                     form.classList.remove('_sending');
 
-                                    if (form.closest('.shop-cart') && result.show_empty_cart) {
+                                    if (result.show_empty_cart) {
                                         document.querySelector('.shop-cart').remove();
                                         document.querySelector('main').insertAdjacentHTML('beforeend', result.show_empty_cart);
                                         document.querySelectorAll('.cart-count').forEach(item => item.textContent = 0);
                                         document.querySelector('.shop-header__cart .price span').textContent = 0;
                                     }
+
+                                    ym(37559085, 'reachGoal', 'zakaz_im_formnew')
                                 }
                                 else {
                                     console.log(result);

@@ -28,6 +28,9 @@ document.addEventListener('DOMContentLoaded', function (e) {
                 }
 
                 submitEmail(document.querySelector('.popup#thanks'));
+
+
+                ymGoal(form.querySelector('[data-ymgoal]'))
             }, false);
 
             form.addEventListener('wpcf7mailfailed', function (event) {
@@ -36,6 +39,13 @@ document.addEventListener('DOMContentLoaded', function (e) {
         })
     }
 })
+
+function ymGoal(elem) {
+    console.log(elem);
+    if (!elem) return;
+    ym(elem.dataset.ymgoal, 'reachGoal', elem.textContent)
+}
+// ym(100002, 'reachGoal', 'zakaz')
 
 
 
