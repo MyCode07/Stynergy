@@ -5,13 +5,13 @@ const popup = document.querySelector('.popup#dealer-map-popup');
 const map = document.querySelector('#popup-map');
 const zoom = 12;
 const dealerItems = document.querySelectorAll('.diller-item');
-const coords = dealer_data;
 let clusterer = null;
 let geoObjects = [];
 
 
 export const createDealerPopupMap = () => {
     if (!map || !dealerItems) return;
+    const coords = dealer_data;
 
     ymaps.ready(function () {
         dealer_data_map = new ymaps.Map('popup-map', {

@@ -45,7 +45,7 @@ if (popupCalculate && document.querySelector('section.single-product')) {
     const title = popupCalculate.querySelector('form h4');
     const openPopupBtn = document.querySelector('.single-product__btns [data-id="calculate"]');
 
-    if (openPopupBtn) {
+    if (openPopupBtn && title) {
         title.textContent = openPopupBtn.textContent
     }
-} 
+}
